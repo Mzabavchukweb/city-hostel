@@ -3,39 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pokój 3-os. z prywatną łazienką | City Hostel Szczecin</title>
+  <title>Pokój obecnie niedostępny | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
-<body>
-  <div id="app">
-    <div id="menu-partial"></div>
-    <main>
-      <section class="section">
-        <div class="room-gallery">
-          <img src="https://source.unsplash.com/600x400/?hotel,room,19" alt="Pokój 7 - zdjęcie 1" />
-          <img src="https://source.unsplash.com/600x400/?hotel,room,20" alt="Pokój 7 - zdjęcie 2" />
-          <img src="https://source.unsplash.com/600x400/?hotel,room,21" alt="Pokój 7 - zdjęcie 3" />
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=600&q=80" alt="Pokój 7 - 360°" class="img-360" />
-        </div>
-        <h1>Pokój 3-osobowy z prywatną łazienką</h1>
-        <p>Doskonały pokój dla grupy znajomych nastawionych na aktywny wypoczynek i zwiedzanie miasta. Bezpłatny internet, trzy łóżka, prywatna łazienka.</p>
-        <ul>
-          <li>Liczba łóżek: 3</li>
-          <li>Maksymalna liczba osób: 3</li>
-          <li>Wyposażenie: prywatna łazienka, Wi-Fi, ręczniki</li>
-        </ul>
-        <a href="pokoje.html">Powrót do listy pokoi</a>
-      </section>
-    </main>
-    <!-- Stopka generowana z komponentu -->
-    <div id="footer-placeholder"></div>
-    <link rel="stylesheet" href="../components/footer.css">
-    <script>
-      fetch('../components/footer.html')
-        .then(response => response.text())
-        .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
-    </script>
-  </div>
+<body class="page-with-header-padding">
+  <main>
+    <section class="section">
+      <h1>Pokój obecnie niedostępny</h1>
+      <p>Ten pokój jest obecnie w trakcie renowacji. Prosimy o kontakt w celu sprawdzenia dostępności innych pokoi.</p>
+      <a href="pokoje.html" class="details-btn">Powrót do listy pokoi</a>
+      <a href="kontakt.html" class="hero-cta">Skontaktuj się z nami</a>
+    </section>
+  </main>
+  
+  <!-- Stopka generowana z komponentu -->
+  <div id="footer-placeholder"></div>
+  <link rel="stylesheet" href="../components/footer.css">
+  <script>
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
+  
   <script src="../assets/main.js"></script>
 </body>
 </html> 
