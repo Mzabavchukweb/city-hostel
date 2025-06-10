@@ -44,7 +44,7 @@
           Kontakt
         </h4>
         <ul class="footer-links">
-          <li class="contact-phone">+48 607 067 353</li>
+          <li><a href="#" id="footer-phone-link" style="color:inherit;text-decoration:none;font-weight:600;">+48 607 067 353</a></li>
           <li><a href="mailto:recepcja@cityhostel.com.pl">recepcja@cityhostel.com.pl</a></li>
           <li class="contact-note">Dostępni 24/7</li>
           <li class="contact-note">Odpowiadamy w 2h</li>
@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const rezerwacjaLink = document.getElementById('footer-rezerwacja-link');
   const regulaminLink = document.getElementById('footer-regulamin-link');
   const politykaLink = document.getElementById('footer-polityka-link');
+  const phoneLink = document.getElementById('footer-phone-link');
   
   if (isMainPage) {
     // Main page links (when on root index.html)
@@ -102,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (rezerwacjaLink) rezerwacjaLink.href = isGitHubPages ? '/city-hostel/src/pages/zapytaj-o-rezerwacje.html' : 'src/pages/zapytaj-o-rezerwacje.html';
     if (regulaminLink) regulaminLink.href = isGitHubPages ? '/city-hostel/src/pages/regulamin.html' : 'src/pages/regulamin.html';
     if (politykaLink) politykaLink.href = isGitHubPages ? '/city-hostel/src/pages/polityka-prywatnosci.html' : 'src/pages/polityka-prywatnosci.html';
+    if (phoneLink) phoneLink.href = isGitHubPages ? '/city-hostel/src/pages/kontakt.html' : 'src/pages/kontakt.html';
   } else if (isInPagesFolder) {
     // Pages folder links (when inside src/pages/)
     if (homeLink1) homeLink1.href = isGitHubPages ? '/city-hostel/' : '../../index.html';
@@ -112,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (rezerwacjaLink) rezerwacjaLink.href = 'zapytaj-o-rezerwacje.html';
     if (regulaminLink) regulaminLink.href = 'regulamin.html';
     if (politykaLink) politykaLink.href = 'polityka-prywatnosci.html';
+    if (phoneLink) phoneLink.href = 'kontakt.html';
   } else {
     // Fallback - relative paths
     if (homeLink1) homeLink1.href = '../../index.html';
@@ -122,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (rezerwacjaLink) rezerwacjaLink.href = 'zapytaj-o-rezerwacje.html';
     if (regulaminLink) regulaminLink.href = 'regulamin.html';
     if (politykaLink) politykaLink.href = 'polityka-prywatnosci.html';
+    if (phoneLink) phoneLink.href = 'kontakt.html';
   }
   
   // Debug info (remove in production)
