@@ -209,43 +209,126 @@
           <a href="http://www.hostelarbet.pl/" target="_blank" class="hostel-card">
             <div class="hostel-icon">
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-  
-  <main>
-    <section class="section">
-      <h1>Łazienka i toaleta - parter</h1>
-      <p style="font-size:1.2rem;max-width:700px;margin-bottom:2rem;">Łazienka i toaleta na parterze dostępna dla wszystkich gości, regularnie sprzątana i wyposażona w niezbędne udogodnienia.</p>
-      <div class="gallery">
-        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8600 2.webp" alt="Łazienka parter 1" onclick="openLightbox(this.src)" />
-        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8659.webp" alt="Łazienka parter 2" onclick="openLightbox(this.src)" />
-        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8602.webp" alt="Łazienka parter 3" onclick="openLightbox(this.src)" />
-        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8592.webp" alt="Łazienka parter 4" onclick="openLightbox(this.src)" />
-        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8597.webp" alt="Łazienka parter 5" onclick="openLightbox(this.src)" />
-        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8593 2.webp" alt="Łazienka parter 6" onclick="openLightbox(this.src)" />
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                <path d="M10 6h4"/>
+                <path d="M10 10h4"/>
+                <path d="M10 14h4"/>
+                <path d="M10 18h4"/>
+              </svg>
+            </div>
+            <div class="hostel-info">
+              <span class="hostel-name">Hostel Arbet</span>
+              <span class="hostel-address">ul. Piesza 11</span>
+            </div>
+          </a>
+        </div>
       </div>
-      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+      
+      <!-- CTA Button -->
+      <div class="mobile-cta-section">
+        <a href="zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
+          <div class="cta-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/>
+              <path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+              <path d="M8 14h.01"/>
+              <path d="M12 14h.01"/>
+              <path d="M16 14h.01"/>
+              <path d="M8 18h.01"/>
+              <path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <span class="cta-text">Zapytaj o rezerwację</span>
+        </a>
       </div>
-    </section>
-  </main>
-  
-  <!-- Stopka generowana z komponentu -->
-  <div id="footer-placeholder"></div>
-  <link rel="stylesheet" href="../components/footer.css">
-  <script>
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').classList.add('active');
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-    fetch('../components/footer.html')
-      .then(response => response.text())
-      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
-  </script>
-  <script src="../assets/main.js" defer></script>
+      
+      <!-- Language switcher -->
+      <div class="mobile-lang-section">
+        <h4 class="lang-section-title">Język / Language</h4>
+        <div class="mobile-lang-options">
+          <button class="mobile-lang-btn active" data-lang="pl">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#DC143C"/>
+                <rect width="20" height="7" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span class="lang-name">Polski</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="en">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#012169"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#FFFFFF" stroke-width="1.5"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#C8102E" stroke-width="1"/>
+                <path d="M10 0v14M0 7h20" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M10 0v14M0 7h20" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="lang-name">English</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="de">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#000000"/>
+                <rect width="20" height="9.33" y="4.67" fill="#DD0000"/>
+                <rect width="20" height="4.67" y="9.33" fill="#FFCE00"/>
+              </svg>
+            </div>
+            <span class="lang-name">Deutsch</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="ru">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#FFFFFF"/>
+                <rect width="20" height="9.33" y="4.67" fill="#0052B4"/>
+                <rect width="20" height="4.67" y="9.33" fill="#D52B1E"/>
+              </svg>
+            </div>
+            <span class="lang-name">Русский</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="section">
+    <h1>Łazienka i toaleta - parter</h1>
+    <p style="font-size:1.2rem;max-width:700px;margin-bottom:2rem;">Łazienka i toaleta na parterze dostępna dla wszystkich gości, regularnie sprzątana i wyposażona w niezbędne udogodnienia.</p>
+    <div class="gallery">
+      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8600 2.webp" alt="Łazienka parter 1" onclick="openLightbox(this.src)" />
+      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8659.webp" alt="Łazienka parter 2" onclick="openLightbox(this.src)" />
+      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8602.webp" alt="Łazienka parter 3" onclick="openLightbox(this.src)" />
+      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8592.webp" alt="Łazienka parter 4" onclick="openLightbox(this.src)" />
+      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8597.webp" alt="Łazienka parter 5" onclick="openLightbox(this.src)" />
+      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8593 2.webp" alt="Łazienka parter 6" onclick="openLightbox(this.src)" />
+    </div>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+    </div>
+  </section>
+</main>
+
+<!-- Stopka generowana z komponentu -->
+<div id="footer-placeholder"></div>
+<link rel="stylesheet" href="../components/footer.css">
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+  fetch('../components/footer.html')
+    .then(response => response.text())
+    .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+</script>
+<script src="../assets/main.js" defer></script>
 </body>
 </html> 
