@@ -434,7 +434,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const desc = (card.dataset.desc || '').toLowerCase();
       const amenities = (card.dataset.amenities || '').split(',');
       const matchAmenities = selectedAmenities.every(a => amenities.includes(a));
-      const matchSearch = !s || desc.includes(s) || card.querySelector('h3').textContent.toLowerCase().includes(s);
+      const titleElement = card.querySelector('h3');
+      const titleText = titleElement ? titleElement.textContent.toLowerCase() : '';
+      const matchSearch = !s || desc.includes(s) || titleText.includes(s);
       if (matchType && matchPersons && matchPrice && matchAmenities && matchSearch) {
         card.style.display = '';
       } else {
@@ -479,7 +481,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const desc = (card.dataset.desc || '').toLowerCase();
       const amenities = (card.dataset.amenities || '').split(',');
       const matchAmenities = selectedAmenities.length === 0 || selectedAmenities.every(a => amenities.includes(a));
-      const matchSearch = !s || desc.includes(s) || card.querySelector('h3').textContent.toLowerCase().includes(s);
+      const titleElement = card.querySelector('h3');
+      const titleText = titleElement ? titleElement.textContent.toLowerCase() : '';
+      const matchSearch = !s || desc.includes(s) || titleText.includes(s);
       
       if (matchType && matchPersons && matchPrice && matchAmenities && matchSearch) {
         card.style.display = '';
@@ -802,7 +806,15 @@ function addStatusIndicators() {
   const rooms = document.querySelectorAll('.room-card');
   
   rooms.forEach(room => {
-    const price = parseInt(room.querySelector('.room-price').textContent);
+    const priceElement = room.querySelector('.room-price');
+    if (!priceElement) return; // Safety check - exit if no price element
+    
+    const priceText = priceElement.textContent;
+    if (!priceText) return; // Safety check - exit if no price text
+    
+    const price = parseInt(priceText);
+    if (isNaN(price)) return; // Safety check - exit if price is not a number
+    
     const indicator = document.createElement('div');
     indicator.className = 'status-indicator';
     
@@ -814,7 +826,7 @@ function addStatusIndicators() {
       indicator.innerHTML = '<span>⭐</span> Standard';
     } else {
       indicator.classList.add('warning');
-      indicator.innerHTML = '<span>��</span> Komfort+';
+      indicator.innerHTML = '<span>👑</span> Komfort+';
     }
     
     const content = room.querySelector('.room-card > *:last-child');
