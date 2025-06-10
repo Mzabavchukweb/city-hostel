@@ -1,0 +1,17 @@
+/* City Hostel Szczecin - Modular CSS Architecture */
+/* Organized for better performance and maintainability */
+
+/* Base styles - variables, reset, typography */
+@import 'css/base.css';
+
+/* Layout - header, footer, sections, grid */
+@import 'css/layout.css';
+
+/* Components - buttons, cards, widgets */
+@import 'css/components.css';
+
+/* Hero Slider & Effects */
+@import 'css/slider.css';
+
+/* Utilities and helper classes */
+@import 'css/utilities.css'; 

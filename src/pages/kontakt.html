@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body class="page-with-header-padding">
+    <header class="header">
+    <div class="logo"><a href="index.html">City Hostel</a></div>
+    <div class="header-right">
+      <nav class="nav">
+        <ul>
+          <li><a href="pokoje.html">Pokoje</a></li>
+          <li><a href="cennik.html">Cennik</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="dropdown-hostels">
+            <a href="#">Pozostałe hostele</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.firlik.com.pl/" target="_blank">Hostel Firlik<br><span style='font-size:0.95em;color:#7b8794;'>ul. Firlika 43, Szczecin</span></a></li>
+              <li><a href="http://www.hostelarbet.pl/" target="_blank">Hostel Arbet<br><span style='font-size:0.95em;color:#7b8794;'>ul. Piesza 11, 70-633 Szczecin</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="zapytaj-o-rezerwacje.html" class="menu-res-btn desktop-only">Zapytaj o rezerwację</a>
+      <div class="lang-switcher">
+        <button class="lang-current">PL</button>
+        <div class="lang-dropdown">
+          <button class="lang-option" data-lang="en">EN</button>
+          <button class="lang-option" data-lang="de">DE</button>
+          <button class="lang-option" data-lang="ru">RU</button>
+        </div>
+      </div>
+      
+      <!-- NOWY HAMBURGER BUTTON -->
+      <button class="mobile-hamburger" id="mobileMenuToggle" aria-label="Otwórz menu mobilne">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    </header>
+  
+    <!-- NOWE MOBILNE MENU -->
+    <div class="modern-mobile-menu" id="modernMobileMenu">
+      <!-- Animowane tło -->
+      <div class="mobile-menu-bg">
+        <div class="menu-bg-orb orb-1"></div>
+        <div class="menu-bg-orb orb-2"></div>
+        <div class="menu-bg-orb orb-3"></div>
+      </div>
+      
+      <!-- Główna zawartość menu -->
+      <div class="mobile-menu-content">
+        <!-- Header menu -->
+        <div class="mobile-menu-header">
+          <div class="mobile-logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9,22 9,12 15,12 15,22"/>
+              </svg>
+            </div>
+            <span class="logo-text">City Hostel</span>
+          </div>
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Nawigacja główna -->
+        <nav class="mobile-nav-main">
+          <a href="index.html" class="mobile-nav-item">
+            <div class="nav-item-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9,22 9,12 15,12 15,22"/>
+              </svg>
+            </div>
+            <div class="nav-item-content">
+              <span class="nav-item-title">Strona główna</span>
+              <span class="nav-item-desc">Powrót do strony głównej</span>
+            </div>
+            <div class="nav-item-arrow">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+            </div>
+          </a>
+          
+          <a href="pokoje.html" class="mobile-nav-item">
+            <div class="nav-item-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="nav-item-content">
+              <span class="nav-item-title">Pokoje</span>
+              <span class="nav-item-desc">Zobacz nasze pokoje</span>
+            </div>
+            <div class="nav-item-arrow">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+            </div>
+          </a>
+          
+          <a href="cennik.html" class="mobile-nav-item">
+            <div class="nav-item-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="nav-item-content">
+              <span class="nav-item-title">Cennik</span>
+              <span class="nav-item-desc">Sprawdź nasze ceny</span>
+            </div>
+            <div class="nav-item-arrow">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+            </div>
+          </a>
+          
+          <a href="kontakt.html" class="mobile-nav-item">
+            <div class="nav-item-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div class="nav-item-content">
+              <span class="nav-item-title">Kontakt</span>
+              <span class="nav-item-desc">Skontaktuj się z nami</span>
+            </div>
+            <div class="nav-item-arrow">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+            </div>
+          </a>
+        </nav>
+        
+        <!-- Sekcja pozostałych hosteli -->
+        <div class="mobile-hostels-section">
+          <h4 class="hostels-section-title">Pozostałe hostele</h4>
+          <div class="mobile-hostels-grid">
+            <a href="http://www.firlik.com.pl/" target="_blank" class="hostel-card">
+              <div class="hostel-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18"/>
+                  <path d="M5 21V7l8-4v18"/>
+                  <path d="M19 21V8l-8-4-8 4v13"/>
+                  <path d="M9 9v.01"/>
+                  <path d="M9 12v.01"/>
+                  <path d="M9 15v.01"/>
+                  <path d="M9 18v.01"/>
+                </svg>
+              </div>
+              <div class="hostel-info">
+                <span class="hostel-name">Hostel Firlik</span>
+                <span class="hostel-address">ul. Firlika 43</span>
+              </div>
+            </a>
+            <a href="http://www.hostelarbet.pl/" target="_blank" class="hostel-card">
+              <div class="hostel-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                  <path d="M10 6h4"/>
+                  <path d="M10 10h4"/>
+                  <path d="M10 14h4"/>
+                  <path d="M10 18h4"/>
+                </svg>
+              </div>
+              <div class="hostel-info">
+                <span class="hostel-name">Hostel Arbet</span>
+                <span class="hostel-address">ul. Piesza 11</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="mobile-cta-section">
+          <a href="zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
+            <div class="cta-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v4"/>
+                <path d="M16 2v4"/>
+                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                <path d="M3 10h18"/>
+                <path d="M8 14h.01"/>
+                <path d="M12 14h.01"/>
+                <path d="M16 14h.01"/>
+                <path d="M8 18h.01"/>
+                <path d="M12 18h.01"/>
+              </svg>
+            </div>
+            <span class="cta-text">Zapytaj o rezerwację</span>
+          </a>
+        </div>
+        
+        <!-- Language switcher -->
+        <div class="mobile-lang-section">
+          <h4 class="lang-section-title">Język / Language</h4>
+          <div class="mobile-lang-options">
+            <button class="mobile-lang-btn active" data-lang="pl">
+              <div class="lang-flag">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                  <rect width="20" height="14" fill="#DC143C"/>
+                  <rect width="20" height="7" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <span class="lang-name">Polski</span>
+            </button>
+            <button class="mobile-lang-btn" data-lang="en">
+              <div class="lang-flag">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                  <rect width="20" height="14" fill="#012169"/>
+                  <path d="M0 0l20 14M20 0L0 14" stroke="#FFFFFF" stroke-width="1.5"/>
+                  <path d="M0 0l20 14M20 0L0 14" stroke="#C8102E" stroke-width="1"/>
+                  <path d="M10 0v14M0 7h20" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M10 0v14M0 7h20" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <span class="lang-name">English</span>
+            </button>
+            <button class="mobile-lang-btn" data-lang="de">
+              <div class="lang-flag">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                  <rect width="20" height="14" fill="#000000"/>
+                  <rect width="20" height="9.33" y="4.67" fill="#DD0000"/>
+                  <rect width="20" height="4.67" y="9.33" fill="#FFCE00"/>
+                </svg>
+              </div>
+              <span class="lang-name">Deutsch</span>
+            </button>
+            <button class="mobile-lang-btn" data-lang="ru">
+              <div class="lang-flag">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                  <rect width="20" height="14" fill="#FFFFFF"/>
+                  <rect width="20" height="9.33" y="4.67" fill="#0052B4"/>
+                  <rect width="20" height="4.67" y="9.33" fill="#D52B1E"/>
+                </svg>
+              </div>
+              <span class="lang-name">Русский</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+    <!-- DYNAMICZNA SEKCJA HERO KONTAKT Z GLASSMORPHISM -->
+    <section class="hero-kontakt">
+      <!-- Animowane tło z gradientem -->
+      <div class="hero-animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+      
+      <!-- Floating elements -->
+      <div class="floating-elements">
+        <div class="floating-icon floating-icon-1">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="floating-icon floating-icon-2">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="floating-icon floating-icon-3">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="floating-icon floating-icon-4">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+      </div>
+      
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          Strona główna
+        </a>
+        <span class="breadcrumb-separator">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+        </span>
+        <span class="breadcrumb-current">Kontakt</span>
+      </div>
+      
+      <!-- Zawartość hero -->
+      <div class="hero-content-kontakt">
+        <h1 class="hero-title-kontakt">Kontakt</h1>
+        <p class="hero-lead-kontakt">Masz pytania? Chcesz dokonać rezerwacji? Skontaktuj się z nami – jesteśmy dostępni 24/7!</p>
+        
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Recepcja</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2h</div>
+            <div class="stat-label">Odpowiedź email</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5 min</div>
+            <div class="stat-label">Od dworca</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="wave"></div>
+    </section>
+    
+    <section class="section">
+      <h2>Skontaktuj się z nami</h2>
+      <div class="contact-cards-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Telefon</h3>
+          <p><strong>+48 (91) 422 58 88</strong><br>
+          <strong>+48 607 067 353</strong><br>
+          <span class="contact-desc">Całodobowa recepcja</span></p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Email</h3>
+          <p><strong>recepcja@cityhostel.com.pl</strong><br>
+          <span class="contact-desc">Odpowiadamy do 2h</span><br>
+          <span class="contact-desc">Rezerwacje i pytania</span></p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Adres</h3>
+          <p><strong>Jana Kazimierza 14</strong><br>
+          <span class="contact-desc">71-620 Szczecin</span><br>
+          <span class="contact-desc">5 min pieszo od dworca</span></p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section wave-section contact-form-section">
+      <div class="contact-form-container">
+        <div class="form-intro">
+          <h2>Napisz do nas</h2>
+          <p>Masz pytania? Potrzebujesz pomocy? Skontaktuj się z nami – odpowiadamy w ciągu 2 godzin!</p>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <h3>💬 Szybki kontakt</h3>
+            <div class="quick-contact-options">
+              <a href="tel:+48607067353" class="quick-contact-btn phone">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div>
+                  <strong>Zadzwoń teraz</strong>
+                  <span>+48 607 067 353</span>
+                </div>
+              </a>
+            </div>
+            
+            <div class="contact-hours">
+              <h4>⏰ Godziny pracy recepcji</h4>
+              <div class="hours-grid">
+                <div class="hour-item">
+                  <span class="day">Poniedziałek - Niedziela</span>
+                  <span class="time">24/7</span>
+                </div>
+                <div class="hour-item highlight">
+                  <span class="day">Całodobowa recepcja</span>
+                  <span class="time">Zawsze otwarci</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <form class="modern-contact-form" id="contact-form">
+            <div class="form-header">
+              <h3>Formularz kontaktowy</h3>
+              <p>Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 2 godzin</p>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Imię i nazwisko *
+                </label>
+                <input type="text" id="contact-name" name="name" required placeholder="Wprowadź swoje imię i nazwisko">
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-email">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  Email *
+                </label>
+                <input type="email" id="contact-email" name="email" required placeholder="twoj@email.com">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-phone">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  Telefon
+                </label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+48 000 000 000">
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-subject">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><tag x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M7 7h10"/><path d="M7 12h10"/></svg>
+                  Temat *
+                </label>
+                <select id="contact-subject" name="subject" required>
+                  <option value="">Wybierz temat</option>
+                  <option value="rezerwacja">🏨 Rezerwacja pokoju</option>
+                  <option value="pytanie">❓ Pytanie ogólne</option>
+                  <option value="informacje">ℹ️ Informacje o hostelu</option>
+                  <option value="anulowanie">❌ Anulowanie rezerwacji</option>
+                  <option value="reklamacja">⚠️ Reklamacja</option>
+                  <option value="inne">📝 Inne</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-message">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Wiadomość *
+              </label>
+              <textarea id="contact-message" name="message" required rows="5" placeholder="Opisz swoje pytanie lub problem. Im więcej szczegółów, tym lepiej będziemy mogli Ci pomóc!"></textarea>
+              <div class="char-counter">
+                <span id="char-count">0</span>/500 znaków
+              </div>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="contact-privacy" name="privacy" required>
+                <span class="checkmark"></span>
+                <span class="checkbox-text">
+                  Akceptuję <a href="polityka-prywatnosci.html" target="_blank">politykę prywatności</a> i wyrażam zgodę na przetwarzanie danych osobowych *
+                </span>
+              </label>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="contact-newsletter" name="newsletter">
+                <span class="checkmark"></span>
+                <span class="checkbox-text">
+                  Chcę otrzymywać newsletter z ofertami specjalnymi i informacjami o hostelu
+                </span>
+              </label>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg>
+              Wyślij wiadomość
+            </button>
+            
+            <div class="form-footer">
+              <p>🔒 Twoje dane są bezpieczne i nie będą udostępniane osobom trzecim</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="wave"></div>
+    </section>
+    </main>
+  <!-- Stopka generowana z komponentu -->
+  <div id="footer-placeholder"></div>
+  <link rel="stylesheet" href="../components/footer.css">
+  <script>
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
+  <style>
+    .menu-res-btn {
+      display: inline-block;
+      padding: 0.45em 1.1em;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent2);
+      background: none;
+      border: 2px solid var(--accent2);
+      border-radius: 999px;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      margin-left: 1.2rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .menu-res-btn:hover {
+      background: var(--accent2);
+      color: #fff;
+      border-color: var(--accent2);
+    }
+    @media (max-width: 768px) {
+      .menu-res-btn.desktop-only { display: none !important; }
+    }
+    @media (max-width: 700px) {
+      .menu-res-btn { font-size: 0.98rem; padding: 0.35em 0.9em; margin-left: 0.5rem; }
+    }
+
+    /* KONTAKT - NOWOCZESNE STYLE */
+    .contact-form-section {
+      background: none;
+      padding: 4rem 5vw !important;
+    }
+
+    .contact-form-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .form-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .form-intro h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .form-intro p {
+      font-size: 1.2rem;
+      color: var(--primary);
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* INFORMACJE KONTAKTOWE */
+    .contact-info-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 15px 50px rgba(45,54,72,0.1);
+      border: 1px solid var(--border);
+      height: fit-content;
+      position: sticky;
+      top: 2rem;
+    }
+
+    .contact-info-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .quick-contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .quick-contact-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--primary);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quick-contact-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(127,200,195,0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .quick-contact-btn:hover::before {
+      left: 100%;
+    }
+
+    .quick-contact-btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(127,200,195,0.2);
+    }
+
+    .quick-contact-btn.phone:hover {
+      border-color: #10b981;
+      box-shadow: 0 8px 25px rgba(16,185,129,0.2);
+    }
+
+    .quick-contact-btn.email:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 8px 25px rgba(59,130,246,0.2);
+    }
+
+    .quick-contact-btn.reservation:hover {
+      border-color: var(--accent2);
+      box-shadow: 0 8px 25px rgba(255,212,163,0.2);
+    }
+
+    .quick-contact-btn svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .quick-contact-btn div {
+      text-align: left;
+    }
+
+    .quick-contact-btn strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: var(--primary);
+    }
+
+    .quick-contact-btn span {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .contact-hours {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    .contact-hours h4 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .hours-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .hour-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem;
+      background: var(--bg);
+      border-radius: 12px;
+    }
+
+    .hour-item.highlight {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: var(--white);
+    }
+
+    .hour-item .day {
+      font-weight: 500;
+    }
+
+    .hour-item .time {
+      font-weight: 600;
+    }
+
+    /* FORMULARZ KONTAKTOWY */
+    .modern-contact-form {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 15px 50px rgba(45,54,72,0.1);
+      border: 1px solid var(--border);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-header h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group label svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      font-size: 1rem;
+      background: var(--bg);
+      transition: all 0.3s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(127,200,195,0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .char-counter {
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+
+    .checkbox-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-label {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 1rem !important;
+      font-weight: normal !important;
+      cursor: pointer;
+      margin-bottom: 0 !important;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: auto !important;
+      padding: 0 !important;
+    }
+
+    .checkmark {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      position: relative;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      margin-top: 0.1rem;
+    }
+
+    .checkmark::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      width: 4px;
+      height: 8px;
+      border: solid var(--white);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .checkbox-label:hover .checkmark {
+      border-color: var(--accent);
+    }
+
+    .checkbox-label input[type="checkbox"]:checked + .checkmark {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+      opacity: 1;
+    }
+
+    .checkbox-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--primary);
+    }
+
+    .checkbox-text a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1.2rem 2rem;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(127,200,195,0.3);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .form-footer {
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .form-footer p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    /* RESPONSYWNOŚĆ */
+    @media (max-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .contact-info-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-form-section {
+        padding: 3rem 2rem !important;
+      }
+
+      .contact-info-card,
+      .modern-contact-form {
+        padding: 2rem;
+        border-radius: 20px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .form-intro h2 {
+        font-size: 2rem;
+      }
+
+      .quick-contact-options {
+        gap: 0.8rem;
+      }
+
+      .quick-contact-btn {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-form-section {
+        padding: 2rem 1rem !important;
+      }
+
+      .contact-info-card,
+      .modern-contact-form {
+        padding: 1.5rem;
+        border-radius: 16px;
+      }
+
+      .form-intro h2 {
+        font-size: 1.8rem;
+      }
+
+      .form-intro p {
+        font-size: 1rem;
+      }
+
+      .quick-contact-btn {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+      }
+
+      .quick-contact-btn div {
+        text-align: center;
+      }
+    }
+
+    /* NOWE KARTY KONTAKTOWE */
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(45,54,72,0.08);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(45,54,72,0.12);
+      border-color: var(--accent);
+    }
+
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(127,200,195,0.3);
+    }
+
+    .contact-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .contact-card p {
+      color: var(--primary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .contact-card strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .contact-desc {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* ============================================ */
+    /* GLASSMORPHISM HERO KONTAKT */
+    /* ============================================ */
+    
+    .hero-kontakt {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+    }
+    
+    .hero-content-kontakt {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 800px;
+      padding: 2rem;
+    }
+    
+    .hero-lead-kontakt {
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+      text-shadow: 1px 1px 4px rgba(45,54,72,0.3);
+    }
+    
+    /* Copy all glassmorphism styles from hero-pricing */
+    .hero-kontakt .hero-animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    .hero-kontakt .gradient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: floatOrbs 20s ease-in-out infinite;
+    }
+    
+    .hero-kontakt .orb-1 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--accent3) 0%, transparent 70%);
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    .hero-kontakt .orb-2 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+      top: 60%;
+      right: 20%;
+      animation-delay: -7s;
+      opacity: 0.3;
+    }
+    
+    .hero-kontakt .orb-3 {
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, var(--white) 0%, transparent 70%);
+      bottom: 20%;
+      left: 60%;
+      animation-delay: -14s;
+      opacity: 0.2;
+    }
+    
+    .hero-kontakt .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    .hero-kontakt .floating-icon {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      animation: floatIcons 15s ease-in-out infinite;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    
+    .hero-kontakt .floating-icon-1 {
+      top: 15%;
+      right: 15%;
+      animation-delay: 0s;
+    }
+    
+    .hero-kontakt .floating-icon-2 {
+      top: 45%;
+      left: 8%;
+      animation-delay: -4s;
+    }
+    
+    .hero-kontakt .floating-icon-3 {
+      bottom: 25%;
+      right: 25%;
+      animation-delay: -8s;
+    }
+    
+    .hero-kontakt .floating-icon-4 {
+      bottom: 15%;
+      left: 20%;
+      animation-delay: -12s;
+    }
+    
+    .hero-kontakt .breadcrumbs {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(20px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    
+    .hero-kontakt .breadcrumbs a {
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .hero-kontakt .breadcrumbs a:hover {
+      color: var(--accent3);
+    }
+    
+    .hero-kontakt .breadcrumb-separator {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .hero-kontakt .breadcrumb-current {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .hero-kontakt .hero-title-kontakt {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 8px rgba(45,54,72,0.3);
+      animation: titleFloat 3s ease-in-out infinite;
+    }
+    
+    .hero-kontakt .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    
+    .hero-kontakt .stat-item {
+      text-align: center;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(20px);
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: transform 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    
+    .hero-kontakt .stat-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.25);
+    }
+    
+    .hero-kontakt .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    
+    .hero-kontakt .stat-label {
+      font-size: 0.9rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+    
+    /* Animations */
+    @keyframes floatOrbs {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+    
+    @keyframes floatIcons {
+      0%, 100% { transform: translateY(0px); opacity: 0.7; }
+      50% { transform: translateY(-20px); opacity: 1; }
+    }
+    
+    @keyframes titleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    /* Responsywność hero kontakt */
+    @media (max-width: 768px) {
+      .hero-kontakt .hero-title-kontakt {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+      }
+      
+      .hero-kontakt .hero-lead-kontakt {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+      
+      .hero-kontakt .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+      
+      .hero-kontakt .stat-item {
+        padding: 1rem 1.5rem;
+        width: 100%;
+        max-width: 200px;
+      }
+      
+      .hero-kontakt .breadcrumbs {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-bottom: 2rem;
+        justify-content: center;
+        margin: 0 1rem 2rem 1rem;
+      }
+      
+      .hero-kontakt .floating-elements {
+        display: none;
+      }
+      
+      .hero-content-kontakt {
+        padding: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-kontakt .hero-title-kontakt {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+      }
+      
+      .hero-kontakt .hero-lead-kontakt {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .hero-content-kontakt {
+        padding: 0.5rem;
+        margin-top: 2rem;
+      }
+      
+      .hero-kontakt .stat-item {
+        padding: 0.8rem 1rem;
+        min-width: 80px;
+      }
+      
+      .hero-kontakt .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .hero-kontakt .stat-label {
+        font-size: 0.75rem;
+      }
+      
+      .hero-kontakt .orb-1, 
+      .hero-kontakt .orb-2, 
+      .hero-kontakt .orb-3 {
+        filter: blur(60px);
+        opacity: 0.3;
+      }
+      
+      .hero-kontakt .breadcrumbs {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin: 0 0.5rem 1.5rem 0.5rem;
+        border-radius: 25px;
+      }
+    }
+  </style>
+  
+  <script>
+    // Character counter for message textarea
+    const messageTextarea = document.getElementById('contact-message');
+    const charCount = document.getElementById('char-count');
+    
+    if (messageTextarea && charCount) {
+      messageTextarea.addEventListener('input', function() {
+        const count = this.value.length;
+        charCount.textContent = count;
+        
+        if (count > 450) {
+          charCount.style.color = '#ef4444';
+        } else if (count > 400) {
+          charCount.style.color = '#f59e0b';
+        } else {
+          charCount.style.color = 'var(--text-light)';
+        }
+      });
+    }
+    
+    // Form submission handler
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simple validation
+      const privacy = document.getElementById('contact-privacy');
+      if (!privacy.checked) {
+        alert('Aby wysłać formularz, musisz zaakceptować politykę prywatności.');
+        return;
+      }
+      
+      // Simulate form submission
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-spin"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/></svg> Wysyłanie...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą w ciągu 2 godzin.');
+        this.reset();
+        charCount.textContent = '0';
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+  </script>
+  <script src="../assets/main.js" defer></script>
+</body>
+</html> 

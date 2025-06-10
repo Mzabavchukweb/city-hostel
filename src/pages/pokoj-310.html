@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokój jednoosobowy ze wspólną łazienką - pokój nr 310 | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/rooms/room-styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.8.1/dist/photo-sphere-viewer.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.8.1/dist/photo-sphere-viewer.min.js"></script>
+</head>
+<body class="page-with-header-padding">
+  <header class="header">
+    <div class="logo"><a href="index.html">City Hostel</a></div>
+    <div class="header-right">
+      <nav class="nav">
+        <ul>
+          <li><a href="pokoje.html">Pokoje</a></li>
+          <li><a href="cennik.html">Cennik</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="dropdown-hostels">
+            <a href="#">Pozostałe hostele</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.firlik.com.pl/" target="_blank">Hostel Firlik<br><span style='font-size:0.95em;color:#7b8794;'>ul. Firlika 43, Szczecin</span></a></li>
+              <li><a href="http://www.hostelarbet.pl/" target="_blank">Hostel Arbet<br><span style='font-size:0.95em;color:#7b8794;'>ul. Piesza 11, 70-633 Szczecin</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="zapytaj-o-rezerwacje.html" class="menu-res-btn desktop-only">Zapytaj o rezerwację</a>
+      <div class="lang-switcher">
+        <button class="lang-current">PL</button>
+        <div class="lang-dropdown">
+          <button class="lang-option" data-lang="en">EN</button>
+          <button class="lang-option" data-lang="de">DE</button>
+          <button class="lang-option" data-lang="ru">RU</button>
+        </div>
+      </div>
+      
+      <!-- NOWY HAMBURGER BUTTON -->
+      <button class="mobile-hamburger" id="mobileMenuToggle" aria-label="Otwórz menu mobilne">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- NOWE MOBILNE MENU -->
+  <div class="modern-mobile-menu" id="modernMobileMenu">
+    <!-- Animowane tło -->
+    <div class="mobile-menu-bg">
+      <div class="menu-bg-orb orb-1"></div>
+      <div class="menu-bg-orb orb-2"></div>
+      <div class="menu-bg-orb orb-3"></div>
+    </div>
+    
+    <!-- Główna zawartość menu -->
+    <div class="mobile-menu-content">
+      <!-- Header menu -->
+      <div class="mobile-menu-header">
+        <div class="mobile-logo">
+          <div class="logo-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <span class="logo-text">City Hostel</span>
+        </div>
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Nawigacja główna -->
+      <nav class="mobile-nav-main">
+        <a href="index.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Strona główna</span>
+            <span class="nav-item-desc">Powrót do strony głównej</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="pokoje.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Pokoje</span>
+            <span class="nav-item-desc">Zobacz nasze pokoje</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="cennik.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Cennik</span>
+            <span class="nav-item-desc">Sprawdź nasze ceny</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="kontakt.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Kontakt</span>
+            <span class="nav-item-desc">Skontaktuj się z nami</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+      </nav>
+      
+      <!-- Sekcja pozostałych hosteli -->
+      <div class="mobile-hostels-section">
+        <h4 class="hostels-section-title">Pozostałe hostele</h4>
+        <div class="mobile-hostels-grid">
+          <a href="http://www.firlik.com.pl/" target="_blank" class="hostel-card">
+            <div class="hostel-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M5 21V7l8-4v18"/>
+                <path d="M19 21V8l-8-4-8 4v13"/>
+                <path d="M9 9v.01"/>
+                <path d="M9 12v.01"/>
+                <path d="M9 15v.01"/>
+                <path d="M9 18v.01"/>
+              </svg>
+            </div>
+            <div class="hostel-info">
+              <span class="hostel-name">Hostel Firlik</span>
+              <span class="hostel-address">ul. Firlika 43</span>
+            </div>
+          </a>
+          <a href="http://www.hostelarbet.pl/" target="_blank" class="hostel-card">
+            <div class="hostel-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                <path d="M10 6h4"/>
+                <path d="M10 10h4"/>
+                <path d="M10 14h4"/>
+                <path d="M10 18h4"/>
+              </svg>
+            </div>
+            <div class="hostel-info">
+              <span class="hostel-name">Hostel Arbet</span>
+              <span class="hostel-address">ul. Piesza 11</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="mobile-cta-section">
+        <a href="zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
+          <div class="cta-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/>
+              <path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+              <path d="M8 14h.01"/>
+              <path d="M12 14h.01"/>
+              <path d="M16 14h.01"/>
+              <path d="M8 18h.01"/>
+              <path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <span class="cta-text">Zapytaj o rezerwację</span>
+        </a>
+      </div>
+      
+      <!-- Language switcher -->
+      <div class="mobile-lang-section">
+        <h4 class="lang-section-title">Język / Language</h4>
+        <div class="mobile-lang-options">
+          <button class="mobile-lang-btn active" data-lang="pl">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#DC143C"/>
+                <rect width="20" height="7" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span class="lang-name">Polski</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="en">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#012169"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#FFFFFF" stroke-width="1.5"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#C8102E" stroke-width="1"/>
+                <path d="M10 0v14M0 7h20" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M10 0v14M0 7h20" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="lang-name">English</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="de">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#000000"/>
+                <rect width="20" height="9.33" y="4.67" fill="#DD0000"/>
+                <rect width="20" height="4.67" y="9.33" fill="#FFCE00"/>
+              </svg>
+            </div>
+            <span class="lang-name">Deutsch</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="ru">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#FFFFFF"/>
+                <rect width="20" height="9.33" y="4.67" fill="#0052B4"/>
+                <rect width="20" height="4.67" y="9.33" fill="#D52B1E"/>
+              </svg>
+            </div>
+            <span class="lang-name">Русский</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <main>
+    <section class="hero-slider wave-section room-hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Pokój jednoosobowy ze wspólną łazienką</h1>
+        <p class="hero-lead">Przytulny pokój dla jednej osoby ze wspólną łazienką na korytarzu.</p>
+        <button class="hero-cta" onclick="window.location.href='zapytaj-o-rezerwacje.html?room=Pokój%20jednoosobowy%20ze%20wspólną%20łazienką%2C%20nr%20310%2C%20100%20zł%2C%20wspólna%20łazienka%2C%20Wi-Fi%2C%20TV%2C%20lodówka'">Zapytaj o rezerwację</button>
+      </div>
+      <div class="wave"></div>
+    </section>
+    <section class="section">
+      <div class="room-layout">
+        <div>
+          <div class="panorama-360-container">
+            <h3>Wirtualny spacer 360°</h3>
+            <div id="panorama-viewer" class="panorama-viewer"></div>
+          </div>
+          <h2>Galeria zdjęć</h2>
+          <div class="gallery">
+            <img src="../images/rooms/room310/IMG_8470 2.webp" alt="Pokój - widok główny" onclick="openLightbox(this.src)" />
+            <img src="../images/rooms/room310/IMG_8472.webp" alt="Pokój - łóżko" onclick="openLightbox(this.src)" />
+            <img src="../images/rooms/room310/IMG_8476.webp" alt="Pokój - wyposażenie" onclick="openLightbox(this.src)" />
+          </div>
+          <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+          </div>
+          <h3>Opis pokoju</h3>
+          <p class="room-description">
+            Przytulny pokój dla jednej osoby<br>
+            ✓ Wspólna łazienka na korytarzu<br>
+            ✓ Ręczniki i pościel w pokoju<br>
+            ✓ Telewizor<br>
+            ✓ Darmowe Wi-Fi<br>
+            ✓ Jedno łóżko<br>
+            ✓ Lodówka<br>
+            ✓ Podstawowe wyposażenie
+          </p>
+        </div>
+        <div>
+          <div class="room-card room-details-card">
+            <h3>Szczegóły rezerwacji</h3>
+            <div class="booking-details">
+              <div class="booking-detail-row">
+                <span>Cena za dobę:</span>
+                <strong>100 zł</strong>
+              </div>
+              <div class="booking-detail-row">
+                <span>Maksymalnie osób:</span>
+                <strong>1</strong>
+              </div>
+            </div>
+            <div class="booking-buttons">
+              <button class="hero-cta">Zarezerwuj teraz</button>
+              <a href="pokoje.html" class="details-btn">Powrót do listy pokoi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Stopka generowana z komponentu -->
+  <div id="footer-placeholder"></div>
+  <link rel="stylesheet" href="../components/footer.css">
+  <script>
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
+  <script src="../assets/rooms/room-scripts.js"></script>
+  <script>
+    initPanoramaViewer('panorama-viewer', '../images/rooms360/pokoj nr 310.jpg');
+  </script>
+  <script src="../assets/main.js" defer></script>
+</body>
+</html> 

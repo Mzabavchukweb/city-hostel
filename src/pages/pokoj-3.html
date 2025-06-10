@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokój nr 3 - Economy | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body class="page-with-header-padding">
+  <header class="header">
+    <div class="logo"><a href="index.html">City Hostel</a></div>
+    <div class="header-right">
+      <nav class="nav">
+        <ul>
+          <li><a href="pokoje.html">Pokoje</a></li>
+          <li><a href="cennik.html">Cennik</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="hostele.html">Pozostałe hostele</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-current">PL</button>
+        <div class="lang-dropdown">
+          <button class="lang-option" data-lang="en">EN</button>
+          <button class="lang-option" data-lang="de">DE</button>
+          <button class="lang-option" data-lang="ru">RU</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero-slider wave-section" style="min-height:60vh;background:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);">
+      <div class="hero-content" style="max-width:800px;margin:0 auto;text-align:center;padding:6rem 2rem 4rem 2rem;">
+        <h1 class="hero-title" style="font-size:3rem;color:var(--white);">Pokój nr 3 - Economy</h1>
+        <p class="hero-lead" style="color:rgba(255,255,255,0.9);">Ekonomiczny pokój z podstawowym wyposażeniem w świetnej cenie.</p>
+        <button class="hero-cta">Zarezerwuj teraz</button>
+      </div>
+      <div class="wave"></div>
+    </section>
+    
+    <section class="section">
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <h2>Galeria zdjęć</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:2rem;">
+            <img src="../images/rooms/pokój nr 3/IMG_8363 2.webp" alt="Economy - widok główny" style="width:100%;height:200px;object-fit:cover;border-radius:15px;" />
+            <img src="../images/rooms/pokój nr 3/IMG_8362 2.webp" alt="Economy - łazienka" style="width:100%;height:200px;object-fit:cover;border-radius:15px;" />
+            <img src="../images/rooms/pokój nr 3/IMG_8360 2.webp" alt="Economy - kuchnia" style="width:100%;height:200px;object-fit:cover;border-radius:15px;" />
+            
+          </div>
+          
+          <h3>Opis pokoju</h3>
+          <p style="line-height:1.8;color:var(--text-light);margin-bottom:2rem;">
+            Przytulny pokój dla dwóch osób z łazienką w pokoju<br>
+            ✓ Prywatna łazienka<br>
+            ✓ Ręczniki i pościel w pokoju<br>
+            ✓ Telewizor<br>
+            ✓ Darmowe Wi-Fi<br>
+            ✓ Lodówka<br>
+            ✓ Łoże małżeńskie
+          </p>
+        </div>
+        
+        <div>
+          <div class="room-card" style="position:sticky;top:6rem;">
+            <h3>Szczegóły rezerwacji</h3>
+            <div style="margin:1.5rem 0;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+                <span>Cena za dobę:</span>
+                <strong style="color:var(--accent);font-size:1.2rem;">120 zł</strong>
+              </div>
+              <div class="booking-detail-row">
+                <span>Maksymalnie osób:</span>
+                <strong>1</strong>
+              </div>
+            </div>
+            
+            <button class="hero-cta" style="width:100%;margin-bottom:1rem;">Zarezerwuj teraz</button>
+            <a href="pokoje.html" class="details-btn" style="width:100%;text-align:center;display:block;text-decoration:none;">Powrót do listy pokoi</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Stopka generowana z komponentu -->
+  <div id="footer-placeholder"></div>
+  <link rel="stylesheet" href="../components/footer.css">
+  <script>
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
+  
+  <script src="../assets/main.js"></script>
+</body>
+</html> 

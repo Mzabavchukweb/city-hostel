@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zapytaj o rezerwację | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    /* GLASSMORPHISM HERO SECTION */
+    .hero-reservation {
+      position: relative;
+      min-height: 60vh;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .hero-reservation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx=".5" cy=".5" r=".5"><stop offset="0%" stop-color="%23ffffff" stop-opacity=".1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-floating-reservation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .floating-reservation-icon {
+      position: absolute;
+      color: rgba(255,255,255,0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-reservation-icon:nth-child(1) {
+      top: 15%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-reservation-icon:nth-child(2) {
+      top: 25%;
+      right: 15%;
+      animation-delay: 1s;
+    }
+
+    .floating-reservation-icon:nth-child(3) {
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 2s;
+    }
+
+    .floating-reservation-icon:nth-child(4) {
+      bottom: 30%;
+      right: 10%;
+      animation-delay: 3s;
+    }
+
+    .hero-content-reservation {
+      text-align: center;
+      z-index: 10;
+      position: relative;
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+
+    .hero-title-reservation {
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero-lead-reservation {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2rem;
+      font-weight: 300;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-stats-reservation {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .stat-reservation {
+      text-align: center;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .stat-number-reservation {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label-reservation {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+    
+    .reservation-form-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(45,54,72,0.08);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* PASEK POSTĘPU */
+    .reservation-progress {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      position: relative;
+    }
+
+    .reservation-progress::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1;
+      max-width: 200px;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: 3px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .step-label {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .progress-step.active .step-number {
+      background: var(--white);
+      color: var(--accent);
+      border-color: var(--white);
+      box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+      transform: scale(1.1);
+    }
+
+    .progress-step.active .step-label {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    .progress-step.completed .step-number {
+      background: var(--white);
+      color: var(--accent);
+      border-color: var(--white);
+    }
+
+    .progress-step.completed .step-number::before {
+      content: '✓';
+      font-weight: 700;
+    }
+
+    /* KARTA INFORMACYJNA */
+    .info-card {
+      background: linear-gradient(135deg, #f0fffe 0%, #e0f7fa 100%);
+      margin: 2rem 3rem 1rem;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(127,200,195,0.15);
+    }
+
+    .info-header h3 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .info-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .info-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(127,200,195,0.08);
+      border: 1px solid rgba(127,200,195,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .info-step:hover {
+      box-shadow: 0 4px 15px rgba(127,200,195,0.15);
+      transform: translateY(-2px);
+    }
+
+    .step-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .step-icon svg {
+      color: var(--accent);
+    }
+
+    .info-step strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .info-step p {
+      color: var(--text-light);
+      font-size: 0.85rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* SEKCJE FORMULARZA */
+    .form-section {
+      display: none;
+      padding: 2rem 3rem 1rem;
+      animation: fadeInSlide 0.5s ease-out;
+      min-height: 400px;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .form-section h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 2.5rem;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .form-group label svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .required {
+      color: #ef4444;
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+      background: var(--white);
+      transition: all 0.3s ease;
+      outline: none;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(127,200,195,0.1);
+    }
+
+    .form-group input.error,
+    .form-group select.error {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 4px rgba(239,68,68,0.1);
+    }
+
+    .field-error {
+      color: #ef4444;
+      font-size: 0.85rem;
+      margin-top: 0.6rem;
+      display: none;
+      font-weight: 500;
+    }
+
+    .field-error.show {
+      display: block;
+    }
+
+    .field-hint {
+      color: var(--text-light);
+      font-size: 0.85rem;
+      margin-top: 0.6rem;
+      font-style: italic;
+    }
+
+    .char-counter {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 0.6rem;
+    }
+
+    /* PODSUMOWANIE POBYTU */
+    .stay-summary {
+      background: linear-gradient(135deg, rgba(127,200,195,0.08) 0%, rgba(255,212,163,0.08) 100%);
+      padding: 1.8rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(127,200,195,0.15);
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .summary-item:not(:last-child) {
+      border-bottom: 1px solid rgba(127,200,195,0.15);
+    }
+
+    .summary-label {
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .summary-value {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* PODSUMOWANIE REZERWACJI */
+    .reservation-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(45,54,72,0.05);
+    }
+
+    .summary-card h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-row.total {
+      margin-top: 1rem;
+      padding-top: 1.2rem;
+      border-top: 2px solid var(--accent);
+      border-bottom: none;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    /* CHECKBOXY */
+    .checkbox-group {
+      margin-bottom: 2rem;
+    }
+
+    .checkbox-label {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 1.2rem !important;
+      font-weight: normal !important;
+      cursor: pointer;
+      margin-bottom: 0 !important;
+      padding: 1rem;
+      background: var(--bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .checkbox-label:hover {
+      border-color: var(--accent);
+      background: rgba(127,200,195,0.05);
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .checkmark {
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+      position: relative;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      margin-top: 0.1rem;
+    }
+
+    .checkmark::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 7px;
+      width: 4px;
+      height: 8px;
+      border: solid var(--white);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .checkbox-label:hover .checkmark {
+      border-color: var(--accent);
+    }
+
+    .checkbox-label input[type="checkbox"]:checked + .checkmark {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+      opacity: 1;
+    }
+
+    .checkbox-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--primary);
+    }
+
+    .checkbox-text a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* NAWIGACJA FORMULARZA */
+    .form-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+      background: linear-gradient(135deg, #f8fafc 0%, var(--bg) 100%);
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 2rem;
+      border: 2px solid var(--border);
+      background: var(--white);
+      color: var(--primary);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-btn:hover {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(127,200,195,0.2);
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.2rem 2.5rem;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(127,200,195,0.3);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* RESPONSYWNOŚĆ */
+    @media (max-width: 768px) {
+      .reservation-form-container {
+        margin: 1rem;
+        border-radius: 16px;
+      }
+
+      .reservation-progress {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .reservation-progress::before {
+        display: none;
+      }
+
+      .progress-step {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .info-card,
+      .form-section,
+      .form-navigation {
+        padding: 1.5rem;
+      }
+
+      .info-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row,
+      .reservation-summary {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .form-navigation {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-btn,
+      .submit-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+
+      .step-label {
+        font-size: 0.8rem;
+      }
+
+      .form-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .info-step {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <script>
+    // Wielokrokowy formularz rezerwacji
+    class ReservationForm {
+      constructor() {
+        this.currentStep = 1;
+        this.totalSteps = 3;
+        this.formData = {};
+        this.init();
+      }
+
+      init() {
+        this.setupEventListeners();
+        this.setupDateLimits();
+        this.updateProgressBar();
+      }
+
+      setupEventListeners() {
+        // Nawigacja kroków
+        document.getElementById('next-btn').addEventListener('click', () => this.nextStep());
+        document.getElementById('prev-btn').addEventListener('click', () => this.prevStep());
+        
+        // Walidacja na żywo
+        document.querySelectorAll('input, select').forEach(field => {
+          field.addEventListener('blur', () => this.validateField(field));
+          field.addEventListener('input', () => this.clearError(field));
+        });
+
+        // Kalkulacja dat i kosztów
+        document.getElementById('arrival').addEventListener('change', () => this.calculateStay());
+        document.getElementById('departure').addEventListener('change', () => this.calculateStay());
+        
+        // Licznik znaków dla uwag
+        const notesField = document.getElementById('notes');
+        const charCount = document.getElementById('notes-char-count');
+        notesField.addEventListener('input', () => {
+          const count = notesField.value.length;
+          charCount.textContent = count;
+          charCount.style.color = count > 250 ? '#ef4444' : 'var(--text-light)';
+        });
+
+        // Aktualizacja podsumowania w czasie rzeczywistym
+        document.querySelectorAll('input, select, textarea').forEach(field => {
+          field.addEventListener('input', () => this.updateSummary());
+        });
+
+        // Wysyłanie formularza
+        document.getElementById('reservation-form').addEventListener('submit', (e) => this.handleSubmit(e));
+      }
+
+      setupDateLimits() {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('arrival').min = today;
+        document.getElementById('departure').min = today;
+      }
+
+      nextStep() {
+        if (this.validateCurrentStep()) {
+          if (this.currentStep < this.totalSteps) {
+            this.currentStep++;
+            this.showStep(this.currentStep);
+            this.updateProgressBar();
+            this.updateSummary();
+          }
+        }
+      }
+
+      prevStep() {
+        if (this.currentStep > 1) {
+          this.currentStep--;
+          this.showStep(this.currentStep);
+          this.updateProgressBar();
+        }
+      }
+
+      showStep(step) {
+        // Ukryj wszystkie sekcje
+        document.querySelectorAll('.form-section').forEach(section => {
+          section.classList.remove('active');
+        });
+
+        // Pokaż aktualną sekcję
+        document.querySelector(`[data-section="${step}"]`).classList.add('active');
+
+        // Aktualizuj przyciski nawigacji
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        prevBtn.style.display = step === 1 ? 'none' : 'flex';
+        nextBtn.style.display = step === this.totalSteps ? 'none' : 'flex';
+        submitBtn.style.display = step === this.totalSteps ? 'flex' : 'none';
+
+        // Przewiń do góry
+        document.querySelector('.reservation-form-container').scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+
+      updateProgressBar() {
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+          const stepNumber = index + 1;
+          step.classList.remove('active', 'completed');
+          
+          if (stepNumber === this.currentStep) {
+            step.classList.add('active');
+          } else if (stepNumber < this.currentStep) {
+            step.classList.add('completed');
+          }
+        });
+      }
+
+      validateCurrentStep() {
+        let isValid = true;
+        const currentSection = document.querySelector(`[data-section="${this.currentStep}"]`);
+        const requiredFields = currentSection.querySelectorAll('[required]');
+
+        requiredFields.forEach(field => {
+          if (!this.validateField(field)) {
+            isValid = false;
+          }
+        });
+
+        // Dodatkowa walidacja dat
+        if (this.currentStep === 2) {
+          const arrival = document.getElementById('arrival').value;
+          const departure = document.getElementById('departure').value;
+          
+          if (arrival && departure) {
+            const arrivalDate = new Date(arrival);
+            const departureDate = new Date(departure);
+            
+            if (departureDate <= arrivalDate) {
+              this.showError('departure', 'Data wyjazdu musi być późniejsza niż data przyjazdu');
+              isValid = false;
+            }
+          }
+        }
+
+        return isValid;
+      }
+
+      validateField(field) {
+        const value = field.value.trim();
+        let isValid = true;
+        let errorMessage = '';
+
+        // Walidacja wymaganych pól
+        if (field.hasAttribute('required') && !value) {
+          errorMessage = 'To pole jest wymagane';
+          isValid = false;
+        }
+        // Walidacja email
+        else if (field.type === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            errorMessage = 'Wprowadź poprawny adres email';
+            isValid = false;
+          }
+        }
+        // Walidacja telefonu
+        else if (field.type === 'tel' && value) {
+          const phoneRegex = /^[+]?[\d\s\-\(\)]+$/;
+          if (!phoneRegex.test(value) || value.length < 9) {
+            errorMessage = 'Wprowadź poprawny numer telefonu';
+            isValid = false;
+          }
+        }
+        // Walidacja dat
+        else if (field.type === 'date' && value) {
+          const today = new Date();
+          const selectedDate = new Date(value);
+          if (selectedDate < today) {
+            errorMessage = 'Data nie może być z przeszłości';
+            isValid = false;
+          }
+        }
+
+        if (isValid) {
+          this.clearError(field);
+        } else {
+          this.showError(field.id, errorMessage);
+        }
+
+        return isValid;
+      }
+
+      showError(fieldId, message) {
+        const field = document.getElementById(fieldId);
+        const errorElement = document.getElementById(`${fieldId}-error`);
+        
+        field.classList.add('error');
+        if (errorElement) {
+          errorElement.textContent = message;
+          errorElement.classList.add('show');
+        }
+      }
+
+      clearError(field) {
+        field.classList.remove('error');
+        const errorElement = document.getElementById(`${field.id}-error`);
+        if (errorElement) {
+          errorElement.classList.remove('show');
+        }
+      }
+
+      calculateStay() {
+        const arrival = document.getElementById('arrival').value;
+        const departure = document.getElementById('departure').value;
+        
+        if (arrival && departure) {
+          const arrivalDate = new Date(arrival);
+          const departureDate = new Date(departure);
+          const timeDiff = departureDate.getTime() - arrivalDate.getTime();
+          const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+          if (daysDiff > 0) {
+            document.getElementById('stay-duration').textContent = `${daysDiff} ${daysDiff === 1 ? 'noc' : daysDiff < 5 ? 'noce' : 'nocy'}`;
+            
+            // Szacowanie kosztów (średnia cena 130 zł/noc)
+            const estimatedCost = daysDiff * 130;
+            document.getElementById('estimated-cost').textContent = `${estimatedCost} zł`;
+            
+            document.getElementById('stay-summary').style.display = 'block';
+          } else {
+            document.getElementById('stay-summary').style.display = 'none';
+          }
+        }
+      }
+
+      updateSummary() {
+        // Aktualizuj podsumowanie tylko jeśli jesteśmy na kroku 3
+        if (this.currentStep !== 3) return;
+
+        const formData = new FormData(document.getElementById('reservation-form'));
+        
+        document.getElementById('summary-name').textContent = formData.get('name') || '-';
+        document.getElementById('summary-email').textContent = formData.get('email') || '-';
+        document.getElementById('summary-phone').textContent = formData.get('phone') || '-';
+        document.getElementById('summary-persons').textContent = formData.get('persons') || '-';
+        
+        const arrival = formData.get('arrival');
+        const departure = formData.get('departure');
+        
+        if (arrival) {
+          const arrivalDate = new Date(arrival);
+          document.getElementById('summary-arrival').textContent = arrivalDate.toLocaleDateString('pl-PL');
+        }
+        
+        if (departure) {
+          const departureDate = new Date(departure);
+          document.getElementById('summary-departure').textContent = departureDate.toLocaleDateString('pl-PL');
+        }
+
+        if (arrival && departure) {
+          const daysDiff = Math.ceil((new Date(departure) - new Date(arrival)) / (1000 * 3600 * 24));
+          if (daysDiff > 0) {
+            document.getElementById('summary-duration').textContent = `${daysDiff} ${daysDiff === 1 ? 'noc' : daysDiff < 5 ? 'noce' : 'nocy'}`;
+            document.getElementById('summary-cost').textContent = `${daysDiff * 130} zł`;
+          }
+        }
+
+        const room = formData.get('room');
+        if (room) {
+          // Wyświetl nazwę pokoju dokładnie tak jak została wybrana
+          document.getElementById('summary-room').textContent = room || 'Dowolny dostępny';
+        } else {
+          document.getElementById('summary-room').textContent = 'Dowolny dostępny';
+        }
+      }
+
+      async handleSubmit(e) {
+        e.preventDefault();
+        
+        const acceptCheckbox = document.getElementById('accept');
+        if (!acceptCheckbox.checked) {
+          alert('Aby wysłać zapytanie, musisz zaakceptować regulamin i politykę prywatności.');
+          return;
+        }
+
+        if (!this.validateCurrentStep()) {
+          return;
+        }
+
+        const submitBtn = document.getElementById('submit-btn');
+        const originalText = submitBtn.innerHTML;
+        
+        // Animacja wysyłania
+        submitBtn.innerHTML = '<svg class="animate-spin" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/></svg> Wysyłanie...';
+        submitBtn.disabled = true;
+
+        // Symulacja wysyłania
+        setTimeout(() => {
+          alert('🎉 Dziękujemy! Zapytanie o rezerwację zostało wysłane.\n\nSkontaktujemy się z Tobą telefonicznie w ciągu 30 minut, aby potwierdzić dostępność i finalizować rezerwację.\n\nDo zobaczenia w City Hostel Szczecin!');
+          
+          // Reset formularza
+          document.getElementById('reservation-form').reset();
+          this.currentStep = 1;
+          this.showStep(1);
+          this.updateProgressBar();
+          document.getElementById('stay-summary').style.display = 'none';
+          document.getElementById('notes-char-count').textContent = '0';
+          
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 2000);
+      }
+    }
+
+    // Inicjalizacja po załadowaniu DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      new ReservationForm();
+    });
+
+    // Animacja spin dla loading
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin {
+        animation: spin 1s linear infinite;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</head>
+<body class="page-with-header-padding">
+  <header class="header">
+    <div class="logo"><a href="index.html">City Hostel</a></div>
+    <div class="header-right">
+      <nav class="nav">
+        <ul>
+          <li><a href="pokoje.html">Pokoje</a></li>
+          <li><a href="cennik.html">Cennik</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="dropdown-hostels">
+            <a href="#">Pozostałe hostele</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.firlik.com.pl/" target="_blank">Hostel Firlik<br><span style='font-size:0.95em;color:#7b8794;'>ul. Firlika 43, Szczecin</span></a></li>
+              <li><a href="http://www.hostelarbet.pl/" target="_blank">Hostel Arbet<br><span style='font-size:0.95em;color:#7b8794;'>ul. Piesza 11, 70-633 Szczecin</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="zapytaj-o-rezerwacje.html" class="menu-res-btn desktop-only">Zapytaj o rezerwację</a>
+      <div class="lang-switcher">
+        <button class="lang-current">PL</button>
+        <div class="lang-dropdown">
+          <button class="lang-option" data-lang="en">EN</button>
+          <button class="lang-option" data-lang="de">DE</button>
+          <button class="lang-option" data-lang="ru">RU</button>
+        </div>
+      </div>
+      
+      <!-- NOWY HAMBURGER BUTTON -->
+      <button class="mobile-hamburger" id="mobileMenuToggle" aria-label="Otwórz menu mobilne">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- NOWE MOBILNE MENU -->
+  <div class="modern-mobile-menu" id="modernMobileMenu">
+    <!-- Animowane tło -->
+    <div class="mobile-menu-bg">
+      <div class="menu-bg-orb orb-1"></div>
+      <div class="menu-bg-orb orb-2"></div>
+      <div class="menu-bg-orb orb-3"></div>
+    </div>
+    
+    <!-- Główna zawartość menu -->
+    <div class="mobile-menu-content">
+      <!-- Header menu -->
+      <div class="mobile-menu-header">
+        <div class="mobile-logo">
+          <div class="logo-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <span class="logo-text">City Hostel</span>
+        </div>
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Nawigacja główna -->
+      <nav class="mobile-nav-main">
+        <a href="index.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Strona główna</span>
+            <span class="nav-item-desc">Powrót do strony głównej</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="pokoje.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Pokoje</span>
+            <span class="nav-item-desc">Zobacz nasze pokoje</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="cennik.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Cennik</span>
+            <span class="nav-item-desc">Sprawdź nasze ceny</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="kontakt.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Kontakt</span>
+            <span class="nav-item-desc">Skontaktuj się z nami</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+      </nav>
+      
+      <!-- Sekcja pozostałych hosteli -->
+      <div class="mobile-hostels-section">
+        <h4 class="hostels-section-title">Pozostałe hostele</h4>
+        <div class="mobile-hostels-grid">
+          <a href="http://www.firlik.com.pl/" target="_blank" class="hostel-card">
+            <div class="hostel-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M5 21V7l8-4v18"/>
+                <path d="M19 21V8l-8-4-8 4v13"/>
+                <path d="M9 9v.01"/>
+                <path d="M9 12v.01"/>
+                <path d="M9 15v.01"/>
+                <path d="M9 18v.01"/>
+              </svg>
+            </div>
+            <div class="hostel-info">
+              <span class="hostel-name">Hostel Firlik</span>
+              <span class="hostel-address">ul. Firlika 43</span>
+            </div>
+          </a>
+          <a href="http://www.hostelarbet.pl/" target="_blank" class="hostel-card">
+            <div class="hostel-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                <path d="M10 6h4"/>
+                <path d="M10 10h4"/>
+                <path d="M10 14h4"/>
+                <path d="M10 18h4"/>
+              </svg>
+            </div>
+            <div class="hostel-info">
+              <span class="hostel-name">Hostel Arbet</span>
+              <span class="hostel-address">ul. Piesza 11</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="mobile-cta-section">
+        <a href="zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
+          <div class="cta-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/>
+              <path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+              <path d="M8 14h.01"/>
+              <path d="M12 14h.01"/>
+              <path d="M16 14h.01"/>
+              <path d="M8 18h.01"/>
+              <path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <span class="cta-text">Zapytaj o rezerwację</span>
+        </a>
+      </div>
+      
+      <!-- Language switcher -->
+      <div class="mobile-lang-section">
+        <h4 class="lang-section-title">Język / Language</h4>
+        <div class="mobile-lang-options">
+          <button class="mobile-lang-btn active" data-lang="pl">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#DC143C"/>
+                <rect width="20" height="7" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span class="lang-name">Polski</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="en">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#012169"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#FFFFFF" stroke-width="1.5"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#C8102E" stroke-width="1"/>
+                <path d="M10 0v14M0 7h20" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M10 0v14M0 7h20" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="lang-name">English</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="de">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#000000"/>
+                <rect width="20" height="9.33" y="4.67" fill="#DD0000"/>
+                <rect width="20" height="4.67" y="9.33" fill="#FFCE00"/>
+              </svg>
+            </div>
+            <span class="lang-name">Deutsch</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="ru">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#FFFFFF"/>
+                <rect width="20" height="9.33" y="4.67" fill="#0052B4"/>
+                <rect width="20" height="4.67" y="9.33" fill="#D52B1E"/>
+              </svg>
+            </div>
+            <span class="lang-name">Русский</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- DYNAMICZNA SEKCJA HERO Z GLASSMORPHISM -->
+    <section class="hero-section hero-reservation">
+      <!-- Animowane tło z gradientem -->
+      <div class="hero-animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+      
+      <!-- Floating elements -->
+      <div class="hero-floating-icons">
+        <div class="floating-icon floating-icon-1">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M14 2v4h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+        </div>
+        <div class="floating-icon floating-icon-2">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="floating-icon floating-icon-3">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="floating-icon floating-icon-4">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+      </div>
+      
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          Strona główna
+        </a>
+        <span class="breadcrumb-separator">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+        </span>
+        <span class="breadcrumb-current">Rezerwacja</span>
+      </div>
+      
+      <!-- Zawartość hero -->
+      <div class="hero-content">
+        <h1 class="hero-title">Zapytaj o rezerwację</h1>
+        <p class="hero-lead">Wypełnij formularz, a my skontaktujemy się z Tobą w ciągu 30 minut. Szybko, bezpiecznie i bez zobowiązań.</p>
+        
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">30min</div>
+            <div class="stat-label">Czas odpowiedzi</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Obsługa</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0zł</div>
+            <div class="stat-label">Zapytanie</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="wave"></div>
+    </section>
+    <section class="reservation-form-container">
+      <div class="reservation-progress">
+        <div class="progress-step active" data-step="1">
+          <div class="step-number">1</div>
+          <div class="step-label">Dane osobowe</div>
+        </div>
+        <div class="progress-step" data-step="2">
+          <div class="step-number">2</div>
+          <div class="step-label">Szczegóły pobytu</div>
+        </div>
+        <div class="progress-step" data-step="3">
+          <div class="step-number">3</div>
+          <div class="step-label">Podsumowanie</div>
+        </div>
+      </div>
+
+      <form class="reservation-form" id="reservation-form" autocomplete="off">
+        <div class="info-card">
+          <div class="info-header">
+            <h3>🏨 Jak działa rezerwacja?</h3>
+          </div>
+          <div class="info-steps">
+            <div class="info-step">
+              <svg class="step-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M14 2v4h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+              <div>
+                <strong>1. Wypełnij formularz</strong>
+                <p>Podaj swoje dane i szczegóły pobytu</p>
+              </div>
+            </div>
+            <div class="info-step">
+              <svg class="step-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>2. Potwierdzenie telefoniczne</strong>
+                <p>Skontaktujemy się w ciągu 30 minut</p>
+              </div>
+            </div>
+            <div class="info-step">
+              <svg class="step-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <div>
+                <strong>3. Płatność i rezerwacja</strong>
+                <p>Dokonasz wpłaty i otrzymasz potwierdzenie</p>
+              </div>
+            </div>
+            <div class="info-step">
+              <svg class="step-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <div>
+                <strong>4. Gotowe!</strong>
+                <p>Czekamy na Ciebie w hostelu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section active" data-section="1">
+          <h2>📋 Dane osobowe</h2>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Imię i nazwisko <span class="required">*</span>
+              </label>
+              <input type="text" id="name" name="name" required placeholder="Wprowadź swoje imię i nazwisko" />
+              <div class="field-error" id="name-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,14.01 2,6"/></svg>
+                Adres email <span class="required">*</span>
+              </label>
+              <input type="email" id="email" name="email" required placeholder="twoj@email.com" />
+              <div class="field-error" id="email-error"></div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Telefon <span class="required">*</span>
+              </label>
+              <input type="tel" id="phone" name="phone" required placeholder="+48 000 000 000" />
+              <div class="field-error" id="phone-error"></div>
+              <div class="field-hint">Potrzebny do potwierdzenia rezerwacji</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="persons">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Liczba osób <span class="required">*</span>
+              </label>
+              <select id="persons" name="persons" required>
+                <option value="">Wybierz liczbę osób</option>
+                <option value="1">1 osoba</option>
+                <option value="2">2 osoby</option>
+                <option value="3">3 osoby</option>
+                <option value="4">4 osoby</option>
+                <option value="5+">5+ osób (skontaktuj się z nami)</option>
+              </select>
+              <div class="field-error" id="persons-error"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section" data-section="2">
+          <h2>📅 Szczegóły pobytu</h2>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="arrival">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Data przyjazdu <span class="required">*</span>
+              </label>
+              <input type="date" id="arrival" name="arrival" required />
+              <div class="field-error" id="arrival-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="departure">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Data wyjazdu <span class="required">*</span>
+              </label>
+              <input type="date" id="departure" name="departure" required />
+              <div class="field-error" id="departure-error"></div>
+            </div>
+          </div>
+
+          <div class="stay-summary" id="stay-summary" style="display: none;">
+            <div class="summary-item">
+              <span class="summary-label">Długość pobytu:</span>
+              <span class="summary-value" id="stay-duration">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Szacowany koszt:</span>
+              <span class="summary-value" id="estimated-cost">-</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="room">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+              Preferowany pokój
+            </label>
+            <select id="room" name="room">
+              <option value="">Wybierz pokój (opcjonalnie)</option>
+              <optgroup label="🏨 Pokoje z prywatną łazienką">
+                <option value="Apartament z łożem małżeńskim + sofa (nr 4)">Apartament z łożem małżeńskim + sofa (nr 4) - 200 zł/noc</option>
+                <option value="Apartament dwuosobowy + sofa (nr 103)">Apartament dwuosobowy + sofa (nr 103) - 190 zł/noc</option>
+                <option value="Pokój czteroosobowy (nr 308)">Pokój czteroosobowy (nr 308) - 180 zł/noc</option>
+                <option value="Pokój trzyosobowy (nr 113)">Pokój trzyosobowy (nr 113) - 170 zł/noc</option>
+                <option value="Pokój dwuosobowy (nr 104)">Pokój dwuosobowy (nr 104) - 150 zł/noc</option>
+                <option value="Pokój z łożem małżeńskim (nr 3)">Pokój z łożem małżeńskim (nr 3) - 140 zł/noc</option>
+                <option value="Pokój jednoosobowy (nr 6)">Pokój jednoosobowy (nr 6) - 120 zł/noc</option>
+              </optgroup>
+              <optgroup label="💰 Pokoje Economy - ze wspólną łazienką">
+                <option value="Pokój czteroosobowy (nr 305)">Pokój czteroosobowy (nr 305) - 120 zł/noc</option>
+                <option value="Pokój dwuosobowy (nr 312)">Pokój dwuosobowy (nr 312) - 110 zł/noc</option>
+                <option value="Pokój jednoosobowy (nr 310)">Pokój jednoosobowy (nr 310) - 90 zł/noc</option>
+                <option value="Pokój trzyosobowy parter (1D)">Pokój trzyosobowy parter (1D) - 80 zł/noc</option>
+                <option value="Pokój czteroosobowy parter (2D)">Pokój czteroosobowy parter (2D) - 85 zł/noc</option>
+                <option value="Pokój czteroosobowy parter (3D)">Pokój czteroosobowy parter (3D) - 85 zł/noc</option>
+              </optgroup>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="notes">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M14 2v4h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+              Dodatkowe uwagi
+            </label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Napisz tu swoje dodatkowe pytania, preferencje lub specjalne potrzeby..."></textarea>
+            <div class="char-counter">
+              <span id="notes-char-count">0</span>/300 znaków
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section" data-section="3">
+          <h2>📋 Podsumowanie</h2>
+          
+          <div class="reservation-summary">
+            <div class="summary-card">
+              <h3>👤 Dane osobowe</h3>
+              <div class="summary-row">
+                <span>Imię i nazwisko:</span>
+                <span id="summary-name">-</span>
+              </div>
+              <div class="summary-row">
+                <span>Email:</span>
+                <span id="summary-email">-</span>
+              </div>
+              <div class="summary-row">
+                <span>Telefon:</span>
+                <span id="summary-phone">-</span>
+              </div>
+              <div class="summary-row">
+                <span>Liczba osób:</span>
+                <span id="summary-persons">-</span>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <h3>🏨 Szczegóły pobytu</h3>
+              <div class="summary-row">
+                <span>Data przyjazdu:</span>
+                <span id="summary-arrival">-</span>
+              </div>
+              <div class="summary-row">
+                <span>Data wyjazdu:</span>
+                <span id="summary-departure">-</span>
+              </div>
+              <div class="summary-row">
+                <span>Długość pobytu:</span>
+                <span id="summary-duration">-</span>
+              </div>
+              <div class="summary-row">
+                <span>Pokój:</span>
+                <span id="summary-room">Dowolny dostępny</span>
+              </div>
+              <div class="summary-row total">
+                <span>Szacowany koszt:</span>
+                <span id="summary-cost">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="accept" name="accept" required />
+              <span class="checkmark"></span>
+              <span class="checkbox-text">
+                Akceptuję <a href="regulamin.html" target="_blank">regulamin</a> oraz <a href="polityka-prywatnosci.html" target="_blank">politykę prywatności</a> <span class="required">*</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="newsletter" name="newsletter" />
+              <span class="checkmark"></span>
+              <span class="checkbox-text">
+                Chcę otrzymywać newsletter z ofertami specjalnymi
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="nav-btn prev-btn" id="prev-btn" style="display: none;">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+            Poprzedni krok
+          </button>
+          
+          <button type="button" class="nav-btn next-btn" id="next-btn">
+            Następny krok
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </button>
+          
+          <button type="submit" class="submit-btn" id="submit-btn" style="display: none;">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+            Wyślij zapytanie o rezerwację
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <!-- Stopka generowana z komponentu -->
+  <div id="footer-placeholder"></div>
+  <link rel="stylesheet" href="../components/footer.css">
+  <script>
+    document.getElementById('reservation-form').addEventListener('submit', function(e) {
+      if (!document.getElementById('accept').checked) {
+        alert('Aby wysłać zapytanie, musisz zaakceptować regulamin i politykę prywatności.');
+        e.preventDefault();
+        return false;
+      }
+      // Możesz tu dodać obsługę wysyłki formularza AJAX lub inny backend
+      alert('Dziękujemy za wysłanie zapytania! Skontaktujemy się z Tobą telefonicznie.');
+      e.preventDefault();
+      return false;
+    });
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
+  <script src="../assets/main.js" defer></script>
+</body>
+</html> 

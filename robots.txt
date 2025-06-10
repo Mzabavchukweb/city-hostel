@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cityhostel.pl/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.DS_Store$
+
+# Allow essential resources
+Allow: /src/assets/
+Allow: /src/images/
+
+# Crawl delay for better server performance
+Crawl-delay: 1 

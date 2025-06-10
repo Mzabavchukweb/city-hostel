@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokój 3-os. z łazienką | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="menu-partial"></div>
+    <main>
+      <section class="section">
+        <div class="room-gallery">
+          <img src="https://source.unsplash.com/600x400/?hotel,room,22" alt="Pokój 8 - zdjęcie 1" />
+          <img src="https://source.unsplash.com/600x400/?hotel,room,23" alt="Pokój 8 - zdjęcie 2" />
+          <img src="https://source.unsplash.com/600x400/?hotel,room,24" alt="Pokój 8 - zdjęcie 3" />
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=600&q=80" alt="Pokój 8 - 360°" class="img-360" />
+        </div>
+        <h1>Pokój 3-osobowy z łazienką</h1>
+        <p>Doskonały pokój dla grupy znajomych nastawionych na aktywny wypoczynek i zwiedzanie miasta. Bezpłatny internet, trzy łóżka, prywatna łazienka.</p>
+        <ul>
+          <li>Liczba łóżek: 3</li>
+          <li>Maksymalna liczba osób: 3</li>
+          <li>Wyposażenie: łazienka, Wi-Fi, ręczniki</li>
+        </ul>
+        <a href="pokoje.html">Powrót do listy pokoi</a>
+      </section>
+    </main>
+    <!-- Stopka generowana z komponentu -->
+    <div id="footer-placeholder"></div>
+    <link rel="stylesheet" href="../components/footer.css">
+    <script>
+      fetch('../components/footer.html')
+        .then(response => response.text())
+        .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+    </script>
+  </div>
+  <script src="../assets/main.js"></script>
+</body>
+</html> 
