@@ -5,7 +5,7 @@
   <meta name="description" content="City Hostel Szczecin – nowoczesny hostel w centrum Szczecina. Komfortowe pokoje, bezpłatny parking, szybka rezerwacja online. Sprawdź dostępność!" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City Hostel Szczecin</title>
-  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="src/assets/style.css" />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
   
@@ -151,9 +151,9 @@
     <div class="header-right">
       <nav class="nav">
         <ul>
-          <li><a href="pokoje.html">Pokoje</a></li>
-          <li><a href="cennik.html">Cennik</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="src/pages/pokoje.html">Pokoje</a></li>
+          <li><a href="src/pages/cennik.html">Cennik</a></li>
+          <li><a href="src/pages/kontakt.html">Kontakt</a></li>
           <li class="dropdown-hostels">
             <a href="#">Pozostałe hostele</a>
             <ul class="dropdown-menu">
@@ -163,7 +163,7 @@
           </li>
         </ul>
       </nav>
-      <a href="zapytaj-o-rezerwacje.html" class="menu-res-btn desktop-only">Zapytaj o rezerwację</a>
+      <a href="src/pages/zapytaj-o-rezerwacje.html" class="menu-res-btn desktop-only">Zapytaj o rezerwację</a>
       <div class="lang-switcher">
         <button class="lang-current">PL</button>
         <div class="lang-dropdown">
@@ -232,7 +232,7 @@
           </div>
         </a>
         
-        <a href="pokoje.html" class="mobile-nav-item">
+        <a href="src/pages/pokoje.html" class="mobile-nav-item">
           <div class="nav-item-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -250,7 +250,7 @@
           </div>
         </a>
         
-        <a href="cennik.html" class="mobile-nav-item">
+        <a href="src/pages/cennik.html" class="mobile-nav-item">
           <div class="nav-item-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="12" y1="1" x2="12" y2="23"/>
@@ -268,7 +268,7 @@
           </div>
         </a>
         
-        <a href="kontakt.html" class="mobile-nav-item">
+        <a href="src/pages/kontakt.html" class="mobile-nav-item">
           <div class="nav-item-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -329,7 +329,7 @@
       
       <!-- CTA Button -->
       <div class="mobile-cta-section">
-        <a href="zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
+        <a href="src/pages/zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
           <div class="cta-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M8 2v4"/>
@@ -401,19 +401,19 @@
     <section class="hero-slider wave-section">
       <div class="slides-container">
         <div class="slide">
-          <img src="../images/inne/street.png" alt="City Hostel wnętrze" loading="lazy" />
+          <img src="src/images/inne/street.png" alt="City Hostel wnętrze" loading="lazy" />
         </div>
         <div class="slide">
-          <img src="../images/inne/recepcja bez kartek.JPEG" alt="City Hostel recepcja" loading="lazy" />
+          <img src="src/images/inne/recepcja bez kartek.JPEG" alt="City Hostel recepcja" loading="lazy" />
         </div>
         <div class="slide">
-          <img src="../images/inne/parking bez koszy i slupkow 2.PNG" alt="City Hostel pokój" loading="lazy" />
+          <img src="src/images/inne/parking bez koszy i slupkow 2.PNG" alt="City Hostel pokój" loading="lazy" />
         </div>
         <div class="slide active">
-          <img src="../images/inne/front.png" alt="City Hostel przestrzeń wspólna" loading="lazy" />
+          <img src="src/images/inne/front.png" alt="City Hostel przestrzeń wspólna" loading="lazy" />
         </div>
         <div class="slide">
-          <img src="../images/inne/recepcja.JPG" alt="City Hostel recepcja" loading="lazy" />
+          <img src="src/images/inne/recepcja.JPG" alt="City Hostel recepcja" loading="lazy" />
         </div>
       </div>
       
@@ -451,7 +451,7 @@
       <div class="common-areas-grid">
         <div class="common-area-card">
           <div class="area-image">
-            <img src="../images/rooms/kuchnia 2 piętro/IMG_8528 2.webp" alt="Kuchnia 2 piętro" loading="lazy" />
+            <img src="src/images/rooms/kuchnia 2 piętro/IMG_8528 2.webp" alt="Kuchnia 2 piętro" loading="lazy" />
             <div class="area-overlay">
               <div class="area-icon">
                 <svg width="32" height="32" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -489,13 +489,13 @@
                 <span>Komplet naczyń</span>
               </div>
             </div>
-            <a href="kuchnia-2p.html" class="area-cta">Zobacz szczegóły</a>
+            <a href="src/pages/kuchnia-2p.html" class="area-cta">Zobacz szczegóły</a>
           </div>
         </div>
 
         <div class="common-area-card">
           <div class="area-image">
-            <img src="../images/rooms/łazienka ogólna+toaleta 3 piętro/IMG_8505.webp" alt="Łazienka ogólna 3 piętro" loading="lazy" />
+            <img src="src/images/rooms/łazienka ogólna+toaleta 3 piętro/IMG_8505.webp" alt="Łazienka ogólna 3 piętro" loading="lazy" />
             <div class="area-overlay">
               <div class="area-icon">
                 <svg width="32" height="32" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -533,13 +533,13 @@
                 <span>Regularne sprzątanie</span>
               </div>
             </div>
-            <a href="lazienka-3p.html" class="area-cta">Zobacz szczegóły</a>
+            <a href="src/pages/lazienka-3p.html" class="area-cta">Zobacz szczegóły</a>
           </div>
         </div>
 
         <div class="common-area-card">
           <div class="area-image">
-            <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8600 2.webp" alt="Łazienka i toaleta parter" loading="lazy" />
+            <img src="src/images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8600 2.webp" alt="Łazienka i toaleta parter" loading="lazy" />
             <div class="area-overlay">
               <div class="area-icon">
                 <svg width="32" height="32" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -577,7 +577,7 @@
                 <span>Dostępne 24/7</span>
               </div>
             </div>
-            <a href="lazienka-parter.html" class="area-cta">Zobacz szczegóły</a>
+            <a href="src/pages/lazienka-parter.html" class="area-cta">Zobacz szczegóły</a>
           </div>
         </div>
       </div>
@@ -591,7 +591,7 @@
       <!-- Fabryka Wody -->
       <div class="attraction-row" data-aos="fade-up">
         <div class="attraction-image">
-          <img src="../images/attractions/fabrykawody.webp" alt="Fabryka Wody Szczecin" loading="lazy" />
+          <img src="src/images/attractions/fabrykawody.webp" alt="Fabryka Wody Szczecin" loading="lazy" />
           <div class="attraction-distance">
             <span class="distance-number">750m</span>
             <span class="distance-time">11 min pieszo</span>
@@ -628,7 +628,7 @@
       <!-- Wały Chrobrego -->
       <div class="attraction-row reverse" data-aos="fade-up" data-aos-delay="100">
         <div class="attraction-image">
-          <img src="../images/attractions/widok-na-waly-chrobrego.webp" alt="Wały Chrobrego" loading="lazy" />
+          <img src="src/images/attractions/widok-na-waly-chrobrego.webp" alt="Wały Chrobrego" loading="lazy" />
           <div class="attraction-distance">
             <span class="distance-number">1.2km</span>
             <span class="distance-time">15 min pieszo</span>
@@ -664,7 +664,7 @@
       <!-- Filharmonia -->
       <div class="attraction-row" data-aos="fade-up" data-aos-delay="200">
         <div class="attraction-image">
-          <img src="../images/attractions/filharmonia.webp" alt="Filharmonia Szczecin" loading="lazy" />
+          <img src="src/images/attractions/filharmonia.webp" alt="Filharmonia Szczecin" loading="lazy" />
           <div class="attraction-distance">
             <span class="distance-number">1.3km</span>
             <span class="distance-time">18 min pieszo</span>
@@ -700,7 +700,7 @@
       <!-- Galeria Galaxy -->
       <div class="attraction-row reverse" data-aos="fade-up" data-aos-delay="300">
         <div class="attraction-image">
-          <img src="../images/attractions/galaxyszczecin.webp" alt="Galeria Galaxy" loading="lazy" />
+          <img src="src/images/attractions/galaxyszczecin.webp" alt="Galeria Galaxy" loading="lazy" />
           <div class="attraction-distance">
             <span class="distance-number">850m</span>
             <span class="distance-time">12 min pieszo</span>
@@ -1165,14 +1165,14 @@
   </main>
   <!-- Stopka generowana z komponentu -->
   <div id="footer-placeholder"></div>
-  <link rel="stylesheet" href="../components/footer.css">
+  <link rel="stylesheet" href="src/components/footer.css">
   <script>
-    fetch('../components/footer.html')
+    fetch('src/components/footer.html')
       .then(response => response.text())
       .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
   </script>
   
-  <script src="../assets/main.js" defer></script>
+  <script src="src/assets/main.js" defer></script>
   <style>
     .menu-res-btn {
       display: inline-flex;
