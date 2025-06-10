@@ -69,21 +69,17 @@
 // Universal footer navigation - automatically detects current location and sets correct paths
 document.addEventListener('DOMContentLoaded', function() {
   const currentPath = window.location.pathname;
-  const isInPagesFolder = currentPath.includes('/src/pages/') || currentPath.includes('\\src\\pages\\');
-  const isMainPage = currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath.includes('city-hostel/index.html');
+  const currentURL = window.location.href;
   
-  // Determine base path
-  let basePath = '';
-  if (isMainPage && !isInPagesFolder) {
-    // We're on main index.html in root directory
-    basePath = 'src/pages/';
-  } else if (isInPagesFolder) {
-    // We're in src/pages/ directory
-    basePath = '';
-  } else {
-    // Fallback - assume we're in pages
-    basePath = '';
-  }
+  // Better detection for GitHub Pages
+  const isGitHubPages = currentURL.includes('github.io');
+  const isInPagesFolder = currentPath.includes('/src/pages/');
+  const isMainPage = currentPath.endsWith('/city-hostel/') || 
+                     currentPath.endsWith('/city-hostel/index.html') || 
+                     currentPath.endsWith('/city-hostel') ||
+                     currentPath === '/city-hostel' ||
+                     (currentPath.endsWith('/') && !isInPagesFolder) ||
+                     (currentPath.endsWith('index.html') && !isInPagesFolder);
   
   // Set navigation links
   const homeLink1 = document.getElementById('footer-home-link');
@@ -95,18 +91,28 @@ document.addEventListener('DOMContentLoaded', function() {
   const regulaminLink = document.getElementById('footer-regulamin-link');
   const politykaLink = document.getElementById('footer-polityka-link');
   
-  if (isMainPage && !isInPagesFolder) {
-    // Main page links
-    if (homeLink1) homeLink1.href = 'index.html';
-    if (homeLink2) homeLink2.href = 'index.html';
-    if (pokojeLink) pokojeLink.href = 'src/pages/pokoje.html';
-    if (cennikLink) cennikLink.href = 'src/pages/cennik.html';
-    if (kontaktLink) kontaktLink.href = 'src/pages/kontakt.html';
-    if (rezerwacjaLink) rezerwacjaLink.href = 'src/pages/zapytaj-o-rezerwacje.html';
-    if (regulaminLink) regulaminLink.href = 'src/pages/regulamin.html';
-    if (politykaLink) politykaLink.href = 'src/pages/polityka-prywatnosci.html';
+  if (isMainPage) {
+    // Main page links (when on root index.html)
+    if (homeLink1) homeLink1.href = isGitHubPages ? '/city-hostel/' : 'index.html';
+    if (homeLink2) homeLink2.href = isGitHubPages ? '/city-hostel/' : 'index.html';
+    if (pokojeLink) pokojeLink.href = isGitHubPages ? '/city-hostel/src/pages/pokoje.html' : 'src/pages/pokoje.html';
+    if (cennikLink) cennikLink.href = isGitHubPages ? '/city-hostel/src/pages/cennik.html' : 'src/pages/cennik.html';
+    if (kontaktLink) kontaktLink.href = isGitHubPages ? '/city-hostel/src/pages/kontakt.html' : 'src/pages/kontakt.html';
+    if (rezerwacjaLink) rezerwacjaLink.href = isGitHubPages ? '/city-hostel/src/pages/zapytaj-o-rezerwacje.html' : 'src/pages/zapytaj-o-rezerwacje.html';
+    if (regulaminLink) regulaminLink.href = isGitHubPages ? '/city-hostel/src/pages/regulamin.html' : 'src/pages/regulamin.html';
+    if (politykaLink) politykaLink.href = isGitHubPages ? '/city-hostel/src/pages/polityka-prywatnosci.html' : 'src/pages/polityka-prywatnosci.html';
+  } else if (isInPagesFolder) {
+    // Pages folder links (when inside src/pages/)
+    if (homeLink1) homeLink1.href = isGitHubPages ? '/city-hostel/' : '../../index.html';
+    if (homeLink2) homeLink2.href = isGitHubPages ? '/city-hostel/' : '../../index.html';
+    if (pokojeLink) pokojeLink.href = 'pokoje.html';
+    if (cennikLink) cennikLink.href = 'cennik.html';
+    if (kontaktLink) kontaktLink.href = 'kontakt.html';
+    if (rezerwacjaLink) rezerwacjaLink.href = 'zapytaj-o-rezerwacje.html';
+    if (regulaminLink) regulaminLink.href = 'regulamin.html';
+    if (politykaLink) politykaLink.href = 'polityka-prywatnosci.html';
   } else {
-    // Pages folder links
+    // Fallback - relative paths
     if (homeLink1) homeLink1.href = '../../index.html';
     if (homeLink2) homeLink2.href = '../../index.html';
     if (pokojeLink) pokojeLink.href = 'pokoje.html';
@@ -120,9 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Debug info (remove in production)
   console.log('Footer navigation initialized:', {
     currentPath,
+    currentURL,
+    isGitHubPages,
     isInPagesFolder,
-    isMainPage,
-    basePath
+    isMainPage
   });
 });
 </script> 

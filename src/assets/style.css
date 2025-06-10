@@ -871,17 +871,25 @@ body.homepage-header {
 .footer {
   background: var(--primary);
   color: var(--white);
-  padding: 3rem 5vw 2rem 5vw;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
+  padding: 3rem 0 2rem 0;
   font-size: 1.1rem;
 }
 
-.footer-section {
-  min-width: 220px;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
   margin-bottom: 2rem;
+}
+
+.footer-section {
+  margin-bottom: 1rem;
 }
 
 .footer-section h4 {
@@ -892,13 +900,15 @@ body.homepage-header {
   font-weight: 600;
   text-transform: uppercase;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer-links {
   list-style: none;
-  margin-bottom: 1.2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-links li {
@@ -917,25 +927,62 @@ body.homepage-header {
 }
 
 .footer-links a:hover {
-  color: #fff;
+  color: var(--accent);
   background: none;
 }
 
-.footer-section:last-child {
-  margin-bottom: 0;
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.footer-bottom-content a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-bottom-content a:hover {
+  text-decoration: underline;
+}
+
+/* Contact specific styles */
+.footer-contact .contact-phone {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.footer-contact .contact-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
 }
 
 @media (max-width: 900px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    font-size: 1rem;
-  }
-  .footer-section {
-    min-width: 0;
-    width: 100%;
     text-align: center;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 }
 
