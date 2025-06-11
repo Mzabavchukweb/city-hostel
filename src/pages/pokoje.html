@@ -1739,34 +1739,31 @@
       will-change: transform;
     }
 
-    /* --- OBRAMOWANIE FILTRÓW --- */
-    .filters-glass .filter-glass-group, .filters-glass-group, .floating-label-group, .filters-glass input, .filters-glass select {
-      border: 1.5px solid rgba(127,200,195,0.25) !important;
-      border-radius: 16px !important;
-      background-clip: padding-box;
-      box-shadow: 0 2px 8px rgba(127,200,195,0.04);
+    /* --- Delikatne obramowanie dla wszystkich pól filtra --- */
+    .floating-label-group input,
+    .floating-label-group select {
+      border: 2px solid rgba(127, 200, 195, 0.25) !important;
+      box-shadow: 0 2px 12px rgba(127, 200, 195, 0.06);
+      transition: border 0.2s, box-shadow 0.2s;
     }
-    .filters-glass input:focus, .filters-glass select:focus {
-      border-color: var(--accent2) !important;
-      box-shadow: 0 0 0 2px rgba(127,200,195,0.12);
+    .floating-label-group input:focus,
+    .floating-label-group select:focus {
+      border: 2.5px solid var(--accent2) !important;
+      box-shadow: 0 4px 18px rgba(127, 200, 195, 0.13);
     }
-    .filter-group, .search-group, .amenity-tag {
-      border: 1.5px solid rgba(127,200,195,0.25) !important;
-      border-radius: 16px !important;
-      background-clip: padding-box;
-      box-shadow: 0 2px 8px rgba(127,200,195,0.04);
-      margin-bottom: 1rem;
+
+    /* --- Delikatne obramowanie dla toggle-label (checkboxy) --- */
+    .toggle-label {
+      border: 2px solid rgba(127, 200, 195, 0.25) !important;
+      box-shadow: 0 2px 12px rgba(127, 200, 195, 0.06);
+      transition: border 0.2s, box-shadow 0.2s, background 0.3s;
     }
-    .filter-group input, .filter-group select {
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
+    .toggle-label:hover,
+    .toggle-input:checked + .toggle-label {
+      border: 2.5px solid var(--accent2) !important;
+      box-shadow: 0 4px 18px rgba(127, 200, 195, 0.13);
+      background: rgba(127, 200, 195, 0.07);
     }
-    .amenity-tag {
-      margin: 0.2rem 0.5rem 0.2rem 0;
-      padding: 0.5rem 1rem;
-    }
-    /* --- KONIEC OBRAMOWANIA FILTRÓW --- */
   </style>
 </body>
 </html> 
