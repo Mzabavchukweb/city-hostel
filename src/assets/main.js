@@ -1284,3 +1284,72 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
+// === GLOBAL CTA MICROINTERACTIONS ===
+document.addEventListener('DOMContentLoaded', function() {
+  // Lista klas do mikrointerakcji
+  const ctaSelectors = [
+    '.btn', '.details-btn', '.hero-cta', '.area-cta', '.attraction-cta',
+    '.menu-res-btn', '.submit-btn', '.pricing-btn',
+    '.footer-links a', '.nav a'
+  ];
+  const ctaElements = document.querySelectorAll(ctaSelectors.join(','));
+
+  ctaElements.forEach(el => {
+    // Ripple effect
+    el.addEventListener('click', function(e) {
+      // Nie dubluj ripple na room-card
+      if (el.classList.contains('room-card')) return;
+      // Usuwaj stare ripple
+      const oldRipple = el.querySelector('.ripple-effect');
+      if (oldRipple) oldRipple.remove();
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple-effect';
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      ripple.style.cssText = `
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(127,200,195,0.3);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        left: ${x}px;
+        top: ${y}px;
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+        z-index: 2;
+      `;
+      el.style.position = 'relative';
+      el.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+    // Focus/active effect
+    el.addEventListener('focus', function() {
+      el.style.boxShadow = '0 0 0 3px rgba(127,200,195,0.25)';
+      el.style.transform = 'scale(1.03)';
+    });
+    el.addEventListener('blur', function() {
+      el.style.boxShadow = '';
+      el.style.transform = '';
+    });
+    // Tap/click scale
+    el.addEventListener('mousedown', function() {
+      el.style.transform = 'scale(0.97)';
+    });
+    el.addEventListener('mouseup', function() {
+      el.style.transform = '';
+    });
+    el.addEventListener('mouseleave', function() {
+      el.style.transform = '';
+    });
+    // Touch (mobile)
+    el.addEventListener('touchstart', function() {
+      el.style.transform = 'scale(0.97)';
+    }, {passive:true});
+    el.addEventListener('touchend', function() {
+      el.style.transform = '';
+    }, {passive:true});
+  });
+});
+// ============================================
