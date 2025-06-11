@@ -297,68 +297,143 @@
     <!-- GLASSMORPHISM FILTRY -->
     <section class="filters-glassmorphism">
       <div class="filters-container-glass">
-        <h2 class="filters-title">Filtruj pokoje</h2>
-        <div class="glass-card" style="background:rgba(45,54,72,0.97);box-shadow:0 8px 40px rgba(45,54,72,0.15);border:2px solid var(--accent);">
-          <form id="room-filters-glass" class="filters-glass" style="gap:2.5rem;">
-            <div class="filters-main-row" style="gap:2rem;">
+        <h2 class="filters-title">Znajdź idealny pokój</h2>
+        
+        <!-- Licznik wyników -->
+        <div class="results-counter-container">
+          <div class="results-counter">Wszystkie pokoje (13)</div>
+        </div>
+        
+        <div class="glass-card">
+          <form id="room-filters-glass" class="filters-glass">
+            <!-- Główne filtry -->
+            <div class="filters-main-row">
               <div class="filter-glass-group">
-                <div class="filter-label" style="color:#fff;font-weight:600;margin-bottom:0.7rem;">Typ pokoju</div>
-                <div class="filter-btn-group" style="display:flex;gap:1rem;">
-                  <button type="button" class="filter-btn" data-value="" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">Dowolny</button>
-                  <button type="button" class="filter-btn" data-value="prywatna" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">Prywatna łazienka</button>
-                  <button type="button" class="filter-btn" data-value="wspolna" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">Wspólna łazienka</button>
+                <div class="floating-label-group">
+                  <select id="room-type-glass" name="room-type" required>
+                    <option value=""></option>
+                    <option value="prywatna">Z prywatną łazienką</option>
+                    <option value="wspolna">Ze wspólną łazienką</option>
+                  </select>
+                  <label for="room-type-glass" class="floating-label">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Typ pokoju
+                  </label>
                 </div>
-                <input type="hidden" id="room-type-glass" name="room-type" value="">
               </div>
+              
               <div class="filter-glass-group">
-                <div class="filter-label" style="color:#fff;font-weight:600;margin-bottom:0.7rem;">Liczba osób</div>
-                <div class="filter-btn-group" style="display:flex;gap:1rem;">
-                  <button type="button" class="filter-btn" data-value="" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">Dowolna</button>
-                  <button type="button" class="filter-btn" data-value="1" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">1</button>
-                  <button type="button" class="filter-btn" data-value="2" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">2</button>
-                  <button type="button" class="filter-btn" data-value="3" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">3</button>
-                  <button type="button" class="filter-btn" data-value="4" style="background:#fff;color:var(--primary);border:2px solid var(--accent);border-radius:12px;padding:0.7em 1.2em;font-weight:600;">4</button>
+                <div class="floating-label-group">
+                  <select id="room-persons-glass" name="room-persons" required>
+                    <option value=""></option>
+                    <option value="1">1 osoba</option>
+                    <option value="2">2 osoby</option>
+                    <option value="3">3 osoby</option>
+                    <option value="4">4 osoby</option>
+                  </select>
+                  <label for="room-persons-glass" class="floating-label">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Liczba osób
+                  </label>
                 </div>
-                <input type="hidden" id="room-persons-glass" name="room-persons" value="">
               </div>
             </div>
-            <div class="search-glass-row" style="margin-top:1.5rem;">
+            
+            <!-- Wyszukiwarka -->
+            <div class="search-glass-row">
               <div class="filter-glass-group search-glass">
-                <input type="text" id="room-search-glass" name="room-search" placeholder="Szukaj po nazwie, udogodnieniach..." style="width:100%;padding:1.2rem 1.5rem;font-size:1.1rem;border-radius:12px;border:2px solid var(--accent);background:#fff;color:var(--primary);font-weight:500;">
+                <div class="floating-label-group">
+                  <input type="text" id="room-search-glass" name="room-search" />
+                  <label for="room-search-glass" class="floating-label">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    Szukaj pokoju (np. apartament, sofa, 3 osoby...)
+                  </label>
+                </div>
               </div>
             </div>
-            <div class="amenities-glass-section" style="background:rgba(255,255,255,0.12);border:2px solid var(--accent2);border-radius:18px;margin-top:1.5rem;">
-              <h4 class="amenities-glass-title" style="color:#fff;">Udogodnienia</h4>
+            
+            <!-- Toggle switches dla udogodnień -->
+            <div class="amenities-glass-section">
+              <h4 class="amenities-glass-title">Udogodnienia</h4>
               <div class="toggle-switches-grid">
-                <!-- (pozostawiam istniejące checkboxy, ale poprawiam kontrast etykiet) -->
-                <label class="toggle-label" style="color:#fff;font-weight:500;">
+                <div class="toggle-switch-item">
                   <input type="checkbox" id="toggle-wifi" class="toggle-input" value="wifi">
-                  WiFi
-                </label>
-                <label class="toggle-label" style="color:#fff;font-weight:500;">
+                  <label for="toggle-wifi" class="toggle-label">
+                    <div class="toggle-switch">
+                      <div class="toggle-slider"></div>
+                    </div>
+                    <div class="toggle-content">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                      <span>WiFi</span>
+                    </div>
+                  </label>
+                </div>
+                
+                <div class="toggle-switch-item">
                   <input type="checkbox" id="toggle-tv" class="toggle-input" value="tv">
-                  TV
-                </label>
-                <label class="toggle-label" style="color:#fff;font-weight:500;">
+                  <label for="toggle-tv" class="toggle-label">
+                    <div class="toggle-switch">
+                      <div class="toggle-slider"></div>
+                    </div>
+                    <div class="toggle-content">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      <span>TV</span>
+                    </div>
+                  </label>
+                </div>
+                
+                <div class="toggle-switch-item">
                   <input type="checkbox" id="toggle-lodowka" class="toggle-input" value="lodowka">
-                  Lodówka
-                </label>
-                <label class="toggle-label" style="color:#fff;font-weight:500;">
+                  <label for="toggle-lodowka" class="toggle-label">
+                    <div class="toggle-switch">
+                      <div class="toggle-slider"></div>
+                    </div>
+                    <div class="toggle-content">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
+                      <span>Lodówka</span>
+                    </div>
+                  </label>
+                </div>
+                
+                <div class="toggle-switch-item">
                   <input type="checkbox" id="toggle-czajnik" class="toggle-input" value="czajnik">
-                  Czajnik
-                </label>
-                <label class="toggle-label" style="color:#fff;font-weight:500;">
+                  <label for="toggle-czajnik" class="toggle-label">
+                    <div class="toggle-switch">
+                      <div class="toggle-slider"></div>
+                    </div>
+                    <div class="toggle-content">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                      <span>Czajnik</span>
+                    </div>
+                  </label>
+                </div>
+                
+                <div class="toggle-switch-item">
                   <input type="checkbox" id="toggle-prywatna" class="toggle-input" value="prywatna-lazienka">
-                  Prywatna łazienka
-                </label>
-                <label class="toggle-label" style="color:#fff;font-weight:500;">
+                  <label for="toggle-prywatna" class="toggle-label">
+                    <div class="toggle-switch">
+                      <div class="toggle-slider"></div>
+                    </div>
+                    <div class="toggle-content">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+                      <span>Prywatna łazienka</span>
+                    </div>
+                  </label>
+                </div>
+                
+                <div class="toggle-switch-item">
                   <input type="checkbox" id="toggle-wspolna" class="toggle-input" value="wspolna-lazienka">
-                  Wspólna łazienka
-                </label>
+                  <label for="toggle-wspolna" class="toggle-label">
+                    <div class="toggle-switch">
+                      <div class="toggle-slider"></div>
+                    </div>
+                    <div class="toggle-content">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="16" cy="3.13" r="1"/></svg>
+                      <span>Wspólna łazienka</span>
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div style="display:flex;justify-content:flex-end;margin-top:2rem;">
-              <button type="reset" class="btn" style="background:var(--accent2);color:var(--primary);font-weight:700;padding:0.8em 2em;border-radius:12px;border:none;font-size:1.1rem;box-shadow:0 2px 10px rgba(45,54,72,0.08);">Wyczyść filtry</button>
             </div>
           </form>
         </div>
@@ -1739,34 +1814,31 @@
       will-change: transform;
     }
 
-    /* --- OBRAMOWANIE FILTRÓW --- */
-    .filters-glass .filter-glass-group, .filters-glass-group, .floating-label-group, .filters-glass input, .filters-glass select {
-      border: 1.5px solid rgba(127,200,195,0.25) !important;
-      border-radius: 16px !important;
-      background-clip: padding-box;
-      box-shadow: 0 2px 8px rgba(127,200,195,0.04);
+    /* --- Delikatne obramowanie dla wszystkich pól filtra --- */
+    .floating-label-group input,
+    .floating-label-group select {
+      border: 2px solid rgba(127, 200, 195, 0.25) !important;
+      box-shadow: 0 2px 12px rgba(127, 200, 195, 0.06);
+      transition: border 0.2s, box-shadow 0.2s;
     }
-    .filters-glass input:focus, .filters-glass select:focus {
-      border-color: var(--accent2) !important;
-      box-shadow: 0 0 0 2px rgba(127,200,195,0.12);
+    .floating-label-group input:focus,
+    .floating-label-group select:focus {
+      border: 2.5px solid var(--accent2) !important;
+      box-shadow: 0 4px 18px rgba(127, 200, 195, 0.13);
     }
-    .filter-group, .search-group, .amenity-tag {
-      border: 1.5px solid rgba(127,200,195,0.25) !important;
-      border-radius: 16px !important;
-      background-clip: padding-box;
-      box-shadow: 0 2px 8px rgba(127,200,195,0.04);
-      margin-bottom: 1rem;
+
+    /* --- Delikatne obramowanie dla toggle-label (checkboxy) --- */
+    .toggle-label {
+      border: 2px solid rgba(127, 200, 195, 0.25) !important;
+      box-shadow: 0 2px 12px rgba(127, 200, 195, 0.06);
+      transition: border 0.2s, box-shadow 0.2s, background 0.3s;
     }
-    .filter-group input, .filter-group select {
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
+    .toggle-label:hover,
+    .toggle-input:checked + .toggle-label {
+      border: 2.5px solid var(--accent2) !important;
+      box-shadow: 0 4px 18px rgba(127, 200, 195, 0.13);
+      background: rgba(127, 200, 195, 0.07);
     }
-    .amenity-tag {
-      margin: 0.2rem 0.5rem 0.2rem 0;
-      padding: 0.5rem 1rem;
-    }
-    /* --- KONIEC OBRAMOWANIA FILTRÓW --- */
   </style>
 </body>
 </html> 
