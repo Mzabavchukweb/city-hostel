@@ -1738,6 +1738,35 @@
     .gradient-orb {
       will-change: transform;
     }
+
+    /* --- OBRAMOWANIE FILTRÓW --- */
+    .filters-glass .filter-glass-group, .filters-glass-group, .floating-label-group, .filters-glass input, .filters-glass select {
+      border: 1.5px solid rgba(127,200,195,0.25) !important;
+      border-radius: 16px !important;
+      background-clip: padding-box;
+      box-shadow: 0 2px 8px rgba(127,200,195,0.04);
+    }
+    .filters-glass input:focus, .filters-glass select:focus {
+      border-color: var(--accent2) !important;
+      box-shadow: 0 0 0 2px rgba(127,200,195,0.12);
+    }
+    .filter-group, .search-group, .amenity-tag {
+      border: 1.5px solid rgba(127,200,195,0.25) !important;
+      border-radius: 16px !important;
+      background-clip: padding-box;
+      box-shadow: 0 2px 8px rgba(127,200,195,0.04);
+      margin-bottom: 1rem;
+    }
+    .filter-group input, .filter-group select {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+    .amenity-tag {
+      margin: 0.2rem 0.5rem 0.2rem 0;
+      padding: 0.5rem 1rem;
+    }
+    /* --- KONIEC OBRAMOWANIA FILTRÓW --- */
   </style>
 </body>
 </html> 
