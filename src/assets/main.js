@@ -962,7 +962,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const modernMobileMenu = document.getElementById('modernMobileMenu');
   const body = document.body;
   
-  if (!mobileMenuToggle || !mobileMenuClose || !modernMobileMenu) {
+  if (!modernMobileMenu || !mobileMenuToggle || !mobileMenuClose) {
     return;
   }
   
