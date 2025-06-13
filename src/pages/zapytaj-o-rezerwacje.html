@@ -6,124 +6,6 @@
   <title>Zapytaj o rezerwację | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/style.css" />
   <style>
-    /* GLASSMORPHISM HERO SECTION */
-    .hero-reservation {
-      position: relative;
-      min-height: 60vh;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .hero-reservation::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx=".5" cy=".5" r=".5"><stop offset="0%" stop-color="%23ffffff" stop-opacity=".1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
-      opacity: 0.3;
-    }
-
-    .hero-floating-reservation {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .floating-reservation-icon {
-      position: absolute;
-      color: rgba(255,255,255,0.1);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .floating-reservation-icon:nth-child(1) {
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .floating-reservation-icon:nth-child(2) {
-      top: 25%;
-      right: 15%;
-      animation-delay: 1s;
-    }
-
-    .floating-reservation-icon:nth-child(3) {
-      bottom: 20%;
-      left: 20%;
-      animation-delay: 2s;
-    }
-
-    .floating-reservation-icon:nth-child(4) {
-      bottom: 30%;
-      right: 10%;
-      animation-delay: 3s;
-    }
-
-    .hero-content-reservation {
-      text-align: center;
-      z-index: 10;
-      position: relative;
-      max-width: 800px;
-      padding: 0 2rem;
-    }
-
-    .hero-title-reservation {
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    }
-
-    .hero-lead-reservation {
-      font-size: 1.3rem;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 2rem;
-      font-weight: 300;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    }
-
-    .hero-stats-reservation {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .stat-reservation {
-      text-align: center;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 1.5rem;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .stat-number-reservation {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label-reservation {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.8);
-      font-weight: 500;
-    }
-    
     .reservation-form-container {
       max-width: 1000px;
       margin: 2rem auto;
@@ -1143,7 +1025,7 @@
         <a href="kontakt.html" class="mobile-nav-item">
           <div class="nav-item-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
           </div>
           <div class="nav-item-content">
@@ -1270,51 +1152,6 @@
   </div>
 
   <main>
-    <!-- DYNAMICZNA SEKCJA HERO Z GLASSMORPHISM -->
-    <section class="hero-section hero-reservation">
-      <!-- Animowane tło z gradientem -->
-      <div class="hero-animated-bg">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-      </div>
-      
-      <!-- Breadcrumbs -->
-      <div class="breadcrumbs">
-        <a href="../../index.html">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-          Strona główna
-        </a>
-        <span class="breadcrumb-separator">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
-        </span>
-        <span class="breadcrumb-current">Rezerwacja</span>
-      </div>
-      
-      <!-- Zawartość hero -->
-      <div class="hero-content">
-        <h1 class="hero-title">Zapytaj o rezerwację</h1>
-        <p class="hero-lead">Wypełnij formularz, a my skontaktujemy się z Tobą w ciągu 30 minut. Szybko, bezpiecznie i bez zobowiązań.</p>
-        
-        <!-- Stats -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number">30min</div>
-            <div class="stat-label">Czas odpowiedzi</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Obsługa</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">0zł</div>
-            <div class="stat-label">Zapytanie</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="wave"></div>
-    </section>
     <section class="reservation-form-container">
       <div class="reservation-progress">
         <div class="progress-step active" data-step="1">
