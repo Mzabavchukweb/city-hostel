@@ -527,7 +527,10 @@ body.homepage-header {
   max-width: 800px;
   text-align: center;
   padding: 2rem;
-  background: transparent;
+  background: rgba(20, 24, 32, 0.22); /* jeszcze delikatniejsze tło */
+  border-radius: 22px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
+  backdrop-filter: blur(2.5px);
   animation: heroContentFloat 2s ease-out 0.5s both;
   will-change: opacity, transform;
 }
@@ -943,7 +946,7 @@ body.homepage-header {
 .footer-bottom-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+    align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -2939,6 +2942,7 @@ li {
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  background: rgba(20,24,32,0.92); /* mocno przyciemnione tło */
 }
 
 .modern-mobile-menu.active {
@@ -2953,7 +2957,7 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  background: none;
   z-index: 1;
 }
 
@@ -3006,15 +3010,16 @@ li {
   height: 100vh;
   overflow-y: auto;
   padding: 2rem 1.5rem 3rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  background: rgba(20,24,32,0.98); /* ciemne, nieprzezroczyste tło */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transform: translateX(-100%);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   /* POPRAWKA SCROLL */
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
+  color: #fff;
 }
 
 .modern-mobile-menu.active .mobile-menu-content {
@@ -3092,12 +3097,10 @@ li {
   gap: 1rem;
   padding: 1.2rem;
   margin-bottom: 0.8rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  text-decoration: none;
-  color: var(--white);
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.08);
+  color: #fff;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -3119,8 +3122,8 @@ li {
 }
 
 .mobile-nav-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.18);
   transform: translateX(8px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
@@ -3149,14 +3152,14 @@ li {
 .nav-item-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--white);
+  color: #fff;
   display: block;
   margin-bottom: 0.2rem;
 }
 
 .nav-item-desc {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255,255,255,0.85);
   display: block;
 }
 
@@ -3180,12 +3183,12 @@ li {
 }
 
 .hostels-section-title {
-  color: var(--white);
+  color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(45, 54, 72, 0.3);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
 .mobile-hostels-grid {
@@ -3236,14 +3239,14 @@ li {
 .hostel-name {
   font-weight: 600;
   font-size: 1rem;
-  color: var(--white);
+  color: #fff;
   display: block;
   margin-bottom: 0.2rem;
 }
 
 .hostel-address {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255,255,255,0.85);
   display: block;
 }
 
@@ -3295,12 +3298,12 @@ li {
 }
 
 .lang-section-title {
-  color: var(--white);
+  color: #fff;
     font-size: 1rem;
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(45, 54, 72, 0.3);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
 .mobile-lang-options {
@@ -3889,4 +3892,4 @@ html, body {
   .area-image {
     height: 180px;
   }
-}
+} 

@@ -9,7 +9,7 @@
 </head>
 <body class="page-with-header-padding">
   <header class="header">
-    <div class="logo"><a href="../../index.html">City Hostel</a></div>
+    <div class="logo"><a href="../../index.html"><span style="font-size:1.1em;font-weight:700;"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
     <div class="header-right">
       <nav class="nav">
         <ul>
@@ -64,7 +64,7 @@
               <polyline points="9,22 9,12 15,12 15,22"/>
             </svg>
           </div>
-          <span class="logo-text">City Hostel</span>
+          <span class="logo-text"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span>
         </div>
         <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -261,312 +261,25 @@
   
   <main>
     <!-- DYNAMICZNA SEKCJA HERO Z ANIMOWANYM GRADIENTEM -->
-    <section class="hero-rooms">
-      <!-- Spokojny hero bez animowanych/floating icons -->
-      <div class="breadcrumbs">
-        <a href="../../index.html">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-          Strona główna
-        </a>
-        <span class="breadcrumb-separator">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
-        </span>
-        <span class="breadcrumb-current">Pokoje</span>
-      </div>
-      <div class="hero-content-rooms">
-        <h1 class="hero-title-animated">Nasze Pokoje</h1>
-        <p class="hero-lead-rooms">Wybierz idealny pokój dla siebie. Każdy z naszych pokoi to styl i niepowtarzalny charakter.</p>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number">13</div>
-            <div class="stat-label">Pokoi</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Recepcja</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">5★</div>
-            <div class="stat-label">Ocena</div>
-          </div>
-        </div>
-      </div>
+    <!-- Usunięto hero-content-rooms na życzenie -->
       <div class="wave"></div>
-    </section>
     
-    <!-- GLASSMORPHISM FILTRY -->
-    <section class="filters-glassmorphism">
-      <div class="filters-container-glass">
-        <h2 class="filters-title">Znajdź idealny pokój</h2>
-        
-        <!-- Licznik wyników -->
-        <div class="results-counter-container">
-          <div class="results-counter">Wszystkie pokoje (13)</div>
-        </div>
-        
-        <div class="glass-card">
-          <form id="room-filters-glass" class="filters-glass">
-            <!-- Główne filtry -->
-            <div class="filters-main-row">
-              <div class="filter-glass-group">
-                <div class="floating-label-group">
-                  <select id="room-type-glass" name="room-type" required>
-                    <option value=""></option>
-                    <option value="prywatna">Z prywatną łazienką</option>
-                    <option value="wspolna">Ze wspólną łazienką</option>
-                  </select>
-                  <label for="room-type-glass" class="floating-label">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                    Typ pokoju
-                  </label>
-                </div>
-              </div>
-              
-              <div class="filter-glass-group">
-                <div class="floating-label-group">
-                  <select id="room-persons-glass" name="room-persons" required>
-                    <option value=""></option>
-                    <option value="1">1 osoba</option>
-                    <option value="2">2 osoby</option>
-                    <option value="3">3 osoby</option>
-                    <option value="4">4 osoby</option>
-                  </select>
-                  <label for="room-persons-glass" class="floating-label">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    Liczba osób
-                  </label>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Wyszukiwarka -->
-            <div class="search-glass-row">
-              <div class="filter-glass-group search-glass">
-                <div class="floating-label-group">
-                  <input type="text" id="room-search-glass" name="room-search" />
-                  <label for="room-search-glass" class="floating-label">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                    Szukaj pokoju (np. apartament, sofa, 3 osoby...)
-                  </label>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Toggle switches dla udogodnień -->
-            <div class="amenities-glass-section">
-              <h4 class="amenities-glass-title">Udogodnienia</h4>
-              <div class="toggle-switches-grid">
-                <div class="toggle-switch-item">
-                  <input type="checkbox" id="toggle-wifi" class="toggle-input" value="wifi">
-                  <label for="toggle-wifi" class="toggle-label">
-                    <div class="toggle-switch">
-                      <div class="toggle-slider"></div>
-                    </div>
-                    <div class="toggle-content">
-                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                      <span>WiFi</span>
-                    </div>
-                  </label>
-                </div>
-                
-                <div class="toggle-switch-item">
-                  <input type="checkbox" id="toggle-tv" class="toggle-input" value="tv">
-                  <label for="toggle-tv" class="toggle-label">
-                    <div class="toggle-switch">
-                      <div class="toggle-slider"></div>
-                    </div>
-                    <div class="toggle-content">
-                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                      <span>TV</span>
-                    </div>
-                  </label>
-                </div>
-                
-                <div class="toggle-switch-item">
-                  <input type="checkbox" id="toggle-lodowka" class="toggle-input" value="lodowka">
-                  <label for="toggle-lodowka" class="toggle-label">
-                    <div class="toggle-switch">
-                      <div class="toggle-slider"></div>
-                    </div>
-                    <div class="toggle-content">
-                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-                      <span>Lodówka</span>
-                    </div>
-                  </label>
-                </div>
-                
-                <div class="toggle-switch-item">
-                  <input type="checkbox" id="toggle-czajnik" class="toggle-input" value="czajnik">
-                  <label for="toggle-czajnik" class="toggle-label">
-                    <div class="toggle-switch">
-                      <div class="toggle-slider"></div>
-                    </div>
-                    <div class="toggle-content">
-                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                      <span>Czajnik</span>
-                    </div>
-                  </label>
-                </div>
-                
-                <div class="toggle-switch-item">
-                  <input type="checkbox" id="toggle-prywatna" class="toggle-input" value="prywatna-lazienka">
-                  <label for="toggle-prywatna" class="toggle-label">
-                    <div class="toggle-switch">
-                      <div class="toggle-slider"></div>
-                    </div>
-                    <div class="toggle-content">
-                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-                      <span>Prywatna łazienka</span>
-                    </div>
-                  </label>
-                </div>
-                
-                <div class="toggle-switch-item">
-                  <input type="checkbox" id="toggle-wspolna" class="toggle-input" value="wspolna-lazienka">
-                  <label for="toggle-wspolna" class="toggle-label">
-                    <div class="toggle-switch">
-                      <div class="toggle-slider"></div>
-                    </div>
-                    <div class="toggle-content">
-                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="16" cy="3.13" r="1"/></svg>
-                      <span>Wspólna łazienka</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-    
-    <!-- FILTRY I WYSZUKIWARKA -->
-    <section class="section filters-section" style="padding-bottom:2rem;">
-      <div class="filters-container">
-        <h2 style="text-align:center;margin-bottom:2rem;font-size:2.2rem;">Znajdź idealny pokój</h2>
-        <form id="room-filters" class="modern-filters">
-          <div class="filter-row">
-            <div class="filter-group">
-              <label for="room-type">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                Typ pokoju
-              </label>
-              <select id="room-type" name="room-type">
-                <option value="">Wszystkie typy</option>
-                <option value="prywatna">Z prywatną łazienką</option>
-                <option value="wspolna">Ze wspólną łazienką</option>
-              </select>
-            </div>
-            
-            <div class="filter-group">
-              <label for="room-persons">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                Liczba osób
-              </label>
-              <select id="room-persons" name="room-persons">
-                <option value="">Dowolna</option>
-                <option value="1">1 osoba</option>
-                <option value="2">2 osoby</option>
-                <option value="3">3 osoby</option>
-                <option value="4">4 osoby</option>
-              </select>
-            </div>
-          </div>
-          
-          <div class="filter-row">
-            <div class="filter-group search-group">
-              <label for="room-search">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                Szukaj pokoju
-              </label>
-              <input type="text" id="room-search" name="room-search" placeholder="np. apartament, sofa, 3 osoby..." />
-            </div>
-          </div>
-          
-          <div class="amenities-filters">
-            <h4>Udogodnienia:</h4>
-            <div class="amenity-tags">
-              <label class="amenity-tag">
-                <input type="checkbox" class="amenity-filter" value="wifi">
-                <span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                  WiFi
-                </span>
-              </label>
-              <label class="amenity-tag">
-                <input type="checkbox" class="amenity-filter" value="tv">
-                <span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                  TV
-                </span>
-              </label>
-              <label class="amenity-tag">
-                <input type="checkbox" class="amenity-filter" value="lodowka">
-                <span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-                  Lodówka
-                </span>
-              </label>
-              <label class="amenity-tag">
-                <input type="checkbox" class="amenity-filter" value="czajnik">
-                <span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                  Czajnik
-                </span>
-              </label>
-              <label class="amenity-tag">
-                <input type="checkbox" class="amenity-filter" value="prywatna-lazienka">
-                <span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-                  Prywatna łazienka
-                </span>
-              </label>
-              <label class="amenity-tag">
-                <input type="checkbox" class="amenity-filter" value="wspolna-lazienka">
-                <span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-                  Wspólna łazienka
-                </span>
-              </label>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-    
-    <!-- SEKCJE POKOI - NOWY DYNAMICZNY LAYOUT -->
-    <section class="section">
-      <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto; padding: 0 2rem;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary);">RODZAJE POKOI</h2>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6;">W naszym hostelu oferujemy dwa typy pokoi, aby każdy mógł wybrać opcję dopasowaną do swoich potrzeb i budżetu</p>
-      </div>
+    <!-- Usunięto nagłówek i opis sekcji rodzaje pokoi -->
+    <section class="rooms-main-content" style="max-width:1400px;margin:0 auto;padding:2rem 1rem 0 1rem;">
       <div class="rooms-container-modern">
         <!-- Wszystkie pokoje w jednej dynamicznej siatce -->
         <div class="rooms-grid-dynamic" id="rooms-all">
-          
-          <!-- POKOJE Z PRYWATNĄ ŁAZIENKĄ -->
           <div class="room-category-header">
-            <h2 class="category-title-styled">
-              <span class="category-icon"></span>
-              POKOJE Z PRYWATNĄ ŁAZIENKĄ
-            </h2>
-            <p class="category-desc">Komfortowe pokoje z łazienką znajdującą się bezpośrednio w pokoju. Idealne dla osób ceniących sobie prywatność</p>
+            <h2 class="category-title-styled" style="font-size:2.1rem;letter-spacing:0.01em;font-weight:700;text-align:center;margin-bottom:1.2rem;color:var(--primary);text-transform:uppercase;">Apartamenty z prywatną łazienką</h2>
           </div>
-          
+          <!-- POKOJE Z PRYWATNĄ ŁAZIENKĄ -->
+          <div class="rooms-list rooms-private-grid" id="rooms-private">
+            <!-- Wszystkie pokoje z prywatną łazienką w układzie jak w sekcji wspólnej łazienki -->
           <div class="room-card room-featured" data-type="prywatna" data-persons="2" data-price="200" data-amenities="wifi,tv,lodowka,czajnik,prywatna-lazienka,reczniki,posciel,kubki,talerze,sztucce,loze-malzenskie,sofa" data-desc="apartament dwuosobowy łoże małżeńskie sofa prywatna łazienka ręczniki pościel telewizor wifi lodówka czajnik kubki talerze sztućce">
             <div class="room-thumb">
-              <img src="../images/rooms/room4/IMG_8342_2.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa" />
-              <div class="room-badge featured">Polecany</div>
+              <img src="../images/rooms/room4/IMG_8342_2.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa" style="margin-top:18px;" />
               <div class="room-price">od 200 zł/noc</div>
             </div>
-            <div class="room-content">
-              <div class="room-icons">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-              </div>
               <h3>Apartament dwuosobowy z łożem małżeńskim + sofa</h3>
               <p>Przytulny apartament dla dwóch osób z łazienką w pokoju<br>
               ✓ Prywatna łazienka<br>
@@ -578,6 +291,7 @@
               ✓ Czajnik + kubki+ talerze+ sztućce</p>
               <a href="pokoj-pokoj-nr-4.html" class="details-btn">Zobacz szczegóły</a>
             </div>
+            <!-- (tu wklej kolejne pokoje z prywatną łazienką w tym samym układzie co powyżej, analogicznie do sekcji wspólnej łazienki) -->
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="2" data-price="190" data-amenities="wifi,tv,lodowka,czajnik,prywatna-lazienka,reczniki,posciel,kubki,talerze,sztucce,dwa-lozka,sofa" data-desc="apartament dwuosobowy dwa osobne łóżka rozkładana sofa prywatna łazienka ręczniki pościel telewizor wifi lodówka czajnik kubki talerze sztućce">
@@ -585,15 +299,7 @@
               <img src="../images/rooms/room103/IMG_8400.webp" alt="Apartament dwuosobowy + sofa" />
               <div class="room-price">od 190 zł/noc</div>
             </div>
-            <div class="room-content">
-              <div class="room-icons">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-              </div>
-              <h3>Apartament dwuosobowy + sofa</h3>
+            <h3>Apartament dwuosobowy + sofa</h3>
               <p>Przytulny apartament dla dwóch osób z łazienką w pokoju<br>
               ✓ Prywatna łazienka<br>
               ✓ Ręczniki i pościel w pokoju<br>
@@ -603,19 +309,12 @@
               ✓ Lodówka<br>
               ✓ Czajnik + kubki+ talerze+ sztućce</p>
               <a href="pokoj-103.html" class="details-btn">Zobacz szczegóły</a>
-            </div>
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="1" data-price="120" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój jednoosobowy prywatna łazienka ręcznik pościel telewizor wifi lodówka">
             <div class="room-thumb">
-              <img src="../images/rooms/room6/IMG_8376.webp" alt="Pokój jednoosobowy z prywatną łazienką" />
+              <img src="../images/rooms/room6/IMG_8389_2.jpg" alt="Pokój jednoosobowy z prywatną łazienką" />
               <div class="room-price">od 120 zł/noc</div>
-            </div>
-            <div class="room-icons">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
             </div>
             <h3>Pokój jednoosobowy z prywatną łazienką</h3>
             <p>Przytulny pokój dla jednej osoby z łazienką w pokoju<br>
@@ -631,13 +330,6 @@
             <div class="room-thumb">
               <img src="../images/rooms/room3/IMG_8363_2.webp" alt="Pokój dwuosobowy z prywatną łazienką i łożem małżeńskim" />
               <div class="room-price">od 140 zł/noc</div>
-            </div>
-            <div class="room-icons">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="16" cy="3.13" r="1"/></svg>
             </div>
             <h3>Pokój dwuosobowy z prywatną łazienką i łożem małżeńskim</h3>
             <p>Przytulny pokój dla dwóch osób z łazienką w pokoju<br>
@@ -655,12 +347,6 @@
               <img src="../images/rooms/room104/IMG_8419.webp" alt="Pokój dwuosobowy z prywatną łazienką" />
               <div class="room-price">od 150 zł/noc</div>
             </div>
-            <div class="room-icons">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-            </div>
             <h3>Pokój dwuosobowy z prywatną łazienką</h3>
             <p>Przytulny pokój dla dwóch osób z łazienką w pokoju<br>
             ✓ Prywatna łazienka<br>
@@ -676,12 +362,6 @@
               <img src="../images/rooms/room113/IMG_8687.webp" alt="Pokój trzyosobowy z prywatną łazienką" />
               <div class="room-price">od 170 zł/noc</div>
             </div>
-            <div class="room-icons">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-            </div>
             <h3>Pokój trzyosobowy z prywatną łazienką</h3>
             <p>Przytulny pokój dla trzech osób z łazienką w pokoju<br>
             ✓ Prywatna łazienka<br>
@@ -694,14 +374,8 @@
           
           <div class="room-card" data-type="prywatna" data-persons="4" data-price="180" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój czteroosobowy prywatna łazienka ręczniki pościel telewizor wifi lodówka">
             <div class="room-thumb">
-              <img src="../images/rooms/room308/IMG_8494.webp" alt="Pokój czteroosobowy z prywatną łazienką" />
+              <img src="../images/rooms/room308/IMG_8491 2.jpg" alt="Pokój czteroosobowy z prywatną łazienką" />
               <div class="room-price">od 180 zł/noc</div>
-            </div>
-            <div class="room-icons">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
             </div>
             <h3>Pokój czteroosobowy z prywatną łazienką</h3>
             <p>Przytulny pokój dla czterech osób z łazienką w pokoju<br>
@@ -715,6 +389,8 @@
         </div>
       </div>
     </section>
+    <!-- KONIEC: nagłówek i opis usunięte -->
+    <!-- SEKCJE POKOI - NOWY DYNAMICZNY LAYOUT -->
     <section class="section">
       <h2>POKOJE ZE WSPÓLNĄ ŁAZIENKĄ ( NA KORYTARZU )</h2>
       <p style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary); font-size: 1.1rem;">Tańsza opcja dla gości, którym nie przeszkadza dzielenie łazienki z innymi. Wspólna łazienka znajduje się na korytarzu i jest regularnie sprzątana.</p>
@@ -723,12 +399,6 @@
           <div class="room-thumb">
             <img src="../images/rooms/room310/IMG_8472.webp" alt="Pokój jednoosobowy ze wspólną łazienką" />
             <div class="room-price">od 90 zł/noc</div>
-          </div>
-          <div class="room-icons">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
           </div>
           <h3>Pokój jednoosobowy ze wspólną łazienką</h3>
           <p>Ekonomiczna opcja dla jednej osoby.<br>
@@ -745,12 +415,6 @@
             <img src="../images/rooms/room312/IMG_8518_2.webp" alt="Pokój dwuosobowy ze wspólną łazienką" />
             <div class="room-price">od 110 zł/noc</div>
           </div>
-          <div class="room-icons">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
-          </div>
           <h3>Pokój dwuosobowy ze wspólną łazienką</h3>
           <p>Ekonomiczna opcja dla dwóch osób.<br>
           ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
@@ -765,12 +429,6 @@
           <div class="room-thumb">
             <img src="../images/rooms/room305/IMG_8459.webp" alt="Pokój czteroosobowy ze wspólną łazienką" />
             <div class="room-price">od 120 zł/noc</div>
-          </div>
-          <div class="room-icons">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
           </div>
           <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
           <p>Ekonomiczna opcja dla czterech osób.<br>
@@ -787,19 +445,13 @@
             <img src="../images/rooms/pietro0_1D/IMG_8545_2.webp" alt="Pokój trzyosobowy ze wspólną łazienką" />
             <div class="room-price">od 80 zł/noc</div>
           </div>
-          <div class="room-icons">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3l6 6-6 6"/><path d="M11 3v18"/></svg>
-          </div>
           <h3>Pokój trzyosobowy ze wspólną łazienką</h3>
           <p>Ekonomiczna opcja dla trzech osób.<br>
           ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
           ✓ Ręczniki i pościel w pokoju<br>
           ✓ Telewizor<br>
           ✓ Darmowe WI-FI<br>
-          ✓ Możliwość wejścia przez hostel lub osobnym wejściem</p>
+          ✓ <strong>Możliwość wejścia przez hostel lub osobnym wejściem</strong></p>
           <a href="pokoj-pietro-0-1D.html" class="details-btn">Zobacz szczegóły</a>
         </div>
         
@@ -808,19 +460,13 @@
             <img src="../images/rooms/pietro0_2D/IMG_8558.webp" alt="Pokój czteroosobowy ze wspólną łazienką" />
             <div class="room-price">od 85 zł/noc</div>
           </div>
-          <div class="room-icons">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3l6 6-6 6"/><path d="M11 3v18"/></svg>
-          </div>
           <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
           <p>Ekonomiczna opcja dla czterech osób.<br>
           ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
           ✓ Ręczniki i pościel w pokoju<br>
           ✓ Telewizor<br>
           ✓ Darmowe WI-FI<br>
-          ✓ Możliwość wejścia przez hostel lub osobnym wejściem</p>
+          ✓ <strong>Możliwość wejścia przez hostel lub osobnym wejściem</strong></p>
           <a href="pokoj-pietro-0-2D.html" class="details-btn">Zobacz szczegóły</a>
         </div>
         
@@ -829,19 +475,13 @@
             <img src="../images/rooms/pietro0_3D/IMG_8582_3.webp" alt="Pokój czteroosobowy ze wspólną łazienką" />
             <div class="room-price">od 85 zł/noc</div>
           </div>
-          <div class="room-icons">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3l6 6-6 6"/><path d="M11 3v18"/></svg>
-          </div>
           <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
           <p>Ekonomiczna opcja dla czterech osób.<br>
           ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
           ✓ Ręczniki i pościel w pokoju<br>
           ✓ Telewizor<br>
           ✓ Darmowe WI-FI<br>
-          ✓ Możliwość wejścia przez hostel lub osobnym wejściem</p>
+          ✓ <strong>Możliwość wejścia przez hostel lub osobnym wejściem</strong></p>
           <a href="pokoj-pietro-0-3D.html" class="details-btn">Zobacz szczegóły</a>
         </div>
       </div>
@@ -856,42 +496,14 @@
         <div class="common-area-card">
           <div class="area-image">
             <img src="../images/rooms/kuchnia2p/IMG_8528_2.webp" alt="Kuchnia 2 piętro" loading="lazy" />
-            <div class="area-overlay">
-              <div class="area-icon">
-                <svg width="32" height="32" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 2v2h18V2M4 7v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7H4zm8 2v9m-3-9v9m6-9v9"/>
-                  <circle cx="8" cy="12" r="1"/><circle cx="16" cy="12" r="1"/>
-                </svg>
-              </div>
-            </div>
           </div>
           <div class="area-content">
             <h3>Kuchnia - 2 piętro</h3>
             <div class="area-features">
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="10" width="18" height="7" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/>
-                </svg>
-                <span>Lodówka z zamrażarką</span>
-              </div>
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="8" width="20" height="10" rx="2"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
-                </svg>
-                <span>Kuchenka mikrofalowa</span>
-              </div>
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="9" cy="9" r="2"/><path d="M21 9c0 5.25-3.75 9-9 9s-9-3.75-9-9 3.75-9 9-9 9 3.75 9 9z"/>
-                </svg>
-                <span>Kuchenka gazowa</span>
-              </div>
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 12a9 9 0 0 1-9 9 6.83 6.83 0 0 1-6.6-5.6l-3.5-8L4 5h16a2 2 0 0 1 1.7 3.05L21 12z"/>
-                </svg>
-                <span>Komplet naczyń</span>
-              </div>
+              <div class="feature-item"><span>Lodówka z zamrażarką</span></div>
+              <div class="feature-item"><span>Kuchenka mikrofalowa</span></div>
+              <div class="feature-item"><span>Kuchenka gazowa</span></div>
+              <div class="feature-item"><span>Komplet naczyń</span></div>
             </div>
             <a href="kuchnia-2p.html" class="area-cta">Zobacz szczegóły</a>
           </div>
@@ -899,42 +511,14 @@
         <div class="common-area-card">
           <div class="area-image">
             <img src="../images/rooms/lazienka3p/IMG_8505.webp" alt="Łazienka ogólna 3 piętro" loading="lazy" />
-            <div class="area-overlay">
-              <div class="area-icon">
-                <svg width="32" height="32" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1.5c-.8-.15-1.5.24-1.5 1.05L4 9.5l-1.5.5c-.83.28-1.15 1.5-.5 1.99l1.5.67V19c0 .5.5 1 1 1h4c.5 0 1-.5 1-1v-6.5l2.48-1.15c.7-.32 1.05-1.31.67-2.01C11.5 9.19 11 9 10.5 9L9 6z"/>
-                  <circle cx="16" cy="12" r="4"/>
-                </svg>
-              </div>
-            </div>
           </div>
           <div class="area-content">
             <h3>Łazienka ogólna - 3 piętro</h3>
             <div class="area-features">
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/>
-                </svg>
-                <span>Prysznic z ciepłą wodą</span>
-              </div>
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-                </svg>
-                <span>Toaleta</span>
-              </div>
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="11" width="18" height="10" rx="2" ry="2"/><circle cx="12" cy="16" r="1"/>
-                </svg>
-                <span>Umywalka z lustrem</span>
-              </div>
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 6 6 18l-4-4"/>
-                </svg>
-                <span>Regularne sprzątanie</span>
-              </div>
+              <div class="feature-item"><span>Prysznic z ciepłą wodą</span></div>
+              <div class="feature-item"><span>Toaleta</span></div>
+              <div class="feature-item"><span>Umywalka z lustrem</span></div>
+              <div class="feature-item"><span>Regularne sprzątanie</span></div>
             </div>
             <a href="lazienka-3p.html" class="area-cta">Zobacz szczegóły</a>
           </div>
@@ -942,42 +526,14 @@
         <div class="common-area-card">
           <div class="area-image">
             <img src="../images/rooms/lazienka_parter/IMG_8600_2.webp" alt="Łazienka i toaleta parter" loading="lazy" />
-            <div class="area-overlay">
-              <div class="area-icon">
-                <svg width="32" height="32" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                  <polyline points="9,22 9,12 15,12 15,22"/>
-                </svg>
-              </div>
-            </div>
           </div>
           <div class="area-content">
             <h3>Łazienka i toaleta - parter</h3>
             <div class="area-features">
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 3l6 6-6 6"/><path d="M11 3v18"/>
-                </svg>
-                <span>Przy głównym wejściu</span>
-              </div>
-              <div class="feature-item">
-                <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-                </svg>
-                <span>Łatwy dostęp</span>
-              </div>
-              <div class="feature-item">
-                <svg width="16" height="16" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span>Udogodnienia dodatkowe</span>
-              </div>
-              <div class="feature-item">
-                <svg width="16" height="16" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                </svg>
-                <span>Dostępne 24/7</span>
-              </div>
+              <div class="feature-item"><span>Przy głównym wejściu</span></div>
+              <div class="feature-item"><span>Łatwy dostęp</span></div>
+              <div class="feature-item"><span>Udogodnienia dodatkowe</span></div>
+              <div class="feature-item"><span>Dostępne 24/7</span></div>
             </div>
             <a href="lazienka-parter.html" class="area-cta">Zobacz szczegóły</a>
           </div>
@@ -1839,6 +1395,163 @@
       box-shadow: 0 4px 18px rgba(127, 200, 195, 0.13);
       background: rgba(127, 200, 195, 0.07);
     }
+
+    /* NOWY UKŁAD: FILTRY PO LEWEJ, POKOJE PO PRAWEJ */
+    .rooms-page-layout {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      max-width: 1400px;
+      margin: 0 auto 0 auto;
+      padding: 2rem 1rem 0 1rem;
+    }
+    .filters-sidebar {
+      flex: 0 0 340px;
+      min-width: 260px;
+      max-width: 380px;
+      position: sticky;
+      top: 90px;
+      z-index: 10;
+    }
+    .rooms-main-content {
+      flex: 1 1 0%;
+      min-width: 0;
+    }
+    @media (max-width: 1100px) {
+      .rooms-page-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .filters-sidebar {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .rooms-page-layout {
+        flex-direction: column;
+        padding: 1rem 0.2rem 0 0.2rem;
+      }
+      .filters-sidebar {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-bottom: 1.2rem;
+      }
+    }
+    /* Ukryj starą sekcję filtrów (na wszelki wypadek) */
+    .filters-section { display: none !important; }
+
+    /* --- Wyrównanie wysokości kart pokoi --- */
+    .rooms-grid-dynamic {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      align-items: stretch;
+    }
+    .room-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 520px;
+      max-height: 100%;
+      box-sizing: border-box;
+      padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+    }
+    .room-thumb {
+      margin-left: -1.2rem;
+      margin-right: -1.2rem;
+      margin-top: -1.5rem;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      overflow: hidden;
+    }
+    .room-card > h3,
+    .room-card > p,
+    .room-icons,
+    .room-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @media (max-width: 700px) {
+      .room-card {
+        padding: 1rem 0.7rem 1.2rem 0.7rem;
+      }
+      .room-thumb {
+        margin-left: -0.7rem;
+        margin-right: -0.7rem;
+        margin-top: -1rem;
+      }
+    }
+
+    /* Grid dla pokoi z prywatną łazienką - równe karty w jednym rzędzie */
+    .rooms-private-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      align-items: stretch;
+    }
+    .rooms-private-grid .room-card {
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    @media (max-width: 700px) {
+      .rooms-private-grid {
+        grid-template-columns: 1fr;
+      }
+      .rooms-private-grid .room-card {
+        min-height: 420px;
+      }
+    }
+
+    /* Obramowanie i cień dla wszystkich kart pokoi */
+    .room-card {
+      border: 2.5px solid rgba(127, 200, 195, 0.25) !important;
+      border-radius: 22px !important;
+      box-shadow: 0 8px 25px rgba(45, 54, 72, 0.10);
+      background: #fff;
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+    .room-card:hover {
+      box-shadow: 0 12px 32px rgba(45, 54, 72, 0.16);
+      border-color: var(--accent2);
+    }
+    .room-thumb {
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      overflow: hidden;
+    }
+    /* Usuwam styl room-badge featured */
+    .room-badge.featured { display: none !important; }
+
+    .room-thumb img {
+      margin-top: 18px;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .room-icons { display: none !important; }
+
+    .room-category-header {
+      width: 100%;
+      margin: 0 auto 1.2rem auto;
+      text-align: center;
+    }
+    .category-title-styled {
+      font-size: 2.1rem;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
   </style>
 </body>
+</html> 
 </html> 

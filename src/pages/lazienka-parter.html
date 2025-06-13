@@ -294,41 +294,41 @@
     </div>
   </div>
 </div>
-
-<main>
-  <section class="section">
-    <h1>Łazienka i toaleta - parter</h1>
-    <p style="font-size:1.2rem;max-width:700px;margin-bottom:2rem;">Łazienka i toaleta na parterze dostępna dla wszystkich gości, regularnie sprzątana i wyposażona w niezbędne udogodnienia.</p>
-    <div class="gallery">
-      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8600 2.webp" alt="Łazienka parter 1" onclick="openLightbox(this.src)" />
-      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8659.webp" alt="Łazienka parter 2" onclick="openLightbox(this.src)" />
-      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8602.webp" alt="Łazienka parter 3" onclick="openLightbox(this.src)" />
-      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8592.webp" alt="Łazienka parter 4" onclick="openLightbox(this.src)" />
-      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8597.webp" alt="Łazienka parter 5" onclick="openLightbox(this.src)" />
-      <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8593 2.webp" alt="Łazienka parter 6" onclick="openLightbox(this.src)" />
-    </div>
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-      <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
-    </div>
-  </section>
-</main>
-
-<!-- Stopka generowana z komponentu -->
-<div id="footer-placeholder"></div>
-<link rel="stylesheet" href="../components/footer.css">
-<script>
-  function openLightbox(src) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').classList.add('active');
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-  }
-  fetch('../components/footer.html')
-    .then(response => response.text())
-    .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
-</script>
-<script src="../assets/main.js" defer></script>
+  
+  <main>
+    <section class="section">
+      <h1>Łazienka i toaleta - parter</h1>
+      <p style="font-size:1.2rem;max-width:700px;margin-bottom:2rem;">Łazienka i toaleta na parterze dostępna dla wszystkich gości, regularnie sprzątana i wyposażona w niezbędne udogodnienia.</p>
+      <div class="gallery">
+        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8600 2.webp" alt="Łazienka parter 1" onclick="openLightbox(this.src)" />
+        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8659.webp" alt="Łazienka parter 2" onclick="openLightbox(this.src)" />
+        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8602.webp" alt="Łazienka parter 3" onclick="openLightbox(this.src)" />
+        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8592.webp" alt="Łazienka parter 4" onclick="openLightbox(this.src)" />
+        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8597.webp" alt="Łazienka parter 5" onclick="openLightbox(this.src)" />
+        <img src="../images/rooms/piętro 0, lazienka, toaleta wejscie pietro 0/IMG_8593 2.webp" alt="Łazienka parter 6" onclick="openLightbox(this.src)" />
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+      </div>
+    </section>
+  </main>
+  
+  <!-- Stopka generowana z komponentu -->
+  <div id="footer-placeholder"></div>
+  <link rel="stylesheet" href="../components/footer.css">
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
+  <script src="../assets/main.js" defer></script>
 </body>
 </html> 
