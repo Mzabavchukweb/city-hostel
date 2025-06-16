@@ -335,12 +335,14 @@
     // Sterowanie panoramą
     document.getElementById('rotate-left').addEventListener('click', () => {
       if (window.panoramaViewer) {
-        window.panoramaViewer.rotate({ longitude: -0.5 });
+        const pos = window.panoramaViewer.getPosition();
+        window.panoramaViewer.rotate({ longitude: pos.longitude - 0.3, latitude: pos.latitude });
       }
     });
     document.getElementById('rotate-right').addEventListener('click', () => {
       if (window.panoramaViewer) {
-        window.panoramaViewer.rotate({ longitude: 0.5 });
+        const pos = window.panoramaViewer.getPosition();
+        window.panoramaViewer.rotate({ longitude: pos.longitude + 0.3, latitude: pos.latitude });
       }
     });
     document.getElementById('zoom-in').addEventListener('click', () => {

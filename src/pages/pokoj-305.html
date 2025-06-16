@@ -291,6 +291,20 @@
         <div>
           <div class="panorama-360-container">
             <h3>Wirtualny spacer 360°</h3>
+            <div class="panorama-controls">
+              <button class="panorama-btn" id="rotate-left" title="Obróć w lewo">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              </button>
+              <button class="panorama-btn" id="zoom-out" title="Oddal">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </button>
+              <button class="panorama-btn" id="zoom-in" title="Przybliż">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </button>
+              <button class="panorama-btn" id="rotate-right" title="Obróć w prawo">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+              </button>
+            </div>
             <div id="panorama-viewer" class="panorama-viewer"></div>
           </div>
           <h2>Galeria zdjęć</h2>
@@ -342,7 +356,31 @@
   </script>
   <script>fetch("../components/footer.html").then(response => response.text()).then(html => { const footerPlaceholder = document.getElementById("footer-placeholder"); if (footerPlaceholder) { footerPlaceholder.innerHTML = html; } }).catch(error => { console.warn("Footer loading failed:", error); });</script><script src="../assets/rooms/room-scripts.js"></script>
   <script>
+    // Inicjalizacja widoku 360° dla tego pokoju
     initPanoramaViewer('panorama-viewer', '../images/rooms360/pokoj nr 305.jpg');
+    // Sterowanie panoramą
+    document.getElementById('rotate-left').addEventListener('click', () => {
+      if (window.panoramaViewer) {
+        const pos = window.panoramaViewer.getPosition();
+        window.panoramaViewer.rotate({ longitude: pos.longitude - 0.3, latitude: pos.latitude });
+      }
+    });
+    document.getElementById('rotate-right').addEventListener('click', () => {
+      if (window.panoramaViewer) {
+        const pos = window.panoramaViewer.getPosition();
+        window.panoramaViewer.rotate({ longitude: pos.longitude + 0.3, latitude: pos.latitude });
+      }
+    });
+    document.getElementById('zoom-in').addEventListener('click', () => {
+      if (window.panoramaViewer) {
+        window.panoramaViewer.zoom(window.panoramaViewer.getZoomLevel() + 10);
+      }
+    });
+    document.getElementById('zoom-out').addEventListener('click', () => {
+      if (window.panoramaViewer) {
+        window.panoramaViewer.zoom(window.panoramaViewer.getZoomLevel() - 10);
+      }
+    });
   </script>
   <script src="../assets/main.js" defer></script>
 </body>

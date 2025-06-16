@@ -357,7 +357,7 @@ function initPanoramaViewer(containerId, panoramaPath) {
   window.addEventListener('DOMContentLoaded', function() {
     if (typeof PhotoSphereViewer !== 'undefined' && document.getElementById(containerId)) {
       try {
-        new PhotoSphereViewer.Viewer({
+        window.panoramaViewer = new PhotoSphereViewer.Viewer({
           container: document.getElementById(containerId),
           panorama: panoramaPath,
           loadingImg: null,
@@ -406,4 +406,4 @@ function handleReservationForm() {
       if (select) select.value = room;
     }
   }
-} 
+}
