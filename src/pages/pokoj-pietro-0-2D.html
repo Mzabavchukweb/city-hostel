@@ -13,7 +13,7 @@
 </head>
 <body class="page-with-header-padding">
   <header class="header">
-    <div class="logo"><a href="../../index.html"><span style="font-size:1.1em;font-weight:700;"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
+    <div class="logo"><a href="../../index.html"><span ><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
     <div class="header-right">
       <nav class="nav">
         <ul>
@@ -285,9 +285,14 @@
             <img src="../images/rooms/piętro 0 pok 2D/IMG_8560.webp" alt="Pokój - łóżka" onclick="openLightbox(this.src)" />
             <img src="../images/rooms/piętro 0 pok 2D/IMG_8564.webp" alt="Pokój - wyposażenie" onclick="openLightbox(this.src)" />
           </div>
-          <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+          <div id="lightbox" class="lightbox" tabindex="-1" aria-modal="true" role="dialog" onclick="if(event.target===this)closeLightbox()">
+            <button class="lightbox-prev" aria-label="Poprzednie zdjęcie" onclick="event.stopPropagation();prevLightboxImage();">&#10094;</button>
+            <span class="lightbox-close" onclick="closeLightbox();event.stopPropagation();" tabindex="0" aria-label="Zamknij">&times;</span>
+            <div class="lightbox-img-wrapper">
+              <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+            </div>
+            <button class="lightbox-next" aria-label="Następne zdjęcie" onclick="event.stopPropagation();nextLightboxImage();">&#10095;</button>
+            <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
           </div>
           <h3>Opis pokoju</h3>
           <p class="room-description">

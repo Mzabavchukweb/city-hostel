@@ -285,9 +285,14 @@
             <img src="../images/rooms/piętro 0 pok 3D/IMG_8582 3.webp" alt="Pokój - łóżka" onclick="openLightbox(this.src)" />
             <img src="../images/rooms/piętro 0 pok 3D/IMG_8584 2.webp" alt="Pokój - wyposażenie" onclick="openLightbox(this.src)" />
           </div>
-          <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+          <div id="lightbox" class="lightbox" tabindex="-1" aria-modal="true" role="dialog" onclick="if(event.target===this)closeLightbox()">
+            <button class="lightbox-prev" aria-label="Poprzednie zdjęcie" onclick="event.stopPropagation();prevLightboxImage();">&#10094;</button>
+            <span class="lightbox-close" onclick="closeLightbox();event.stopPropagation();" tabindex="0" aria-label="Zamknij">&times;</span>
+            <div class="lightbox-img-wrapper">
+              <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+            </div>
+            <button class="lightbox-next" aria-label="Następne zdjęcie" onclick="event.stopPropagation();nextLightboxImage();">&#10095;</button>
+            <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
           </div>
           <h3>Opis pokoju</h3>
           <p class="room-description">

@@ -11,13 +11,6 @@
   <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.8.1/dist/photo-sphere-viewer.min.js"></script>
   <style>
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: box-shadow 0.2s; }
-    .gallery img:hover { box-shadow: 0 0 0 4px var(--accent2); }
-    .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 20px; }
-    .lightbox-close { position: absolute; top: 40px; right: 60px; font-size: 3rem; color: #fff; cursor: pointer; }
     .panorama-360-container {
       background: #fff;
       border-radius: 24px;
@@ -55,7 +48,7 @@
 </head>
 <body class="page-with-header-padding">
   <header class="header">
-    <div class="logo"><a href="../../index.html"><span style="font-size:1.1em;font-weight:700;"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
+    <div class="logo"><a href="../../index.html"><span ><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
     <div class="header-right">
       <nav class="nav">
         <ul>
@@ -322,14 +315,13 @@
           </div>
           <h2>Galeria zdjęć</h2>
           <div class="gallery">
-            <img src="../images/rooms/room4/IMG_8342_2.webp" alt="Apartament - widok główny" onclick="openLightbox(this.src)" />
-            <img src="../images/rooms/room4/IMG_8341.webp" alt="Apartament - łazienka" onclick="openLightbox(this.src)" />
-            <img src="../images/rooms/room4/IMG_8345.webp" alt="Apartament - kuchnia" onclick="openLightbox(this.src)" />
-            <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament - salon" onclick="openLightbox(this.src)" />
+            <img src="../images/rooms/room4/IMG_8342_2.webp" alt="Apartament - widok główny"  />
+            <img src="../images/rooms/room4/IMG_8341.webp" alt="Apartament - łazienka"  />
+            <img src="../images/rooms/room4/IMG_8345.webp" alt="Apartament - kuchnia"  />
+            <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament - salon"  />
           </div>
-          <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+            <button class="lightbox-next" aria-label="Następne zdjęcie" onclick="event.stopPropagation();nextLightboxImage();">&#10095;</button>
+            <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
           </div>
           <h3>Opis pokoju</h3>
           <p class="room-description">

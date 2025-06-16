@@ -5,15 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pokój trzyosobowy z prywatną łazienką -  | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/rooms/room-styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.8.1/dist/photo-sphere-viewer.css" />
-  <style>
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: box-shadow 0.2s; }
-    .gallery img:hover { box-shadow: 0 0 0 4px var(--accent2); }
-    .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 20px; }
-    .lightbox-close { position: absolute; top: 40px; right: 60px; font-size: 3rem; color: #fff; cursor: pointer; }
     .panorama-360-container {
       background: #fff;
       border-radius: 24px;
@@ -47,11 +40,12 @@
       #panorama-113 { height: 300px; max-width: 100%; }
       .panorama-360-container h3 { font-size: 1.3rem; margin-bottom: 1rem; }
     }
+  <style>
   </style>
 </head>
 <body class="page-with-header-padding">
   <header class="header">
-    <div class="logo"><a href="../../index.html"><span style="font-size:1.1em;font-weight:700;"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
+    <div class="logo"><a href="../../index.html"><span ><span >city</span> <span >HOSTEL</span></span></a></div>
     <div class="header-right">
       <nav class="nav">
         <ul>
@@ -106,7 +100,7 @@
               <polyline points="9,22 9,12 15,12 15,22"/>
             </svg>
           </div>
-          <span class="logo-text"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span>
+          <span class="logo-text"><span >city</span> <span >HOSTEL</span></span>
         </div>
         <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -301,16 +295,16 @@
     </div>
   </div>
   <main>
-    <section class="hero-slider wave-section" style="min-height:60vh;background:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);">
-      <div class="hero-content" style="max-width:800px;margin:0 auto;text-align:center;padding:6rem 2rem 4rem 2rem;">
-        <h1 class="hero-title" style="font-size:3rem;color:var(--white);">Pokój trzyosobowy z prywatną łazienką</h1>
-        <p class="hero-lead" style="color:rgba(255,255,255,0.9);">Przytulny pokój dla trzech osób z łazienką w pokoju i podstawowymi udogodnieniami.</p>
+    <section class="hero-slider wave-section room-hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Pokój trzyosobowy z prywatną łazienką</h1>
+        <p class="hero-lead">Przytulny pokój dla trzech osób z łazienką w pokoju i podstawowymi udogodnieniami.</p>
         <button class="hero-cta" onclick="window.location.href='zapytaj-o-rezerwacje.html?room=Pok%C3%B3j%20trzyosobowy%20z%20prywatn%C4%85%20%C5%82azienk%C4%85%2C%20nr%20113%2C%20170%20z%C5%82%2C%20Wi-Fi%2C%20TV%2C%20lod%C3%B3wka'">Zapytaj o rezerwację</button>
       </div>
       <div class="wave"></div>
     </section>
     <section class="section">
-      <div style="display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:start;">
+      <div >
         <div>
           <div class="panorama-360-container">
             <h3>Wirtualny spacer 360°</h3>
@@ -318,15 +312,11 @@
           </div>
           <h2>Galeria zdjęć</h2>
           <div class="gallery">
-            <img src="../images/rooms/room113/IMG_8687.webp" alt="Pokój 113 - widok główny" onclick="openLightbox(this.src)" />
-            <img src="../images/rooms/room113/IMG_8690.webp" alt="Pokój 113 - łóżko" onclick="openLightbox(this.src)" />
-          </div>
-          <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+            <img src="../images/rooms/room113/IMG_8687.webp" alt="Pokój 113 - widok główny" />
+            <img src="../images/rooms/room113/IMG_8690.webp" alt="Pokój 113 - łóżko" />
           </div>
           <h3>Opis pokoju</h3>
-          <p style="line-height:1.8;color:var(--text-light);margin-bottom:2rem;">
+          <p >
             Przytulny pokój dla trzech osób z łazienką w pokoju<br>
             ✓ Prywatna łazienka<br>
             ✓ Ręczniki i pościel w pokoju<br>
@@ -336,20 +326,20 @@
           </p>
         </div>
         <div>
-          <div class="room-card" style="position:sticky;top:6rem;">
+          <div class="room-card room-details-card">
             <h3>Szczegóły rezerwacji</h3>
-            <div style="margin:1.5rem 0;">
-              <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+            <div >
+              <div >
                 <span>Cena za dobę:</span>
-                <strong style="color:var(--accent);font-size:1.2rem;">170 zł</strong>
+                <strong >170 zł</strong>
               </div>
               <div class="booking-detail-row">
                 <span>Maksymalnie osób:</span>
                 <strong>3</strong>
               </div>
             </div>
-            <button class="hero-cta" style="width:100%;margin-bottom:1rem;">Zarezerwuj teraz</button>
-            <a href="pokoje.html" class="details-btn" style="width:100%;text-align:center;display:block;text-decoration:none;">Powrót do listy pokoi</a>
+            <button class="hero-cta" >Zarezerwuj teraz</button>
+            <a href="pokoje.html" class="details-btn">Powrót do listy pokoi</a>
           </div>
         </div>
       </div>
@@ -359,33 +349,14 @@
   <div id="footer-placeholder"></div>
   <link rel="stylesheet" href="../components/footer.css">
   <script>
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').classList.add('active');
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-    // Inicjalizacja Photo Sphere Viewer
-    window.addEventListener('DOMContentLoaded', function() {
-      if (typeof PhotoSphereViewer !== 'undefined' && document.getElementById('panorama-113')) {
-        new PhotoSphereViewer.Viewer({
-          container: document.getElementById('panorama-113'),
-          panorama: '../images/rooms360/pokoj nr 113.jpg',
-          loadingImg: null,
-          navbar: ["zoom", "fullscreen"],
-        });
-      } else if (typeof PhotoSphereViewer === 'undefined') {
-        // Silent fallback - hide panorama container if library not loaded
-        const panoramaContainer = document.querySelector('.panorama-360-container');
-        if (panoramaContainer) {
-          panoramaContainer.style.display = 'none';
-        }
-      }
-    });
     fetch('../components/footer.html')
       .then(response => response.text())
       .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
+  <script src="../assets/rooms/room-scripts.js"></script>
+  <script>
+    // Inicjalizacja Photo Sphere Viewer
+    initPanoramaViewer('panorama-113', '../images/rooms360/pokoj nr 113.jpg');
   </script>
   <script src="../assets/main.js" defer></script>
 </body>

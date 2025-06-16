@@ -550,6 +550,42 @@
       .then(response => response.text())
       .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
   </script>
+  <script>
+    // Dodaj funkcjonalność kliknięcia w zdjęcia pokoi
+    document.addEventListener('DOMContentLoaded', function() {
+      // Znajdź wszystkie zdjęcia w kartach pokoi
+      const roomImages = document.querySelectorAll('.room-thumb img');
+      
+      roomImages.forEach(img => {
+        // Dodaj cursor pointer
+        img.style.cursor = 'pointer';
+        
+        // Dodaj efekt hover
+        img.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05)';
+          this.style.transition = 'transform 0.3s ease';
+        });
+        
+        img.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+        });
+        
+        // Dodaj funkcjonalność kliknięcia
+        img.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Znajdź link "Zobacz szczegóły" w tej samej karcie pokoju
+          const roomCard = this.closest('.room-card');
+          const detailsLink = roomCard.querySelector('.details-btn');
+          
+          if (detailsLink && detailsLink.href) {
+            // Przekieruj do strony pokoju
+            window.location.href = detailsLink.href;
+          }
+        });
+      });
+    });
+  </script>
   <script src="../assets/main.js" defer></script>
   <style>
     .menu-res-btn {
