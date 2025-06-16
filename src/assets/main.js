@@ -127,7 +127,7 @@ function initSlider() {
   
   function showSlide(index) {
     const prevSlide = currentSlide;
-    const transitionDelay = isMobile ? 400 : 600; // Wydłużone delay
+    const transitionDelay = isMobile ? 200 : 300; // Skrócone z 400/600
     
     // Lazy load następnego slajdu
     const nextIndex = (index + 1) % slides.length;
@@ -153,7 +153,7 @@ function initSlider() {
       if (slides[prevSlide]) {
         slides[prevSlide].classList.add('prev');
       }
-    }, 250); // Wydłużone z 150
+    }, 100); // Skrócone z 250
     
     // Responsywny delay dla płynniejszego efektu fade
     setTimeout(() => {
@@ -179,10 +179,10 @@ function initSlider() {
       clearInterval(slideInterval); // Stop auto slide
       showSlide(index);
       
-      // Restart auto slide po dłuższym czasie po interakcji użytkownika
+      // Restart auto slide po krótszym czasie po interakcji użytkownika
       setTimeout(() => {
         startAutoSlide();
-      }, 15000); // Zwiększone z 10s do 15s
+      }, 5000); // Skrócone z 15s do 5s
     }
   }
   
@@ -192,9 +192,9 @@ function initSlider() {
   }
   
   function startAutoSlide() {
-    // Responsywny timing - dłuższe interwały dla spokojniejszego efektu
+    // Responsywny timing - szybsze interwały
     const isMobile = window.innerWidth <= 768;
-    const interval = isMobile ? 10000 : 12000; // 10s na mobile, 12s na desktop
+    const interval = isMobile ? 4000 : 5000; // 4s na mobile, 5s na desktop (było 10s/12s)
     
     slideInterval = setInterval(() => {
       nextSlide();
@@ -214,10 +214,10 @@ function initSlider() {
   // Pokaż 4. slajd (indeks 3) jako pierwszy
   showSlide(3);
   
-  // Start auto slide po 8 sekundach (więcej czasu na pierwszym slajdzie)
+  // Start auto slide po 2 sekundach (skrócone z 8 sekund)
   setTimeout(() => {
     startAutoSlide();
-  }, 8000);
+  }, 2000);
   
   // OPTIMIZED MOUSE PARALLAX EFFECT
   const heroContent = document.querySelector('.hero-content');

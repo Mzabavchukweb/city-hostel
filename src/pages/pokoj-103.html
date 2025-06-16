@@ -38,7 +38,6 @@
           <button class="lang-option" data-lang="ru">RU</button>
         </div>
       </div>
-      
       <!-- NOWY HAMBURGER BUTTON -->
       <button class="mobile-hamburger" id="mobileMenuToggle" aria-label="Otwórz menu mobilne">
         <span class="hamburger-line"></span>
@@ -47,7 +46,6 @@
       </button>
     </div>
   </header>
-  
   <!-- NOWE MOBILNE MENU -->
   <div class="modern-mobile-menu" id="modernMobileMenu">
     <!-- Animowane tło -->
@@ -56,7 +54,6 @@
       <div class="menu-bg-orb orb-2"></div>
       <div class="menu-bg-orb orb-3"></div>
     </div>
-    
     <!-- Główna zawartość menu -->
     <div class="mobile-menu-content">
       <!-- Header menu -->
@@ -77,7 +74,6 @@
           </svg>
         </button>
       </div>
-      
       <!-- Nawigacja główna -->
       <nav class="mobile-nav-main">
         <a href="../../index.html" class="mobile-nav-item">
@@ -97,7 +93,6 @@
             </svg>
           </div>
         </a>
-        
         <a href="pokoje.html" class="mobile-nav-item">
           <div class="nav-item-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -115,7 +110,6 @@
             </svg>
           </div>
         </a>
-        
         <a href="cennik.html" class="mobile-nav-item">
           <div class="nav-item-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -133,7 +127,6 @@
             </svg>
           </div>
         </a>
-        
         <a href="kontakt.html" class="mobile-nav-item">
           <div class="nav-item-icon">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -151,7 +144,6 @@
           </div>
         </a>
       </nav>
-      
       <!-- Sekcja pozostałych hosteli -->
       <div class="mobile-hostels-section">
         <h4 class="hostels-section-title">Pozostałe hostele</h4>
@@ -192,7 +184,6 @@
           </a>
         </div>
       </div>
-      
       <!-- CTA Button -->
       <div class="mobile-cta-section">
         <a href="zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
@@ -212,7 +203,6 @@
           <span class="cta-text">Zapytaj o rezerwację</span>
         </a>
       </div>
-      
       <!-- Language switcher -->
       <div class="mobile-lang-section">
         <h4 class="lang-section-title">Język / Language</h4>
@@ -262,7 +252,6 @@
       </div>
     </div>
   </div>
-  
   <main>
     <section class="hero-slider wave-section room-hero">
       <div class="hero-content">
@@ -338,34 +327,27 @@
   <div id="footer-placeholder"></div>
   <link rel="stylesheet" href="../components/footer.css">
   <script>
-    fetch('../components/footer.html')
-      .then(response => response.text())
-      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
   </script>
-  <script src="../assets/rooms/room-scripts.js"></script>
+  <script>fetch("../components/footer.html").then(response => response.text()).then(html => { const footerPlaceholder = document.getElementById("footer-placeholder"); if (footerPlaceholder) { footerPlaceholder.innerHTML = html; } }).catch(error => { console.warn("Footer loading failed:", error); });</script><script src="../assets/rooms/room-scripts.js"></script>
   <script>
     // Inicjalizacja widoku 360° dla tego pokoju
     initPanoramaViewer('panorama-viewer', '../images/rooms360/pokoj-nr-103.jpg');
-    
     // Sterowanie panoramą
     document.getElementById('rotate-left').addEventListener('click', () => {
       if (window.panoramaViewer) {
         window.panoramaViewer.rotate({ longitude: -0.5 });
       }
     });
-    
     document.getElementById('rotate-right').addEventListener('click', () => {
       if (window.panoramaViewer) {
         window.panoramaViewer.rotate({ longitude: 0.5 });
       }
     });
-    
     document.getElementById('zoom-in').addEventListener('click', () => {
       if (window.panoramaViewer) {
         window.panoramaViewer.zoom(window.panoramaViewer.getZoomLevel() + 10);
       }
     });
-    
     document.getElementById('zoom-out').addEventListener('click', () => {
       if (window.panoramaViewer) {
         window.panoramaViewer.zoom(window.panoramaViewer.getZoomLevel() - 10);
