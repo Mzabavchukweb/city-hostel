@@ -625,6 +625,34 @@ body.homepage-header {
   padding: 16px 32px;
   font-size: 1.1rem;
   font-weight: 700;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+.hero-cta:hover {
+  color: var(--white);
+  transform: translateX(5px);
+}
+
+.hero-cta:hover::before {
+  left: 0;
 }
 
 /* SLIDER NAVIGATION - UKRYTE */
