@@ -112,15 +112,15 @@ function initSlider() {
     return;
   }
   
-  // Preload tylko pierwszego i drugiego obrazu
+  // Preload tylko pierwszego obrazu
   function preloadImages() {
-    slides.forEach((slide) => {
-      const img = slide.querySelector('img');
+    if (slides.length > 0) {
+      const img = slides[0].querySelector('img');
       if (img) {
         const imagePreload = new Image();
         imagePreload.src = img.src;
       }
-    });
+    }
   }
   
   const isMobile = window.innerWidth <= 768;
