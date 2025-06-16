@@ -114,9 +114,9 @@ function initSlider() {
   
   // Preload tylko pierwszego i drugiego obrazu
   function preloadImages() {
-    slides.forEach((slide, index) => {
+    slides.forEach((slide) => {
       const img = slide.querySelector('img');
-      if (img && index < 2) { // Preload tylko pierwsze 2 slajdy
+      if (img) {
         const imagePreload = new Image();
         imagePreload.src = img.src;
       }
