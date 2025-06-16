@@ -527,10 +527,11 @@ body.homepage-header {
   max-width: 800px;
   text-align: center;
   padding: 2rem;
-  background: rgba(20, 24, 32, 0.22); /* jeszcze delikatniejsze tło */
-  border-radius: 22px;
-  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
-  backdrop-filter: blur(2.5px);
+  /* background: none; */
+  background: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
   animation: heroContentFloat 2s ease-out 0.5s both;
   will-change: opacity, transform;
 }
