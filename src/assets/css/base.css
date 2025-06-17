@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* EASY ONE STYLE VARIABLES */
 :root {
@@ -21,59 +21,71 @@
   box-sizing: border-box;
 }
 
+/* GLOBAL TYPOGRAPHY - BASE SETUP - INCREASED FOR ACCESSIBILITY */
 body {
   background: var(--bg);
   color: var(--primary);
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.125rem; /* Zwiększone z 1rem do 1.125rem (18px) */
   line-height: 1.6;
   font-weight: 400;
+  letter-spacing: 0;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* TYPOGRAPHY */
+/* HEADING TYPOGRAPHY - INCREASED SIZES */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--primary);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.2;
+  letter-spacing: 0.01em;
   margin-top: 2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.5rem; /* Zwiększone z 3rem do 3.5rem */
   margin-top: 0;
 }
 
 h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
-  font-weight: 400;
+  font-size: 2.75rem; /* Zwiększone z 2.25rem do 2.75rem */
 }
 
 h3 {
-  font-size: 1.3rem;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
-  font-weight: 400;
-  color: var(--accent);
+  font-size: 2rem; /* Zwiększone z 1.75rem do 2rem */
 }
 
+h4 {
+  font-size: 1.75rem; /* Zwiększone z 1.5rem do 1.75rem */
+}
+
+h5 {
+  font-size: 1.5rem; /* Zwiększone z 1.25rem do 1.5rem */
+}
+
+h6 {
+  font-size: 1.25rem; /* Zwiększone z 1rem do 1.25rem */
+}
+
+/* BODY TEXT TYPOGRAPHY - INCREASED SIZE */
 p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--primary);
-  margin-bottom: 1.2em;
-  margin-top: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.125rem; /* Zwiększone z 1rem do 1.125rem (18px) */
+  line-height: 1.6;
   font-weight: 400;
+  letter-spacing: 0;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
+/* TYPOGRAPHY UTILITIES */
 strong, b {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary);
 }
 
@@ -83,53 +95,246 @@ em, i {
 }
 
 blockquote {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  font-style: italic;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.25rem; /* Zwiększone z 1rem do 1.25rem */
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--accent);
   border-left: 4px solid var(--accent);
   padding-left: 1.2em;
-  margin: 1.5em 0 1.5em 0;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   background: #f8fafc;
 }
 
 ul, ol {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.125rem; /* Zwiększone z 1rem do 1.125rem */
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--primary);
-  margin-bottom: 1.2em;
-  margin-top: 0.5em;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   padding-left: 2em;
 }
 
 li {
-  margin-bottom: 0.4em;
-  font-size: 1.08rem;
-  line-height: 1.7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.125rem; /* Zwiększone z 1rem do 1.125rem */
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--primary);
+  margin-bottom: 0.5em;
+}
+
+/* CSS CLASSES FOR COMMON PATTERNS */
+.logo-brand {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.logo-brand .logo-lower {
+  text-transform: lowercase;
+}
+
+.logo-brand .logo-upper {
+  text-transform: uppercase;
+}
+
+.hero-title-large {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 5.2rem; /* Zwiększone z 4.8rem do 5.2rem */
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: #111827;
+  margin-bottom: 2.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.category-title {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2.5rem; /* Zwiększone z 2.1rem do 2.5rem */
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 2rem;
+}
+
+.attractions-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.attractions-title {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 3.5rem; /* Zwiększone z 3rem do 3.5rem */
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.attractions-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-light);
+  font-size: 1.5rem; /* Zwiększone z 1.3rem do 1.5rem */
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.location-title {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: center;
+  font-size: 2.25rem; /* Zwiększone z 2rem do 2.25rem */
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin-top: 2rem;
+}
+
+.description-large {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.375rem; /* Zwiększone z 1.2rem do 1.375rem */
+  max-width: 700px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.description-medium {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.25rem; /* Zwiększone z 1.1rem do 1.25rem */
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.footer-brand {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.footer-brand .logo-lower {
+  text-transform: lowercase;
+}
+
+.footer-brand .logo-upper {
+  text-transform: uppercase;
+}
+
+.footer-phone-link {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-size: 1.125rem; /* Dodane dla lepszej czytelności */
+}
+
+.regulation-list {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.25rem; /* Zwiększone z 1.1rem do 1.25rem */
+  line-height: 2;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  color: var(--primary);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.footer-note {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin-top: 2rem;
+  font-size: 1.25rem; /* Zwiększone z 1.1rem do 1.25rem */
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.dropdown-address {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.0625rem; /* Zwiększone dla lepszej czytelności */
+  color: #7b8794;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
 }
 
 /* RESPONSIVE TYPOGRAPHY */
 @media (max-width: 900px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 1.7rem; }
-  h3 { font-size: 1.1rem; }
+  h1 { font-size: 2.75rem; } /* Zwiększone z 2.5rem */
+  h2 { font-size: 2.25rem; } /* Zwiększone z 1.875rem */
+  h3 { font-size: 1.75rem; } /* Zwiększone z 1.5rem */
+  h4 { font-size: 1.5rem; } /* Zwiększone z 1.25rem */
+  h5 { font-size: 1.375rem; } /* Zwiększone z 1.125rem */
+  h6 { font-size: 1.125rem; } /* Zwiększone z 1rem */
+  
+  .hero-title-large { font-size: 4rem; } /* Zwiększone z 3.5rem */
+  .category-title { font-size: 2.125rem; } /* Zwiększone z 1.8rem */
+  .attractions-title { font-size: 3rem; } /* Zwiększone z 2.5rem */
+  .location-title { font-size: 2rem; } /* Zwiększone z 1.75rem */
 }
 
 @media (max-width: 700px) {
-  p, ul, ol, li, blockquote {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  blockquote {
-    font-size: 1.05rem;
-    padding-left: 0.8em;
-  }
+  body { font-size: 1.0625rem; } /* Zwiększone z 0.95rem do 1.0625rem (17px) */
+  
+  h1 { font-size: 2.25rem; } /* Zwiększone z 2rem */
+  h2 { font-size: 1.75rem; } /* Zwiększone z 1.5rem */
+  h3 { font-size: 1.5rem; } /* Zwiększone z 1.25rem */
+  h4 { font-size: 1.375rem; } /* Zwiększone z 1.125rem */
+  h5 { font-size: 1.25rem; } /* Zwiększone z 1rem */
+  h6 { font-size: 1.125rem; } /* Zwiększone z 0.95rem */
+  
+  p, ul, ol, li, blockquote { font-size: 1.0625rem; } /* Zwiększone z 0.95rem */
+  
+  .hero-title-large { font-size: 3.25rem; } /* Zwiększone z 2.8rem */
+  .category-title { font-size: 1.75rem; } /* Zwiększone z 1.5rem */
+  .attractions-title { font-size: 2.5rem; } /* Zwiększone z 2rem */
+  .attractions-description { font-size: 1.25rem; } /* Zwiększone z 1.1rem */
+  .location-title { font-size: 1.75rem; } /* Zwiększone z 1.5rem */
+  .description-large { font-size: 1.25rem; } /* Zwiększone z 1.1rem */
+  .description-medium { font-size: 1.125rem; } /* Zwiększone z 1rem */
 }
 
 @media (max-width: 600px) {
-  h1 { font-size: 1.7rem; }
-  h2 { font-size: 1.2rem; }
-  h3 { font-size: 1rem; }
+  h1 { font-size: 2rem; } /* Zwiększone z 1.75rem */
+  h2 { font-size: 1.625rem; } /* Zwiększone z 1.375rem */
+  h3 { font-size: 1.375rem; } /* Zwiększone z 1.125rem */
+  
+  .hero-title-large { font-size: 2.75rem; } /* Zwiększone z 2.2rem */
+  .category-title { font-size: 1.5rem; } /* Zwiększone z 1.3rem */
+  .attractions-title { font-size: 2rem; } /* Zwiększone z 1.75rem */
+}
+
+@media (max-width: 480px) {
+  .hero-title-large { font-size: 2.25rem; } /* Zwiększone z 1.8rem */
+  .attractions-title { font-size: 1.75rem; } /* Zwiększone z 1.5rem */
 } 

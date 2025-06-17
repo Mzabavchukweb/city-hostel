@@ -5,24 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Cennik City Hostel Szczecin - pokoje od 190 zł za dobę. Studio Lux od 250 zł, Studio Standard od 230 zł, Economy od 190 zł. Atrakcyjne ceny w centrum Szczecina." />
   <title>Cennik | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="../assets/css/base.css" />
   <link rel="stylesheet" href="../assets/style.css" />
   <style>
     body { background: #f7fafc; }
-    .price-main-wrap { max-width: 1050px; margin: 0 auto; padding: 2.5rem 1rem 4rem 1rem; }
+    .price-main-wrap { max-width: 1050px; margin: 0 auto; padding: 4rem 1rem 5rem 1rem; }
     .price-header { text-align: center; margin-bottom: 2.5rem; }
-    .price-header h1 { font-size: 2.3rem; font-weight: 700; letter-spacing: 0.01em; color: var(--primary); margin-bottom: 0.7rem; }
+    .price-header h1 {
+      font-size: 4.8rem;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      color: #111827;
+      margin-bottom: 2.2rem;
+      text-transform: uppercase;
+      text-shadow: 0 4px 24px #b6e0fe33, 0 1px 0 #fff;
+    }
     .price-header .price-note { font-size: 1.1rem; color: #7b8794; font-weight: 400; margin-bottom: 0.2rem; }
     .price-header .price-date { font-size: 1.08rem; color: var(--accent); font-weight: 500; margin-bottom: 0.2rem; }
-    .price-section { margin-bottom: 3.5rem; }
-    .price-section-title { font-size: 1.25rem; font-weight: 600; color: var(--primary); margin-bottom: 1.7rem; letter-spacing: 0.01em; text-align:left; padding-left:0.2em; }
-    .price-grid { display: flex; flex-wrap: wrap; gap: 2.7rem 3.5rem; justify-content: center; margin-top: 0.5rem; }
-    .price-card { background: #fff; border-radius: 1.3rem; box-shadow: 0 4px 32px 0 rgba(0,0,0,0.07); border: 1.5px solid #e5e7eb; padding: 2.2rem 1.7rem 2.1rem 1.7rem; display: flex; flex-direction: column; align-items: center; transition: box-shadow .18s, transform .18s, border .18s; cursor: pointer; min-width: 230px; min-height: 220px; max-width: 270px; margin-bottom: 0.5rem; position: relative; overflow: hidden; }
-    .price-card:hover { box-shadow: 0 12px 40px 0 rgba(127,200,195,0.13); border: 1.5px solid var(--accent); transform: translateY(-3px) scale(1.025); }
-    .price-room { font-size: 1.18rem; font-weight: 500; color: var(--primary); margin-bottom: 0.7rem; letter-spacing: 0.01em; text-align: center; }
-    .price-value { font-size: 2.5rem; font-weight: 300; color: var(--accent); margin-bottom: 0.5rem; letter-spacing: 0.01em; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.1; }
-    .price-persons { font-size: 1.05rem; color: #374151; font-weight: 400; margin-bottom: 0.2rem; letter-spacing: 0.01em; }
+    .price-section { margin-bottom: 5rem; padding-top: 2.5rem; }
+    .price-section-title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #1a2533;
+      margin-bottom: 2.2rem;
+      letter-spacing: 0.01em;
+      text-align:left;
+      padding-left:0.2em;
+      text-shadow: 0 2px 12px #a7f3d033, 0 1px 0 #fff;
+    }
+    @media (max-width:600px){
+      .price-section-title{font-size:1.3rem;margin-bottom:1.2rem;text-align:center;padding-left:0;}
+      .price-main-wrap{padding:2.2rem 0.2rem 3rem 0.2rem;}
+      .price-header h1{font-size:3.2rem;margin-bottom:1.3rem;}
+      .price-section{margin-bottom:2.5rem;padding-top:1.2rem;}
+      .price-grid{gap:1.5rem;}
+    }
+    .price-grid { display: flex; flex-wrap: wrap; gap: 3.2rem 4.2rem; justify-content: center; margin-top: 1.5rem; }
+    .price-card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 1.3rem;
+      box-shadow: 0 4px 24px 0 rgba(127,200,195,0.10), 0 1.5px 8px 0 rgba(0,0,0,0.03);
+      border: 1.5px solid #e5e7eb;
+      padding: 2.2rem 1.7rem 2.1rem 1.7rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow .16s, transform .16s, border .16s, background .16s;
+      cursor: pointer;
+      min-width: 230px;
+      min-height: 220px;
+      max-width: 270px;
+      margin-bottom: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card:hover {
+      box-shadow: 0 8px 32px 0 rgba(127,200,195,0.13), 0 2px 12px 0 rgba(0,0,0,0.06);
+      border: 1.5px solid var(--accent);
+      background: rgba(255,255,255,1);
+      transform: translateY(-2px) scale(1.018);
+    }
+    .price-room { font-size: 1.18rem; font-weight: 500; color: #2d3748; margin-bottom: 0.7rem; letter-spacing: 0.01em; text-align: center; opacity: 0.93; }
+    .price-value { font-size: 2.5rem; font-weight: 300; color: var(--accent); margin-bottom: 0.5rem; letter-spacing: 0.01em; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.1; text-shadow: 0 2px 12px #b6e0fe33, 0 1px 0 #fff; }
+    .price-persons { font-size: 1.05rem; color: #2d3748; font-weight: 400; margin-bottom: 0.2rem; letter-spacing: 0.01em; opacity: 0.93; }
     @media (max-width:900px){.price-grid{gap:2.2rem 1.2rem;}}
-    @media (max-width:600px){.price-main-wrap{padding:1.2rem 0.2rem;}.price-grid{flex-direction:column;gap:1.2rem;}.price-card{padding:1.2rem 0.7rem;min-width:0;max-width:100%;min-height:140px;}.price-header h1{font-size:1.3rem;}.price-value{font-size:1.5rem;}.price-section-title{text-align:center;padding-left:0;}}
+    @media (max-width:600px){.price-main-wrap{padding:1.2rem 0.2rem;}.price-grid{flex-direction:column;gap:1.2rem;}.price-card{padding:1.2rem 0.7rem;min-width:0;max-width:100%;min-height:140px;}.price-header h1{font-size:3.2rem;}.price-value{font-size:1.5rem;}.price-section-title{text-align:center;padding-left:0;}}
     .apartament-card .apartment-prices {
       display: flex;
       flex-direction: column;
@@ -38,11 +85,12 @@
     }
     .apartment-label {
       font-size: 1.08rem;
-      color: #7b8794;
+      color: #2d3748;
       font-weight: 400;
       min-width: 70px;
       text-align: right;
       letter-spacing: 0.01em;
+      opacity: 0.93;
     }
     .apartment-value {
       font-size: 2.1rem;
@@ -51,16 +99,30 @@
       letter-spacing: 0.01em;
       font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
       line-height: 1.1;
+      text-shadow: 0 2px 12px #b6e0fe33, 0 1px 0 #fff;
     }
     @media (max-width:600px){
       .apartment-value{font-size:1.3rem;}
       .apartment-label{font-size:0.98rem;}
     }
+    body::before {
+      content: '';
+      position: fixed;
+      z-index: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 20% 10%, #b6e0fe 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 20%, #fef9c3 0%, transparent 75%),
+                  radial-gradient(ellipse at 60% 80%, #a7f3d0 0%, transparent 75%),
+                  linear-gradient(120deg, #f7fafc 60%, #e0f2fe 100%);
+      opacity: 0.32;
+    }
+    .price-main-wrap, .price-card { position: relative; z-index: 1; }
   </style>
 </head>
 <body class="page-with-header-padding">
   <header class="header">
-    <div class="logo"><a href="../../index.html"><span style="font-size:1.1em;font-weight:700;"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
+    <div class="logo"><a href="../../index.html"><span class="logo-brand"><span class="logo-lower">city</span> <span class="logo-upper">HOSTEL</span></span></a></div>
     <div class="header-right">
       <nav class="nav">
         <ul>
@@ -115,7 +177,7 @@
               <polyline points="9,22 9,12 15,12 15,22"/>
             </svg>
           </div>
-          <span class="logo-text"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span>
+          <span class="logo-text logo-brand"><span class="logo-lower">city</span> <span class="logo-upper">HOSTEL</span></span>
         </div>
         <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -313,10 +375,10 @@
   <main>
     <div class="price-main-wrap">
       <div class="price-header">
-        <h1>Cennik pokoi</h1>
+        <h1 class="hero-title" style="font-size:4.8rem;font-weight:300;letter-spacing:0.03em;color:#111827;margin-bottom:2.2rem;text-transform:uppercase;text-align:center;">Cennik</h1>
         <div class="price-date">Cennik obowiązuje od 01.07.2025</div>
         <div class="price-note">Do tego czasu obowiązują stare ceny.</div>
-      </div>
+              </div>
       <section class="price-section">
         <h2 class="price-section-title">Pokoje z prywatną łazienką</h2>
         <div class="price-grid">
@@ -329,11 +391,11 @@
             <div class="apartment-prices">
               <div class="apartment-price-row"><span class="apartment-label">1 osoba</span><span class="apartment-value">200 zł</span></div>
               <div class="apartment-price-row"><span class="apartment-label">2 osoby</span><span class="apartment-value">270 zł</span></div>
-            </div>
+              </div>
             <div class="price-persons">1-2 osoby</div>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
       <section class="price-section">
         <h2 class="price-section-title">Pokoje Economy (ze wspólną łazienką)</h2>
         <div class="price-grid">
@@ -341,8 +403,8 @@
           <div class="price-card"><div class="price-room">Pokój 2-osobowy Economy</div><div class="price-value">160 zł</div><div class="price-persons">2 osoby</div></div>
           <div class="price-card"><div class="price-room">Pokój 3-osobowy Economy</div><div class="price-value">180 zł</div><div class="price-persons">3 osoby</div></div>
           <div class="price-card"><div class="price-room">Pokój 4-osobowy Economy</div><div class="price-value">220 zł</div><div class="price-persons">4 osoby</div></div>
-        </div>
-      </section>
+      </div>
+    </section>
     </div>
   </main>
   <!-- Stopka generowana z komponentu -->

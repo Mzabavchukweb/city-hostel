@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Pokoje w City Hostel Szczecin - Studio Lux z kuchnią, Studio Standard z aneksem, pokoje Economy. Wszystkie z prywatną łazienką. Centrum Szczecina." />
   <title>Pokoje | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="../assets/css/base.css" />
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body class="page-with-header-padding">
   <header class="header">
-    <div class="logo"><a href="../../index.html"><span style="font-size:1.1em;font-weight:700;"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span></a></div>
+    <div class="logo"><a href="../../index.html"><span class="logo-brand"><span class="logo-lower">city</span> <span class="logo-upper">HOSTEL</span></span></a></div>
     <div class="header-right">
       <nav class="nav">
         <ul>
@@ -64,7 +65,7 @@
               <polyline points="9,22 9,12 15,12 15,22"/>
             </svg>
           </div>
-          <span class="logo-text"><span style="text-transform:lowercase;">city</span> <span style="text-transform:uppercase;">HOSTEL</span></span>
+          <span class="logo-text logo-brand"><span class="logo-lower">city</span> <span class="logo-upper">HOSTEL</span></span>
         </div>
         <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -260,6 +261,7 @@
   </div>
   
   <main>
+            <h1 class="hero-title-large">Pokoje</h1>
     <!-- DYNAMICZNA SEKCJA HERO Z ANIMOWANYM GRADIENTEM -->
     <!-- Usunięto hero-content-rooms na życzenie -->
       <div class="wave"></div>
@@ -270,7 +272,7 @@
         <!-- Wszystkie pokoje w jednej dynamicznej siatce -->
         <div class="rooms-grid-dynamic" id="rooms-all">
           <div class="room-category-header">
-            <h2 class="category-title-styled" style="font-size:2.1rem;letter-spacing:0.01em;font-weight:700;text-align:center;margin-bottom:1.2rem;color:var(--primary);text-transform:uppercase;">POKOJE Z PRYWATNĄ ŁAZIENKĄ</h2>
+            <h2 class="category-title">POKOJE Z PRYWATNĄ ŁAZIENKĄ</h2>
           </div>
           <!-- POKOJE Z PRYWATNĄ ŁAZIENKĄ -->
           <div class="rooms-list rooms-private-grid" id="rooms-private">
@@ -393,7 +395,7 @@
     <!-- SEKCJE POKOI - NOWY DYNAMICZNY LAYOUT -->
     <section class="section">
       <h2>POKOJE ZE WSPÓLNĄ ŁAZIENKĄ ( NA KORYTARZU )</h2>
-      <p style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary); font-size: 1.1rem;">Tańsza opcja dla gości, którym nie przeszkadza dzielenie łazienki z innymi. Wspólna łazienka znajduje się na korytarzu i jest regularnie sprzątana.</p>
+        <p class="description-medium">Tańsza opcja dla gości, którym nie przeszkadza dzielenie łazienki z innymi. Wspólna łazienka znajduje się na korytarzu i jest regularnie sprzątana.</p>
       <div class="rooms-list" id="rooms-shared">
         <div class="room-card" data-type="wspolna" data-persons="1" data-price="90" data-amenities="wifi,tv,lodowka,wspolna-lazienka,reczniki,posciel" data-desc="pokój jednoosobowy ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi lodówka">
           <div class="room-thumb">

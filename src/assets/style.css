@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Pacifico&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Typography imports moved to base.css */
 
 /* EASY ONE STYLE VARIABLES */
 :root {
@@ -21,45 +21,9 @@
   box-sizing: border-box;
 }
 
-body {
-  background: var(--bg);
-  color: var(--primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  font-weight: 400;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Body typography rules moved to base.css */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--primary);
-  font-weight: 500;
-  line-height: 1.3;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.02em;
-}
-h1 {
-  font-size: 3.5rem;
-  margin-top: 0;
-}
-h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
-  font-weight: 400;
-}
-h3 {
-  font-size: 1.3rem;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
-  font-weight: 400;
-  color: var(--accent);
-}
+/* Heading typography rules moved to base.css */
 
 /* PADDING FOR NON-HERO PAGES */
 body:not(:has(.hero-slider)) {
@@ -178,12 +142,12 @@ body.homepage-header {
 }
 
 .logo a {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--primary);
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.01em;
   transition: color 0.3s ease;
   display: flex;
   align-items: center;
@@ -1832,67 +1796,7 @@ body.homepage-header {
   }
 }
 
-/* === TYPOGRAFIA: SPÓJNE STYLE TEKSTU === */
-p {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--primary);
-  margin-bottom: 1.2em;
-  margin-top: 0;
-  font-weight: 400;
-}
-
-strong, b {
-  font-weight: 700;
-  color: var(--primary);
-}
-
-em, i {
-  font-style: italic;
-  color: var(--primary);
-}
-
-blockquote {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--accent);
-  border-left: 4px solid var(--accent);
-  padding-left: 1.2em;
-  margin: 1.5em 0 1.5em 0;
-  background: #f8fafc;
-  font-weight: 400;
-}
-
-ul, ol {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.7;
-  color: var(--primary);
-  margin-bottom: 1.2em;
-  margin-top: 0.5em;
-  padding-left: 2em;
-}
-
-li {
-  margin-bottom: 0.4em;
-  font-size: 1.08rem;
-  line-height: 1.7;
-  color: var(--primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-@media (max-width: 700px) {
-  p, ul, ol, li, blockquote {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  blockquote {
-    font-size: 1.05rem;
-    padding-left: 0.8em;
-  }
-}
+/* Typography rules moved to base.css */
 
 /* MENU RESERVATION BUTTON */
 .menu-res-btn {
