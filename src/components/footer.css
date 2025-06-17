@@ -5,9 +5,7 @@
   border-top: 3px solid var(--accent);
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
 }
 
 .footer::before {
@@ -21,8 +19,8 @@
 }
 
 .footer-container {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
   padding: 0;
   position: relative;
@@ -215,27 +213,31 @@
 /* FOOTER BOTTOM */
 .footer-bottom {
   border-top: 1px solid rgba(127, 200, 195, 0.2);
-  padding: 1.5rem 5vw;
+  padding: 1.2rem 0;
   background: rgba(0, 0, 0, 0.2);
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
 }
 
 .footer-bottom-content {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .copyright p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #94a3b8;
   line-height: 1.5;
+  width: 100%;
+  text-align: center;
 }
 
 .creator-info {
@@ -341,6 +343,10 @@
   
   .creator-info {
     text-align: center;
+  }
+  
+  .copyright p {
+    font-size: 0.93rem;
   }
 }
 
