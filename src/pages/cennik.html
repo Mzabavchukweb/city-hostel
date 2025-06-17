@@ -6,6 +6,57 @@
   <meta name="description" content="Cennik City Hostel Szczecin - pokoje od 190 zł za dobę. Studio Lux od 250 zł, Studio Standard od 230 zł, Economy od 190 zł. Atrakcyjne ceny w centrum Szczecina." />
   <title>Cennik | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    body { background: #f7fafc; }
+    .price-main-wrap { max-width: 1050px; margin: 0 auto; padding: 2.5rem 1rem 4rem 1rem; }
+    .price-header { text-align: center; margin-bottom: 2.5rem; }
+    .price-header h1 { font-size: 2.3rem; font-weight: 700; letter-spacing: 0.01em; color: var(--primary); margin-bottom: 0.7rem; }
+    .price-header .price-note { font-size: 1.1rem; color: #7b8794; font-weight: 400; margin-bottom: 0.2rem; }
+    .price-header .price-date { font-size: 1.08rem; color: var(--accent); font-weight: 500; margin-bottom: 0.2rem; }
+    .price-section { margin-bottom: 3.5rem; }
+    .price-section-title { font-size: 1.25rem; font-weight: 600; color: var(--primary); margin-bottom: 1.7rem; letter-spacing: 0.01em; text-align:left; padding-left:0.2em; }
+    .price-grid { display: flex; flex-wrap: wrap; gap: 2.7rem 3.5rem; justify-content: center; margin-top: 0.5rem; }
+    .price-card { background: #fff; border-radius: 1.3rem; box-shadow: 0 4px 32px 0 rgba(0,0,0,0.07); border: 1.5px solid #e5e7eb; padding: 2.2rem 1.7rem 2.1rem 1.7rem; display: flex; flex-direction: column; align-items: center; transition: box-shadow .18s, transform .18s, border .18s; cursor: pointer; min-width: 230px; min-height: 220px; max-width: 270px; margin-bottom: 0.5rem; position: relative; overflow: hidden; }
+    .price-card:hover { box-shadow: 0 12px 40px 0 rgba(127,200,195,0.13); border: 1.5px solid var(--accent); transform: translateY(-3px) scale(1.025); }
+    .price-room { font-size: 1.18rem; font-weight: 500; color: var(--primary); margin-bottom: 0.7rem; letter-spacing: 0.01em; text-align: center; }
+    .price-value { font-size: 2.5rem; font-weight: 300; color: var(--accent); margin-bottom: 0.5rem; letter-spacing: 0.01em; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.1; }
+    .price-persons { font-size: 1.05rem; color: #374151; font-weight: 400; margin-bottom: 0.2rem; letter-spacing: 0.01em; }
+    @media (max-width:900px){.price-grid{gap:2.2rem 1.2rem;}}
+    @media (max-width:600px){.price-main-wrap{padding:1.2rem 0.2rem;}.price-grid{flex-direction:column;gap:1.2rem;}.price-card{padding:1.2rem 0.7rem;min-width:0;max-width:100%;min-height:140px;}.price-header h1{font-size:1.3rem;}.price-value{font-size:1.5rem;}.price-section-title{text-align:center;padding-left:0;}}
+    .apartament-card .apartment-prices {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      margin-top: 0.2rem;
+    }
+    .apartment-price-row {
+      display: flex;
+      gap: 1.2rem;
+      align-items: baseline;
+      margin-bottom: 0.1rem;
+    }
+    .apartment-label {
+      font-size: 1.08rem;
+      color: #7b8794;
+      font-weight: 400;
+      min-width: 70px;
+      text-align: right;
+      letter-spacing: 0.01em;
+    }
+    .apartment-value {
+      font-size: 2.1rem;
+      font-weight: 300;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      line-height: 1.1;
+    }
+    @media (max-width:600px){
+      .apartment-value{font-size:1.3rem;}
+      .apartment-label{font-size:0.98rem;}
+    }
+  </style>
 </head>
 <body class="page-with-header-padding">
   <header class="header">
@@ -260,88 +311,39 @@
   </div>
   
   <main>
-    <section class="section">
-      <h1 class="price-title" style="text-align:center;margin-bottom:1.5rem;">Cennik City Hostel Szczecin</h1>
-      <p style="text-align:center;font-size:1.1rem;margin-bottom:2.5rem;color:var(--text-light);">
-        <strong>Nowy cennik obowiązuje od 01.07.2025 r.</strong><br>
-        Do tego czasu obowiązują <a href="#stare-ceny" style="color:var(--accent);text-decoration:underline;">stare ceny</a> (poniżej).
-      </p>
-      <div class="pricing-section">
-        <h2 class="category-title" style="margin-top:2rem;">Pokoje z prywatną łazienką</h2>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="card-header"><h4>Pokój 1-osobowy</h4></div>
-            <div class="price-display"><span class="price">165 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">1 osoba</div>
-            <ul class="features"><li>Prywatna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokój: 310</span></div>
-          </div>
-          <div class="pricing-card">
-            <div class="card-header"><h4>Pokój 2-osobowy</h4></div>
-            <div class="price-display"><span class="price">200 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">2 osoby</div>
-            <ul class="features"><li>Prywatna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokoje: 103, 104, 6</span></div>
-          </div>
-          <div class="pricing-card">
-            <div class="card-header"><h4>Pokój 3-osobowy</h4></div>
-            <div class="price-display"><span class="price">260 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">3 osoby</div>
-            <ul class="features"><li>Prywatna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokój: 113</span></div>
-          </div>
-          <div class="pricing-card">
-            <div class="card-header"><h4>Pokój 4-osobowy</h4></div>
-            <div class="price-display"><span class="price">280 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">4 osoby</div>
-            <ul class="features"><li>Prywatna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokój: 308</span></div>
-          </div>
-          <div class="pricing-card featured">
-            <div class="card-header"><h4>Apartament 2-osobowy</h4></div>
-            <div class="price-display"><span class="price">1 os – 200 zł<br>2 os – 270 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">1-2 osoby</div>
-            <ul class="features"><li>Prywatna łazienka</li><li>Aneks kuchenny</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Apartament: 103</span></div>
-          </div>
-        </div>
-        <h2 class="category-title" style="margin-top:2.5rem;">Pokoje Economy (ze wspólną łazienką)</h2>
-        <div class="pricing-grid">
-          <div class="pricing-card economy">
-            <div class="card-header"><h4>Pokój 1-osobowy</h4></div>
-            <div class="price-display"><span class="price">130 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">1 osoba</div>
-            <ul class="features"><li>Wspólna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokój: 310</span></div>
-          </div>
-          <div class="pricing-card economy">
-            <div class="card-header"><h4>Pokój 2-osobowy</h4></div>
-            <div class="price-display"><span class="price">160 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">2 osoby</div>
-            <ul class="features"><li>Wspólna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokoje: 312, 2D</span></div>
-          </div>
-          <div class="pricing-card economy">
-            <div class="card-header"><h4>Pokój 3-osobowy</h4></div>
-            <div class="price-display"><span class="price">180 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">3 osoby</div>
-            <ul class="features"><li>Wspólna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokoje: 3D, 312</span></div>
-          </div>
-          <div class="pricing-card economy">
-            <div class="card-header"><h4>Pokój 4-osobowy</h4></div>
-            <div class="price-display"><span class="price">220 zł</span><span class="period">za noc</span></div>
-            <div class="capacity">4 osoby</div>
-            <ul class="features"><li>Wspólna łazienka</li><li>TV, Wi-Fi, lodówka</li></ul>
-            <div class="room-list"><span>Pokoje: 305, 1D</span></div>
-          </div>
-        </div>
+    <div class="price-main-wrap">
+      <div class="price-header">
+        <h1>Cennik pokoi</h1>
+        <div class="price-date">Cennik obowiązuje od 01.07.2025</div>
+        <div class="price-note">Do tego czasu obowiązują stare ceny.</div>
       </div>
-      <hr style="margin:3rem 0;">
-      <h2 id="stare-ceny" style="text-align:center;margin-bottom:1rem;">Cennik obowiązujący do 30.06.2025</h2>
-      <p style="text-align:center;color:var(--text-light);margin-bottom:2rem;">Poniżej znajdziesz dotychczasowe ceny obowiązujące do końca czerwca 2025 r.</p>
-      <!-- Możesz tu dodać starą tabelę lub uproszczoną listę, jeśli chcesz zachować archiwalne ceny -->
-    </section>
+      <section class="price-section">
+        <h2 class="price-section-title">Pokoje z prywatną łazienką</h2>
+        <div class="price-grid">
+          <div class="price-card"><div class="price-room">Pokój 1-osobowy z łazienką</div><div class="price-value">165 zł</div><div class="price-persons">1 osoba</div></div>
+          <div class="price-card"><div class="price-room">Pokój 2-osobowy z łazienką</div><div class="price-value">200 zł</div><div class="price-persons">2 osoby</div></div>
+          <div class="price-card"><div class="price-room">Pokój 3-osobowy z łazienką</div><div class="price-value">260 zł</div><div class="price-persons">3 osoby</div></div>
+          <div class="price-card"><div class="price-room">Pokój 4-osobowy z łazienką</div><div class="price-value">280 zł</div><div class="price-persons">4 osoby</div></div>
+          <div class="price-card apartament-card">
+            <div class="price-room">Apartament 2-osobowy</div>
+            <div class="apartment-prices">
+              <div class="apartment-price-row"><span class="apartment-label">1 osoba</span><span class="apartment-value">200 zł</span></div>
+              <div class="apartment-price-row"><span class="apartment-label">2 osoby</span><span class="apartment-value">270 zł</span></div>
+            </div>
+            <div class="price-persons">1-2 osoby</div>
+          </div>
+        </div>
+      </section>
+      <section class="price-section">
+        <h2 class="price-section-title">Pokoje Economy (ze wspólną łazienką)</h2>
+        <div class="price-grid">
+          <div class="price-card"><div class="price-room">Pokój 1-osobowy Economy</div><div class="price-value">130 zł</div><div class="price-persons">1 osoba</div></div>
+          <div class="price-card"><div class="price-room">Pokój 2-osobowy Economy</div><div class="price-value">160 zł</div><div class="price-persons">2 osoby</div></div>
+          <div class="price-card"><div class="price-room">Pokój 3-osobowy Economy</div><div class="price-value">180 zł</div><div class="price-persons">3 osoby</div></div>
+          <div class="price-card"><div class="price-room">Pokój 4-osobowy Economy</div><div class="price-value">220 zł</div><div class="price-persons">4 osoby</div></div>
+        </div>
+      </section>
+    </div>
   </main>
   <!-- Stopka generowana z komponentu -->
   <div id="footer-placeholder"></div>
@@ -399,7 +401,7 @@
     }
 
     .pricing-category {
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
     }
 
     .category-title {
@@ -426,53 +428,35 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.2rem;
       margin-top: 2rem;
     }
 
     .pricing-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 30px rgba(45,54,72,0.08);
-      border: 2px solid var(--border);
-      transition: all 0.4s ease;
+      background: linear-gradient(135deg, #f8fafc 60%, #e6f0fa 100%);
+      border-radius: 1.3rem;
+      box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
+      padding: 2.3rem 1.7rem 2.1rem 1.7rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow .22s, transform .22s, background .22s;
+      border: 1.5px solid #e0e7ef;
       position: relative;
       overflow: hidden;
     }
 
-    .pricing-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-    }
-
     .pricing-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(45,54,72,0.15);
-      border-color: var(--accent);
-    }
-
-    .pricing-card:hover::before {
-      transform: scaleX(1);
+      box-shadow: 0 12px 40px 0 rgba(0,0,0,0.16);
+      background: linear-gradient(135deg, #e6f0fa 60%, #f8fafc 100%);
+      transform: translateY(-4px) scale(1.025);
     }
 
     .pricing-card.featured {
       border-color: var(--accent);
       box-shadow: 0 12px 40px rgba(127,200,195,0.2);
       transform: scale(1.02);
-    }
-
-    .pricing-card.featured::before {
-      transform: scaleX(1);
-      background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
     }
 
     .pricing-card.economy {
@@ -507,11 +491,12 @@
     }
 
     .card-header h4 {
-      font-size: 1.3rem;
+      font-size: 1.32rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
       color: var(--primary);
-      margin: 0 0 0.5rem 0;
-      font-weight: 600;
-      line-height: 1.3;
+      letter-spacing: 0.01em;
+      text-align: center;
     }
 
     .room-number {
@@ -527,42 +512,27 @@
     }
 
     .price-display {
-      text-align: center;
-      margin-bottom: 1rem;
-      padding: 1.5rem 0;
-      background: linear-gradient(135deg, rgba(127,200,195,0.05) 0%, rgba(255,212,163,0.05) 100%);
-      border-radius: 16px;
-      position: relative;
-    }
-
-    .price {
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 2.3rem;
+      font-weight: 800;
       color: var(--accent);
-      display: block;
-      line-height: 1;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 8px rgba(127,200,195,0.08);
     }
 
-    .period {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      font-weight: 500;
-      margin-top: 0.3rem;
+    .price-display .period {
+      font-size: 1.08rem;
+      font-weight: 400;
+      color: #7b8794;
+      margin-left: 0.3rem;
     }
 
     .capacity {
-      text-align: center;
-      font-size: 1rem;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      padding: 0.6rem;
-      background: rgba(127,200,195,0.1);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      font-size: 1.13rem;
+      color: #374151;
+      margin-bottom: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
     }
 
     .capacity svg {
@@ -674,11 +644,6 @@
     @media (max-width: 480px) {
       .pricing-main {
         padding: 2rem 1rem !important;
-      }
-
-      .pricing-intro {
-        font-size: 1rem;
-        margin-bottom: 2rem;
       }
 
       .pricing-card {
