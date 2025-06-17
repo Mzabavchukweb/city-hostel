@@ -6,40 +6,6 @@
   <title>Apartament dwuosobowy z łożem małżeńskim + sofa -  | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/style.css" />
   <link rel="stylesheet" href="../assets/rooms/room-styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.8.1/dist/photo-sphere-viewer.css" />
-    .panorama-360-container {
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 8px 40px 0 rgba(0,0,0,0.13);
-      padding: 2.5rem 2rem 2.5rem 2rem;
-      margin-bottom: 3.5rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    .panorama-360-container h3 {
-      margin-bottom: 2rem;
-      font-size: 2.2rem;
-      color: var(--accent2);
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    #panorama-pokoj-nr-4-alt {
-      width: 100%;
-      max-width: 820px;
-      height: 500px;
-      margin: 0 auto 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 32px 0 rgba(0,0,0,0.13);
-    }
-    @media (max-width: 900px) {
-      .panorama-360-container { padding: 1.2rem 0.2rem; max-width: 100%; }
-      #panorama-pokoj-nr-4-alt { height: 300px; max-width: 100%; }
-      .panorama-360-container h3 { font-size: 1.3rem; margin-bottom: 1rem; }
-    }
   <style>
   </style>
 </head>
@@ -296,10 +262,6 @@
     <section class="section">
       <div >
         <div>
-          <div class="panorama-360-container">
-            <h3>Wirtualny spacer 360°</h3>
-            <div id="panorama-pokoj-nr-4-alt"></div>
-          </div>
           <h2>Galeria zdjęć</h2>
           <div class="gallery">
             <img src="../images/rooms/pokój nr 4/IMG_8341.jpg" alt="Apartament - widok główny" />
@@ -350,23 +312,6 @@
     function closeLightbox() {
       document.getElementById('lightbox').classList.remove('active');
     }
-    // Inicjalizacja Photo Sphere Viewer
-    window.addEventListener('DOMContentLoaded', function() {
-      if (typeof PhotoSphereViewer !== 'undefined' && document.getElementById('panorama-pokoj-nr-4-alt')) {
-        new PhotoSphereViewer.Viewer({
-          container: document.getElementById('panorama-pokoj-nr-4-alt'),
-          panorama: '../images/rooms360/pokoj nr 4.jpg',
-          loadingImg: null,
-          navbar: ["zoom", "fullscreen"],
-        });
-      } else if (typeof PhotoSphereViewer === 'undefined') {
-        // Silent fallback - hide panorama container if library not loaded
-        const panoramaContainer = document.querySelector('.panorama-360-container');
-        if (panoramaContainer) {
-          panoramaContainer.style.display = 'none';
-        }
-      }
-    });
   </script>
   <script>fetch("../components/footer.html").then(response => response.text()).then(html => { const footerPlaceholder = document.getElementById("footer-placeholder"); if (footerPlaceholder) { footerPlaceholder.innerHTML = html; } }).catch(error => { console.warn("Footer loading failed:", error); });</script><script src="../assets/rooms/room-scripts.js"></script><script src="../assets/main.js" defer></script>
 </body>
