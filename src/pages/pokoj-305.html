@@ -306,8 +306,6 @@
   <!-- Stopka generowana z komponentu -->
   <div id="footer-placeholder"></div>
   <link rel="stylesheet" href="../components/footer.css">
-  <script>
-  </script>
   <script>fetch("../components/footer.html").then(response => response.text()).then(html => { const footerPlaceholder = document.getElementById("footer-placeholder"); if (footerPlaceholder) { footerPlaceholder.innerHTML = html; } }).catch(error => { console.warn("Footer loading failed:", error); });</script><script src="../assets/rooms/room-scripts.js"></script>
   <script src="../assets/main.js" defer></script>
 </body>

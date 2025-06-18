@@ -6,6 +6,10 @@
   <title>Pokój dwuosobowy z prywatną łazienką -  | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/css/base.css" /><link rel="stylesheet" href="../assets/style.css" />
   <link rel="stylesheet" href="../assets/rooms/room-styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.8.1/dist/photo-sphere-viewer.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.8.1/dist/photo-sphere-viewer.min.js"></script>
 </head>
 <body class="page-with-header-padding">
   <header class="header">
@@ -267,7 +271,6 @@
             <img src="../images/rooms/room104/IMG_8422.webp" alt="Pokój - wyposażenie"  />
             <img src="../images/rooms/room104/IMG_8429.webp" alt="Pokój - łóżka"  />
           </div>
-          </div>
           <h3>Opis pokoju</h3>
           <p class="room-description">
             Przytulny pokój dla dwóch osób z łazienką w pokoju<br>
@@ -292,7 +295,7 @@
               </div>
             </div>
             <div class="booking-buttons">
-              <a class="hero-cta">Zarezerwuj teraz</a>
+              <a class="hero-cta" href="https://mzabavchukweb.github.io/city-hostel/src/pages/zapytaj-o-rezerwacje.html">Zarezerwuj teraz</a>
               <a href="pokoje.html" class="details-btn">Powrót do listy pokoi</a>
             </div>
           </div>
@@ -303,8 +306,6 @@
   <!-- Stopka generowana z komponentu -->
   <div id="footer-placeholder"></div>
   <link rel="stylesheet" href="../components/footer.css">
-  <script>
-  </script>
   <script>fetch("../components/footer.html").then(response => response.text()).then(html => { const footerPlaceholder = document.getElementById("footer-placeholder"); if (footerPlaceholder) { footerPlaceholder.innerHTML = html; } }).catch(error => { console.warn("Footer loading failed:", error); });</script><script src="../assets/rooms/room-scripts.js"></script>
   <script src="../assets/main.js" defer></script>
 </body>
