@@ -660,6 +660,8 @@ body.homepage-header {
   position: relative;
   will-change: auto;
   border-bottom: 1.5px solid #f0f0f0;
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
 }
 .section:last-child {
   border-bottom: none;
@@ -2211,6 +2213,8 @@ body.homepage-header {
   background: linear-gradient(135deg, var(--accent3) 0%, rgba(127,200,195,0.1) 100%);
   border-radius: 25px;
   border: 2px solid rgba(127,200,195,0.2);
+  margin-top: 5rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .category-title-styled {
@@ -3836,3 +3840,133 @@ html, body {
   text-shadow: 0 2px 12px #b6e0fe33, 0 1px 0 #fff;
   display: block;
 }
+
+#rooms-parter + .room-category-header, #rooms-parter ~ .room-category-header, .room-category-header.poziom0parter, .room-category-header:has(.category-title-styled:contains('poziom 0 parter')) {
+  margin-top: 6rem !important;
+  margin-bottom: 4rem !important;
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.rooms-private-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+.room-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+}
+.room-card .details-btn {
+  margin-top: auto;
+  align-self: center;
+}
+.category-title-styled {
+  font-size: 2.2rem !important;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.room-category-header h2, 
+.room-category-header .category-title,
+.room-category-header .category-title-styled {
+  font-size: 2.2rem !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  margin-top: 2.5rem !important;
+  font-weight: 400 !important;
+  color: var(--primary) !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  gap: unset !important;
+}
+.room-category-header {
+  margin-top: 5rem !important;
+  margin-bottom: 3rem !important;
+  padding: 2rem !important;
+}
+
+.price-section-title {
+  text-align: center !important;
+  font-size: 2.1rem !important;
+  font-weight: 600 !important;
+  color: var(--primary) !important;
+  margin-bottom: 2.5rem !important;
+  letter-spacing: 0.01em;
+  position: relative;
+  padding-bottom: 0.7rem;
+}
+.price-section-title::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.price-section {
+  margin-bottom: 6rem !important;
+  padding-top: 3.5rem !important;
+}
+.price-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem 4.2rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.price-card {
+  background: linear-gradient(135deg, #f8fafc 60%, #e6f0fa 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(127,200,195,0.13), 0 2px 16px 0 rgba(45,54,72,0.10);
+  border: 1.5px solid #e0e7ef;
+  padding: 2.7rem 2.1rem 2.3rem 2.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 250px;
+  min-height: 220px;
+  max-width: 300px;
+  margin-bottom: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .22s, transform .22s, background .22s;
+}
+.price-card:hover {
+  box-shadow: 0 16px 48px 0 rgba(127,200,195,0.18), 0 4px 24px 0 rgba(45,54,72,0.13);
+  background: linear-gradient(135deg, #e6f0fa 60%, #f8fafc 100%);
+  transform: translateY(-6px) scale(1.025);
+}
+.price-room {
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+  opacity: 0.97;
+}
+.price-value {
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px #b6e0fe33, 0 1px 0 #fff;
+  text-align: center;
+  white-space: nowrap;
+}
+@media (max-width:900px){.price-grid{gap:2.2rem 1.2rem;}.price-card{max-width:98vw;}}
+@media (max-width:600px){.price-section-title{font-size:1.3rem;margin-bottom:1.2rem;text-align:center;padding-left:0;}.price-main-wrap{padding:2.2rem 0.2rem 3rem 0.2rem;}.price-header h1{font-size:3.2rem;margin-bottom:1.3rem;}.price-section{margin-bottom:2.5rem;padding-top:1.2rem;}.price-grid{gap:1.2rem;}.price-card{padding:1.2rem 0.7rem;min-width:0;max-width:100%;min-height:140px;}.price-value{font-size:1.5rem;}.price-section-title{text-align:center;padding-left:0;}}
