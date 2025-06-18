@@ -112,7 +112,7 @@
   top: 32px;
   right: 48px;
   background: #fff;
-  color: #222;
+  color: #222 !important;
   border: 2px solid #222;
   box-shadow: 0 4px 24px rgba(0,0,0,0.18);
   width: 54px;
@@ -133,6 +133,15 @@
   border: 2px solid var(--accent);
   box-shadow: 0 8px 32px rgba(45,54,72,0.18);
   transform: scale(1.08);
+}
+.lightbox-close svg {
+  width: 60%;
+  height: 60%;
+  color: inherit;
+  display: block;
+}
+.lightbox-close svg line {
+  stroke: #222 !important;
 }
 .lightbox-thumbs {
   display: none !important;

@@ -46,7 +46,9 @@ function createLightboxHTML() {
   const lightboxHTML = `
     <div id="lightbox" class="lightbox" tabindex="-1" aria-modal="true" role="dialog">
       <div class="lightbox-content">
-        <div class="lightbox-close" onclick="closeLightbox()" aria-label="Zamknij">&times;</div>
+        <div class="lightbox-close" onclick="closeLightbox()" aria-label="Zamknij">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="8" y1="8" x2="24" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="24" y1="8" x2="8" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
         <div class="lightbox-img-container">
           <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage()" aria-label="Poprzednie zdjęcie">&#10094;</button>
           <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
