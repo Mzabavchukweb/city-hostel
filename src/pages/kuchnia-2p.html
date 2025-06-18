@@ -298,7 +298,15 @@
       <h1>Kuchnia - 2 piętro</h1>
               <p class="description-large">Wspólna kuchnia na drugim piętrze wyposażona w niezbędne sprzęty i miejsce do przygotowywania posiłków dla gości hostelu.</p>
       <div class="gallery">
-        <img src="../images/rooms/kuchnia2p/IMG_8528_2.webp" alt="Kuchnia 2 piętro - widok główny" />
+        <img src="../images/rooms/kuchnia2p/IMG_8528_2.webp" alt="Kuchnia 2 piętro - widok główny" onclick="openLightbox(0)" />
+      </div>
+      <div id="lightbox" class="lightbox" tabindex="-1" aria-modal="true" role="dialog" onclick="if(event.target===this)closeLightbox()">
+        <button class="lightbox-prev" aria-label="Poprzednie zdjęcie" onclick="event.stopPropagation();prevLightboxImage();">&#10094;</button>
+        <span class="lightbox-close" onclick="closeLightbox();event.stopPropagation();" tabindex="0" aria-label="Zamknij">&times;</span>
+        <div class="lightbox-img-wrapper">
+          <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+        </div>
+        <button class="lightbox-next" aria-label="Następne zdjęcie" onclick="event.stopPropagation();nextLightboxImage();">&#10095;</button>
       </div>
     </section>
   </main>
@@ -306,7 +314,40 @@
   <!-- Stopka generowana z komponentu -->
   <div id="footer-placeholder"></div>
   <link rel="stylesheet" href="../components/footer.css">
-  <script src="../assets/rooms/room-scripts.js"></script>
+  <script>
+    // Wzorcowy lightbox z pokojów
+    const galleryImages = [
+      '../images/rooms/kuchnia2p/IMG_8528_2.webp'
+    ];
+    let currentImgIndex = 0;
+    function openLightbox(idx) {
+      currentImgIndex = idx;
+      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
+      document.getElementById('lightbox').classList.add('active');
+      document.getElementById('lightbox').focus();
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    function prevLightboxImage() {
+      currentImgIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
+    }
+    function nextLightboxImage() {
+      currentImgIndex = (currentImgIndex + 1) % galleryImages.length;
+      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') prevLightboxImage();
+      if (e.key === 'ArrowRight') nextLightboxImage();
+      if (e.key === 'Escape') closeLightbox();
+    });
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+  </script>
   <script src="../assets/main.js" defer></script>
 </body>
 </html> 
