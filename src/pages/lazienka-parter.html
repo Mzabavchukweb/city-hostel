@@ -301,20 +301,12 @@
       <h1>Łazienka i toaleta - parter</h1>
       <p style="font-size:1.2rem;max-width:700px;margin-bottom:2rem;">Łazienka i toaleta na parterze dostępna dla wszystkich gości, regularnie sprzątana i wyposażona w niezbędne udogodnienia.</p>
       <div class="gallery">
-        <img src="../images/rooms/lazienka_parter/IMG_8600_2.webp" alt="Łazienka parter 1" onclick="openLightbox(0)" />
-        <img src="../images/rooms/lazienka_parter/IMG_8659.webp" alt="Łazienka parter 2" onclick="openLightbox(1)" />
-        <img src="../images/rooms/lazienka_parter/IMG_8602.webp" alt="Łazienka parter 3" onclick="openLightbox(2)" />
-        <img src="../images/rooms/lazienka_parter/IMG_8592.webp" alt="Łazienka parter 4" onclick="openLightbox(3)" />
-        <img src="../images/rooms/lazienka_parter/IMG_8597.webp" alt="Łazienka parter 5" onclick="openLightbox(4)" />
-        <img src="../images/rooms/lazienka_parter/IMG_8593_2.webp" alt="Łazienka parter 6" onclick="openLightbox(5)" />
-      </div>
-      <div id="lightbox" class="lightbox" tabindex="-1" aria-modal="true" role="dialog" onclick="if(event.target===this)closeLightbox()">
-        <button class="lightbox-prev" aria-label="Poprzednie zdjęcie" onclick="event.stopPropagation();prevLightboxImage();">&#10094;</button>
-        <span class="lightbox-close" onclick="closeLightbox();event.stopPropagation();" tabindex="0" aria-label="Zamknij">&times;</span>
-        <div class="lightbox-img-wrapper">
-          <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
-        </div>
-        <button class="lightbox-next" aria-label="Następne zdjęcie" onclick="event.stopPropagation();nextLightboxImage();">&#10095;</button>
+        <img src="../images/rooms/lazienka_parter/IMG_8600_2.webp" alt="Łazienka parter 1" />
+        <img src="../images/rooms/lazienka_parter/IMG_8659.webp" alt="Łazienka parter 2" />
+        <img src="../images/rooms/lazienka_parter/IMG_8602.webp" alt="Łazienka parter 3" />
+        <img src="../images/rooms/lazienka_parter/IMG_8592.webp" alt="Łazienka parter 4" />
+        <img src="../images/rooms/lazienka_parter/IMG_8597.webp" alt="Łazienka parter 5" />
+        <img src="../images/rooms/lazienka_parter/IMG_8593_2.webp" alt="Łazienka parter 6" />
       </div>
     </section>
   </main>
@@ -322,43 +314,7 @@
   <!-- Stopka generowana z komponentu -->
   <div id="footer-placeholder"></div>
   <link rel="stylesheet" href="../components/footer.css">
-  <script>
-    // Lightbox identyczny jak w pokojach
-    const galleryImages = [
-      '../images/rooms/lazienka_parter/IMG_8600_2.webp',
-      '../images/rooms/lazienka_parter/IMG_8659.webp',
-      '../images/rooms/lazienka_parter/IMG_8602.webp',
-      '../images/rooms/lazienka_parter/IMG_8592.webp',
-      '../images/rooms/lazienka_parter/IMG_8597.webp',
-      '../images/rooms/lazienka_parter/IMG_8593_2.webp'
-    ];
-    let currentImgIndex = 0;
-    function openLightbox(idx) {
-      currentImgIndex = idx;
-      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
-      document.getElementById('lightbox').classList.add('active');
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-    function prevLightboxImage() {
-      currentImgIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
-      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
-    }
-    function nextLightboxImage() {
-      currentImgIndex = (currentImgIndex + 1) % galleryImages.length;
-      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
-    }
-    document.addEventListener('keydown', function(e) {
-      if (!document.getElementById('lightbox').classList.contains('active')) return;
-      if (e.key === 'ArrowLeft') prevLightboxImage();
-      if (e.key === 'ArrowRight') nextLightboxImage();
-      if (e.key === 'Escape') closeLightbox();
-    });
-    fetch('../components/footer.html')
-      .then(response => response.text())
-      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
-  </script>
+  <script src="../assets/rooms/room-scripts.js"></script>
   <script src="../assets/main.js" defer></script>
 </body>
 </html> 
