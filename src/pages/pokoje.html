@@ -7,6 +7,62 @@
   <title>Pokoje | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/css/base.css" />
   <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    /* Wymuszenie identycznego układu i wysokości kart w obu sekcjach pokoi */
+    #rooms-private, #rooms-shared {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      align-items: stretch;
+      padding: 0;
+      margin: 0;
+    }
+    #rooms-private .room-card, #rooms-shared .room-card {
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+      border: 2.5px solid rgba(127, 200, 195, 0.25) !important;
+      border-radius: 22px !important;
+      box-shadow: 0 8px 25px rgba(45, 54, 72, 0.10);
+      background: #fff;
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+    #rooms-private .room-card:hover, #rooms-shared .room-card:hover {
+      box-shadow: 0 12px 32px rgba(45, 54, 72, 0.16);
+      border-color: var(--accent2);
+    }
+    #rooms-private .room-thumb, #rooms-shared .room-thumb {
+      margin-left: -1.2rem;
+      margin-right: -1.2rem;
+      margin-top: -1.5rem;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      overflow: hidden;
+    }
+    #rooms-private .room-thumb img, #rooms-shared .room-thumb img {
+      margin-top: 18px;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    @media (max-width: 700px) {
+      #rooms-private, #rooms-shared {
+        grid-template-columns: 1fr;
+      }
+      #rooms-private .room-card, #rooms-shared .room-card {
+        min-height: 420px;
+        padding: 1rem 0.7rem 1.2rem 0.7rem;
+      }
+      #rooms-private .room-thumb, #rooms-shared .room-thumb {
+        margin-left: -0.7rem;
+        margin-right: -0.7rem;
+        margin-top: -1rem;
+      }
+    }
+  </style>
 </head>
 <body class="page-with-header-padding">
   <header class="header">
