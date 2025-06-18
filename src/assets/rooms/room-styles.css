@@ -399,15 +399,22 @@ html, body {
 
 @media (max-width: 600px) {
   .gallery {
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: 10vw !important;
+    padding-right: 10vw !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .gallery img {
     border-radius: 8px;
     box-shadow: none;
   }
   .room-details-card {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
   }
 } 
