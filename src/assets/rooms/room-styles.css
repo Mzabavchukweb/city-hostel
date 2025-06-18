@@ -399,10 +399,15 @@ html, body {
 
 @media (max-width: 600px) {
   .gallery {
-    grid-template-columns: 1fr;
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
   .gallery img {
     border-radius: 8px;
     box-shadow: none;
+  }
+  .room-details-card {
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 } 
