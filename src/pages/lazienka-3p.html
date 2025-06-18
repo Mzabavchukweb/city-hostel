@@ -298,12 +298,16 @@
       <h1>Łazienka ogólna - 3 piętro</h1>
               <p class="description-large">Przestronna łazienka ogólnodostępna na trzecim piętrze, czysta i regularnie sprzątana, dostępna dla wszystkich gości piętra.</p>
       <div class="gallery">
-        <img src="../images/rooms/lazienka3p/IMG_8505.webp" alt="Łazienka 3 piętro - widok główny" onclick="openLightbox(this.src)" />
-        <img src="../images/rooms/lazienka3p/c3d7bc15-20ed-4900-bb1d-c91182e9cbf2.jpg.webp" alt="Łazienka 3 piętro - dodatkowy widok" onclick="openLightbox(this.src)" />
+        <img src="../images/rooms/lazienka3p/IMG_8505.webp" alt="Łazienka 3 piętro - widok główny" onclick="openLightbox(0)" />
+        <img src="../images/rooms/lazienka3p/c3d7bc15-20ed-4900-bb1d-c91182e9cbf2.jpg.webp" alt="Łazienka 3 piętro - dodatkowy widok" onclick="openLightbox(1)" />
       </div>
-      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+      <div id="lightbox" class="lightbox" tabindex="-1" aria-modal="true" role="dialog" onclick="if(event.target===this)closeLightbox()">
+        <button class="lightbox-prev" aria-label="Poprzednie zdjęcie" onclick="event.stopPropagation();prevLightboxImage();">&#10094;</button>
+        <span class="lightbox-close" onclick="closeLightbox();event.stopPropagation();" tabindex="0" aria-label="Zamknij">&times;</span>
+        <div class="lightbox-img-wrapper">
+          <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+        </div>
+        <button class="lightbox-next" aria-label="Następne zdjęcie" onclick="event.stopPropagation();nextLightboxImage();">&#10095;</button>
       </div>
     </section>
   </main>
@@ -312,13 +316,34 @@
   <div id="footer-placeholder"></div>
   <link rel="stylesheet" href="../components/footer.css">
   <script>
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
+    // Lightbox z nawigacją
+    const galleryImages = [
+      '../images/rooms/lazienka3p/IMG_8505.webp',
+      '../images/rooms/lazienka3p/c3d7bc15-20ed-4900-bb1d-c91182e9cbf2.jpg.webp'
+    ];
+    let currentImgIndex = 0;
+    function openLightbox(idx) {
+      currentImgIndex = idx;
+      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
       document.getElementById('lightbox').classList.add('active');
     }
     function closeLightbox() {
       document.getElementById('lightbox').classList.remove('active');
     }
+    function prevLightboxImage() {
+      currentImgIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
+    }
+    function nextLightboxImage() {
+      currentImgIndex = (currentImgIndex + 1) % galleryImages.length;
+      document.getElementById('lightbox-img').src = galleryImages[currentImgIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') prevLightboxImage();
+      if (e.key === 'ArrowRight') nextLightboxImage();
+      if (e.key === 'Escape') closeLightbox();
+    });
     fetch('../components/footer.html')
       .then(response => response.text())
       .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
