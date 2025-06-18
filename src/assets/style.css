@@ -3826,3 +3826,13 @@ html, body {
     height: 180px;
   }
 } 
+
+.room-price-bold {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent2, #0ea5e9);
+  margin: 0.3em 0 0.7em 0;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px #b6e0fe33, 0 1px 0 #fff;
+  display: block;
+}
