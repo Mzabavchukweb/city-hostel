@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pokoje w City Hostel Szczecin - Studio Lux z kuchnią, Studio Standard z aneksem, pokoje Economy. Wszystkie z prywatną łazienką. Centrum Szczecina." />
+  <title>Pokoje | City Hostel Szczecin</title>
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/rooms/room-styles.css" />
+</head>
+<body class="page-with-header-padding">
+  <header class="header">
+    <div class="logo"><a href="../../index.html"><span class="logo-brand"><span class="logo-lower">city</span> <span class="logo-upper">HOSTEL</span></span></a></div>
+    <div class="header-right">
+      <nav class="nav">
+        <ul>
+          <li><a href="pokoje.html">Pokoje</a></li>
+          <li><a href="cennik.html">Cennik</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="dropdown-hostels">
+            <a href="#">Pozostałe hostele</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.firlik.com.pl/" target="_blank">Hostel Firlik<br><span style='font-size:0.95em;color:#7b8794;'>ul. Firlika 43, Szczecin</span></a></li>
+              <li><a href="http://www.hostelarbet.pl/" target="_blank">Hostel Arbet<br><span style='font-size:0.95em;color:#7b8794;'>ul. Piesza 11, 70-633 Szczecin</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="zapytaj-o-rezerwacje.html" class="menu-res-btn desktop-only">Zapytaj o rezerwację</a>
+      <div class="lang-switcher">
+        <button class="lang-current">PL</button>
+        <div class="lang-dropdown">
+          <button class="lang-option" data-lang="en">EN</button>
+          <button class="lang-option" data-lang="de">DE</button>
+          <button class="lang-option" data-lang="ru">RU</button>
+        </div>
+      </div>
+      
+      <!-- NOWY HAMBURGER BUTTON -->
+      <button class="mobile-hamburger" id="mobileMenuToggle" aria-label="Otwórz menu mobilne">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- NOWE MOBILNE MENU -->
+  <div class="modern-mobile-menu" id="modernMobileMenu">
+    <!-- Animowane tło -->
+    <div class="mobile-menu-bg">
+      <div class="menu-bg-orb orb-1"></div>
+      <div class="menu-bg-orb orb-2"></div>
+      <div class="menu-bg-orb orb-3"></div>
+    </div>
+    
+    <!-- Główna zawartość menu -->
+    <div class="mobile-menu-content">
+      <!-- Header menu -->
+      <div class="mobile-menu-header">
+        <div class="mobile-logo">
+          <div class="logo-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <span class="logo-text logo-brand"><span class="logo-lower">city</span> <span class="logo-upper">HOSTEL</span></span>
+        </div>
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Nawigacja główna -->
+      <nav class="mobile-nav-main">
+        <a href="../../index.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Strona główna</span>
+            <span class="nav-item-desc">Powrót do strony głównej</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="pokoje.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Pokoje</span>
+            <span class="nav-item-desc">Zobacz nasze pokoje</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="cennik.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Cennik</span>
+            <span class="nav-item-desc">Sprawdź nasze ceny</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="kontakt.html" class="mobile-nav-item">
+          <div class="nav-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="nav-item-content">
+            <span class="nav-item-title">Kontakt</span>
+            <span class="nav-item-desc">Skontaktuj się z nami</span>
+          </div>
+          <div class="nav-item-arrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </div>
+        </a>
+      </nav>
+      
+      <!-- Sekcja pozostałych hosteli -->
+      <div class="mobile-hostels-section">
+        <h4 class="hostels-section-title">Pozostałe hostele</h4>
+        <div class="mobile-hostels-grid">
+          <a href="http://www.firlik.com.pl/" target="_blank" class="hostel-card">
+            <div class="hostel-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M5 21V7l8-4v18"/>
+                <path d="M19 21V8l-8-4-8 4v13"/>
+                <path d="M9 9v.01"/>
+                <path d="M9 12v.01"/>
+                <path d="M9 15v.01"/>
+                <path d="M9 18v.01"/>
+              </svg>
+            </div>
+            <div class="hostel-info">
+              <span class="hostel-name">Hostel Firlik</span>
+              <span class="hostel-address">ul. Firlika 43</span>
+            </div>
+          </a>
+          <a href="http://www.hostelarbet.pl/" target="_blank" class="hostel-card">
+            <div class="hostel-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                <path d="M10 6h4"/>
+                <path d="M10 10h4"/>
+                <path d="M10 14h4"/>
+                <path d="M10 18h4"/>
+              </svg>
+            </div>
+            <div class="hostel-info">
+              <span class="hostel-name">Hostel Arbet</span>
+              <span class="hostel-address">ul. Piesza 11</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="mobile-cta-section">
+        <a href="zapytaj-o-rezerwacje.html" class="mobile-cta-btn">
+          <div class="cta-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/>
+              <path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+              <path d="M8 14h.01"/>
+              <path d="M12 14h.01"/>
+              <path d="M16 14h.01"/>
+              <path d="M8 18h.01"/>
+              <path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <span class="cta-text">Zapytaj o rezerwację</span>
+        </a>
+      </div>
+      
+      <!-- Language switcher -->
+      <div class="mobile-lang-section">
+        <h4 class="lang-section-title">Język / Language</h4>
+        <div class="mobile-lang-options">
+          <button class="mobile-lang-btn active" data-lang="pl">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#DC143C"/>
+                <rect width="20" height="7" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span class="lang-name">Polski</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="en">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#012169"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#FFFFFF" stroke-width="1.5"/>
+                <path d="M0 0l20 14M20 0L0 14" stroke="#C8102E" stroke-width="1"/>
+                <path d="M10 0v14M0 7h20" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M10 0v14M0 7h20" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="lang-name">English</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="de">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#000000"/>
+                <rect width="20" height="9.33" y="4.67" fill="#DD0000"/>
+                <rect width="20" height="4.67" y="9.33" fill="#FFCE00"/>
+              </svg>
+            </div>
+            <span class="lang-name">Deutsch</span>
+          </button>
+          <button class="mobile-lang-btn" data-lang="ru">
+            <div class="lang-flag">
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+                <rect width="20" height="14" fill="#FFFFFF"/>
+                <rect width="20" height="9.33" y="4.67" fill="#0052B4"/>
+                <rect width="20" height="4.67" y="9.33" fill="#D52B1E"/>
+              </svg>
+            </div>
+            <span class="lang-name">Русский</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <main>
+    <!-- DYNAMICZNA SEKCJA HERO Z ANIMOWANYM GRADIENTEM -->
+    <!-- Usunięto hero-content-rooms na życzenie -->
+      <div class="wave"></div>
+    
+    <!-- Usunięto nagłówek i opis sekcji rodzaje pokoi -->
+    <section class="rooms-main-content" style="max-width:1400px;margin:0 auto;padding:2rem 1rem 0 1rem;">
+      <div class="rooms-container-modern">
+        <!-- Wszystkie pokoje w jednej dynamicznej siatce -->
+        <div class="rooms-grid-dynamic" id="rooms-all">
+          <div class="room-category-header">
+            <h2 class="category-title">POKOJE Z PRYWATNĄ ŁAZIENKĄ</h2>
+          </div>
+          <!-- POKOJE Z PRYWATNĄ ŁAZIENKĄ -->
+          <div class="rooms-list rooms-private-grid" id="rooms-private">
+            <!-- Wszystkie pokoje z prywatną łazienką w układzie jak w sekcji wspólnej łazienki -->
+          <div class="room-card room-featured" data-type="prywatna" data-persons="2" data-price="200" data-amenities="wifi,tv,lodowka,czajnik,prywatna-lazienka,reczniki,posciel,kubki,talerze,sztucce,loze-malzenskie,sofa" data-desc="apartament dwuosobowy łoże małżeńskie sofa prywatna łazienka ręczniki pościel telewizor wifi lodówka czajnik kubki talerze sztućce">
+            <div class="room-thumb">
+              <img src="../images/rooms/room4/IMG_8342_2.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa" style="margin-top:18px;" />
+              <div class="room-price">od 200 zł/noc</div>
+            </div>
+              <h3>Apartament dwuosobowy z łożem małżeńskim + sofa</h3>
+              <span class="room-price-bold">200 zł / doba</span>
+              <p>Przytulny apartament dla dwóch osób z łazienką w pokoju<br>
+              ✓ Prywatna łazienka<br>
+              ✓ Ręczniki i pościel w pokoju<br>
+              ✓ Telewizor<br>
+              ✓ Darmowe Wi-Fi<br>
+              ✓ Łoże małżeńskie + sofa<br>
+              ✓ Lodówka<br>
+              ✓ Czajnik + kubki+ talerze+ sztućce</p>
+              <a href="pokoj-pokoj-nr-4.html" class="details-btn">Zobacz szczegóły</a>
+            </div>
+            <!-- (tu wklej kolejne pokoje z prywatną łazienką w tym samym układzie co powyżej, analogicznie do sekcji wspólnej łazienki) -->
+          </div>
+          
+          <div class="room-card" data-type="prywatna" data-persons="2" data-price="190" data-amenities="wifi,tv,lodowka,czajnik,prywatna-lazienka,reczniki,posciel,kubki,talerze,sztucce,dwa-lozka,sofa" data-desc="apartament dwuosobowy dwa osobne łóżka rozkładana sofa prywatna łazienka ręczniki pościel telewizor wifi lodówka czajnik kubki talerze sztućce">
+            <div class="room-thumb">
+              <img src="../images/rooms/room103/3.png" alt="Apartament dwuosobowy + sofa" />
+              <div class="room-price">od 190 zł/noc</div>
+            </div>
+            <h3>Apartament dwuosobowy + sofa</h3>
+            <span class="room-price-bold">270 zł / doba</span>
+              <p>Przytulny apartament dla dwóch osób z łazienką w pokoju<br>
+              ✓ Prywatna łazienka<br>
+              ✓ Ręczniki i pościel w pokoju<br>
+              ✓ Telewizor<br>
+              ✓ Darmowe Wi-Fi<br>
+              ✓ Dwa osobne łóżka + rozkładana sofa<br>
+              ✓ Lodówka<br>
+              ✓ Czajnik + kubki+ talerze+ sztućce</p>
+              <a href="pokoj-103.html" class="details-btn">Zobacz szczegóły</a>
+          </div>
+          
+          <div class="room-card" data-type="prywatna" data-persons="1" data-price="120" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój jednoosobowy prywatna łazienka ręcznik pościel telewizor wifi lodówka">
+            <div class="room-thumb">
+              <img src="../images/rooms/room6/pokoj6nowe.webp" alt="Pokój jednoosobowy z prywatną łazienką" />
+              <div class="room-price">od 120 zł/noc</div>
+            </div>
+            <h3>Pokój jednoosobowy z prywatną łazienką</h3>
+            <span class="room-price-bold">165 zł / doba</span>
+            <p>Przytulny pokój dla jednej osoby z łazienką w pokoju<br>
+            ✓ Prywatna łazienka<br>
+            ✓ Ręcznik i pościel w pokoju<br>
+            ✓ Telewizor<br>
+            ✓ Darmowe Wi-Fi<br>
+            ✓ Lodówka</p>
+            <a href="pokoj-pokoj-nr-6.html" class="details-btn">Zobacz szczegóły</a>
+          </div>
+          
+          <div class="room-card" data-type="prywatna" data-persons="2" data-price="140" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel,loze-malzenskie" data-desc="pokój dwuosobowy łoże małżeńskie prywatna łazienka ręczniki pościel telewizor wifi lodówka">
+            <div class="room-thumb">
+              <a href="../images/rooms/room3/nowe2.png" class="glightbox" data-gallery="room3-gallery">
+                <img src="../images/rooms/room3/nowe2.png" alt="Pokój dwuosobowy z prywatną łazienką i łożem małżeńskim" />
+              </a>
+              <a href="../images/rooms/room3/nowe3.webp" class="glightbox" data-gallery="room3-gallery" style="display:none;"></a>
+              <a href="../images/rooms/room3/IMG_8360_2.webp" class="glightbox" data-gallery="room3-gallery" style="display:none;"></a>
+              <div class="room-price">od 140 zł/noc</div>
+            </div>
+            <h3>Pokój dwuosobowy z prywatną łazienką i łożem małżeńskim</h3>
+            <span class="room-price-bold">200 zł / doba</span>
+            <p>Przytulny pokój dla dwóch osób z łazienką w pokoju<br>
+            ✓ Prywatna łazienka<br>
+            ✓ Ręczniki i pościel w pokoju<br>
+            ✓ Telewizor<br>
+            ✓ Darmowe Wi-Fi<br>
+            ✓ Lodówka<br>
+            ✓ Łoże małżeńskie</p>
+            <a href="pokoj-pokoj-nr-3.html" class="details-btn">Zobacz szczegóły</a>
+          </div>
+          
+          <div class="room-card" data-type="prywatna" data-persons="2" data-price="150" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój dwuosobowy prywatna łazienka ręczniki pościel telewizor wifi lodówka">
+            <div class="room-thumb">
+              <img src="../images/rooms/room104/new104!.png" alt="Pokój dwuosobowy z prywatną łazienką" />
+              <div class="room-price">od 150 zł/noc</div>
+            </div>
+            <h3>Pokój dwuosobowy z prywatną łazienką</h3>
+            <span class="room-price-bold">200 zł / doba</span>
+            <p>Przytulny pokój dla dwóch osób z łazienką w pokoju<br>
+            ✓ Prywatna łazienka<br>
+            ✓ Ręczniki i pościel w pokoju<br>
+            ✓ Telewizor<br>
+            ✓ Darmowe Wi-Fi<br>
+            ✓ Lodówka</p>
+            <a href="pokoj-104.html" class="details-btn">Zobacz szczegóły</a>
+          </div>
+          
+          <div class="room-card" data-type="prywatna" data-persons="3" data-price="170" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój trzyosobowy prywatna łazienka ręczniki pościel telewizor wifi lodówka">
+            <div class="room-thumb">
+              <img src="../images/rooms/room113/113@new.png" alt="Pokój trzyosobowy z prywatną łazienką" />
+              <div class="room-price">od 170 zł/noc</div>
+            </div>
+            <h3>Pokój trzyosobowy z prywatną łazienką</h3>
+            <span class="room-price-bold">260 zł / doba</span>
+            <p>Przytulny pokój dla trzech osób z łazienką w pokoju<br>
+            ✓ Prywatna łazienka<br>
+            ✓ Ręczniki i pościel w pokoju<br>
+            ✓ Telewizor<br>
+            ✓ Darmowe Wi-Fi<br>
+            ✓ Lodówka</p>
+            <a href="pokoj-113.html" class="details-btn">Zobacz szczegóły</a>
+          </div>
+          
+          <div class="room-card" data-type="prywatna" data-persons="4" data-price="180" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój czteroosobowy prywatna łazienka ręczniki pościel telewizor wifi lodówka">
+            <div class="room-thumb">
+              <img src="../images/rooms/room308/IMG_8491 2.jpg" alt="Pokój czteroosobowy z prywatną łazienką" />
+              <div class="room-price">od 180 zł/noc</div>
+            </div>
+            <h3>Pokój czteroosobowy z prywatną łazienką</h3>
+            <span class="room-price-bold">280 zł / doba</span>
+            <p>Przytulny pokój dla czterech osób z łazienką w pokoju<br>
+            ✓ Prywatna łazienka<br>
+            ✓ Ręczniki i pościel w pokoju<br>
+            ✓ Telewizor<br>
+            ✓ Darmowe Wi-Fi<br>
+            ✓ Lodówka</p>
+            <a href="pokoj-308.html" class="details-btn">Zobacz szczegóły</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- KONIEC: nagłówek i opis usunięte -->
+    <!-- SEKCJE POKOI - NOWY DYNAMICZNY LAYOUT -->
+    <section class="section">
+      <div class="room-category-header">
+        <h2 class="category-title">POKOJE ZE WSPÓLNĄ ŁAZIENKĄ ( NA KORYTARZU )</h2>
+      </div>
+      <p class="description-medium">Tańsza opcja dla gości, którym nie przeszkadza dzielenie łazienki z innymi. Wspólna łazienka znajduje się na korytarzu i jest regularnie sprzątana.</p>
+      <div class="rooms-list rooms-private-grid" id="rooms-shared">
+        <!-- TUTAJ ZOSTAWIAMY TYLKO POKOJE NIE Z PARTERU -->
+        <div class="room-card" data-type="wspolna" data-persons="1" data-price="90" data-amenities="wifi,tv,lodowka,wspolna-lazienka,reczniki,posciel" data-desc="pokój jednoosobowy ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi lodówka">
+          <div class="room-thumb">
+            <img src="../images/rooms/room310/IMG_8472.webp" alt="Pokój jednoosobowy ze wspólną łazienką" />
+            <div class="room-price">od 90 zł/noc</div>
+          </div>
+          <h3>Pokój jednoosobowy ze wspólną łazienką</h3>
+          <span class="room-price-bold">130 zł / doba</span>
+          <p>Ekonomiczna opcja dla jednej osoby.<br>
+          ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
+          ✓ Ręczniki i pościel w pokoju<br>
+          ✓ Telewizor<br>
+          ✓ Darmowe WI-FI<br>
+          ✓ Lodówka</p>
+          <a href="pokoj-310.html" class="details-btn">Zobacz szczegóły</a>
+        </div>
+        <div class="room-card" data-type="wspolna" data-persons="2" data-price="110" data-amenities="wifi,tv,lodowka,wspolna-lazienka,reczniki,posciel" data-desc="pokój dwuosobowy ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi lodówka">
+          <div class="room-thumb">
+            <img src="../images/rooms/room312/IMG_8518_2.webp" alt="Pokój dwuosobowy ze wspólną łazienką" />
+            <div class="room-price">od 110 zł/noc</div>
+          </div>
+          <h3>Pokój dwuosobowy ze wspólną łazienką</h3>
+          <span class="room-price-bold">160 zł / doba</span>
+          <p>Ekonomiczna opcja dla dwóch osób.<br>
+          ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
+          ✓ Ręczniki i pościel w pokoju<br>
+          ✓ Telewizor<br>
+          ✓ Darmowe WI-FI<br>
+          ✓ Lodówka</p>
+          <a href="pokoj-312.html" class="details-btn">Zobacz szczegóły</a>
+        </div>
+        <div class="room-card" data-type="wspolna" data-persons="4" data-price="120" data-amenities="wifi,tv,lodowka,wspolna-lazienka,reczniki,posciel" data-desc="pokój czteroosobowy ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi lodówka">
+          <div class="room-thumb">
+            <img src="../images/rooms/room305/2.png" alt="Pokój czteroosobowy ze wspólną łazienką" />
+            <div class="room-price">od 120 zł/noc</div>
+          </div>
+          <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
+          <span class="room-price-bold">220 zł / doba</span>
+          <p>Ekonomiczna opcja dla czterech osób.<br>
+          ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
+          ✓ Ręczniki i pościel w pokoju<br>
+          ✓ Telewizor<br>
+          ✓ Darmowe WI-FI<br>
+          ✓ Lodówka</p>
+          <a href="pokoj-305.html" class="details-btn">Zobacz szczegóły</a>
+        </div>
+      </div>
+      <!-- NOWA SEKCJA PARTER -->
+      <div class="room-category-header">
+        <h2 class="category-title">poziom 0 parter</h2>
+      </div>
+      <div class="rooms-list rooms-private-grid" id="rooms-parter">
+        <div class="room-card" data-type="wspolna" data-persons="3" data-price="80" data-amenities="wifi,tv,wspolna-lazienka,reczniki,posciel,osobne-wejscie" data-desc="pokój trzyosobowy piętro 0 ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi osobne wejście">
+          <div class="room-thumb">
+            <img src="../images/rooms/pietro0_1D/IMG_8545_2.webp" alt="Pokój trzyosobowy ze wspólną łazienką" />
+            <div class="room-price">od 80 zł/noc</div>
+          </div>
+          <h3>Pokój trzyosobowy ze wspólną łazienką</h3>
+          <span class="room-price-bold">180 zł / doba</span>
+          <p>Ekonomiczna opcja dla trzech osób.<br>
+          ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
+          ✓ Ręczniki i pościel w pokoju<br>
+          ✓ Telewizor<br>
+          ✓ Darmowe WI-FI<br>
+          ✓ <strong>Możliwość wejścia przez hostel lub osobnym wejściem</strong></p>
+          <a href="pokoj-pietro-0-1D.html" class="details-btn">Zobacz szczegóły</a>
+        </div>
+        <div class="room-card" data-type="wspolna" data-persons="4" data-price="85" data-amenities="wifi,tv,wspolna-lazienka,reczniki,posciel,osobne-wejscie" data-desc="pokój czteroosobowy piętro 0 ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi osobne wejście">
+          <div class="room-thumb">
+            <img src="../images/rooms/pietro0_2D/3.png" alt="Pokój czteroosobowy ze wspólną łazienką" />
+            <div class="room-price">od 85 zł/noc</div>
+          </div>
+          <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
+          <span class="room-price-bold">220 zł / doba</span>
+          <p>Ekonomiczna opcja dla czterech osób.<br>
+          ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
+          ✓ Ręczniki i pościel w pokoju<br>
+          ✓ Telewizor<br>
+          ✓ Darmowe WI-FI<br>
+          ✓ <strong>Możliwość wejścia przez hostel lub osobnym wejściem</strong></p>
+          <a href="pokoj-pietro-0-2D.html" class="details-btn">Zobacz szczegóły</a>
+        </div>
+        <div class="room-card" data-type="wspolna" data-persons="4" data-price="85" data-amenities="wifi,tv,wspolna-lazienka,reczniki,posciel,osobne-wejscie" data-desc="pokój czteroosobowy piętro 0 ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi osobne wejście">
+          <div class="room-thumb">
+            <img src="../images/rooms/pietro0_3D/IMG_8582_3.webp" alt="Pokój czteroosobowy ze wspólną łazienką" />
+            <div class="room-price">od 85 zł/noc</div>
+          </div>
+          <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
+          <span class="room-price-bold">220 zł / doba</span>
+          <p>Ekonomiczna opcja dla czterech osób.<br>
+          ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
+          ✓ Ręczniki i pościel w pokoju<br>
+          ✓ Telewizor<br>
+          ✓ Darmowe WI-FI<br>
+          ✓ <strong>Możliwość wejścia przez hostel lub osobnym wejściem</strong></p>
+          <a href="pokoj-pietro-0-3D.html" class="details-btn">Zobacz szczegóły</a>
+        </div>
+      </div>
+    </section>
+    <!-- SEKCA WSPÓLNE PRZESTRZENIE (przeniesiona z index.html) -->
+    <section id="common-areas" class="section">
+      <div class="room-category-header">
+        <h2 class="category-title">Wspólne przestrzenie</h2>
+      </div>
+      <div class="common-areas-grid">
+        <div class="common-area-card">
+          <div class="area-image">
+            <img src="../images/rooms/kuchnia2p/kuchnia.png" alt="Kuchnia 2 piętro" loading="lazy" />
+          </div>
+          <div class="area-content">
+            <h3>Kuchnia - 2 piętro</h3>
+            <div class="area-features">
+              <div class="feature-item"><span>Lodówka z zamrażarką</span></div>
+              <div class="feature-item"><span>Kuchenka mikrofalowa</span></div>
+              <div class="feature-item"><span>Kuchenka gazowa</span></div>
+              <div class="feature-item"><span>Komplet naczyń</span></div>
+            </div>
+            <a href="kuchnia-2p.html" class="area-cta">Zobacz szczegóły</a>
+          </div>
+        </div>
+        <div class="common-area-card">
+          <div class="area-image">
+            <img src="../images/rooms/lazienka3p/IMG_8505.webp" alt="Łazienka ogólna 3 piętro" loading="lazy" />
+          </div>
+          <div class="area-content">
+            <h3>Łazienka ogólna - 3 piętro</h3>
+            <div class="area-features">
+              <div class="feature-item"><span>Prysznic z ciepłą wodą</span></div>
+              <div class="feature-item"><span>Toaleta</span></div>
+              <div class="feature-item"><span>Umywalka z lustrem</span></div>
+              <div class="feature-item"><span>Regularne sprzątanie</span></div>
+            </div>
+            <a href="lazienka-3p.html" class="area-cta">Zobacz szczegóły</a>
+          </div>
+        </div>
+        <div class="common-area-card">
+          <div class="area-image">
+            <img src="../images/rooms/lazienka_parter/IMG_8600_2.webp" alt="Łazienka i toaleta parter" loading="lazy" />
+          </div>
+          <div class="area-content">
+            <h3>Łazienka i toaleta - parter</h3>
+            <div class="area-features">
+              <div class="feature-item"><span>Przy głównym wejściu</span></div>
+              <div class="feature-item"><span>Łatwy dostęp</span></div>
+              <div class="feature-item"><span>Udogodnienia dodatkowe</span></div>
+              <div class="feature-item"><span>Dostępne 24/7</span></div>
+            </div>
+            <a href="lazienka-parter.html" class="area-cta">Zobacz szczegóły</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- KONIEC SEKCI WSPÓLNE PRZESTRZENIE -->
+  </main>
+  <!-- Stopka generowana z komponentu -->
+  <div id="footer-placeholder"></div>
+  <link rel="stylesheet" href="../components/footer.css">
+  <script>
+    fetch('../components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      });
+  </script>
+  <script src="../assets/main.js" defer></script>
+  <script src="../assets/rooms/room-scripts.js" defer></script>
+</body>
+</html> 

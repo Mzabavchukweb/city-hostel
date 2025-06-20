@@ -7,6 +7,7 @@
   <title>Pokoje | City Hostel Szczecin</title>
   <link rel="stylesheet" href="../assets/css/base.css" />
   <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/rooms/room-styles.css" />
 </head>
 <body class="page-with-header-padding">
   <header class="header">
@@ -277,9 +278,15 @@
           <div class="rooms-list rooms-private-grid" id="rooms-private">
             <!-- Wszystkie pokoje z prywatną łazienką w układzie jak w sekcji wspólnej łazienki -->
           <div class="room-card room-featured" data-type="prywatna" data-persons="2" data-price="200" data-amenities="wifi,tv,lodowka,czajnik,prywatna-lazienka,reczniki,posciel,kubki,talerze,sztucce,loze-malzenskie,sofa" data-desc="apartament dwuosobowy łoże małżeńskie sofa prywatna łazienka ręczniki pościel telewizor wifi lodówka czajnik kubki talerze sztućce">
-            <div class="room-thumb">
+            <div class="room-thumb" onclick="openGalleryForRoom(this)">
               <img src="../images/rooms/room4/IMG_8342_2.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa" style="margin-top:18px;" />
               <div class="room-price">od 200 zł/noc</div>
+              <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room4/IMG_8342_2.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa - widok 1" />
+                <img src="../images/rooms/room4/IMG_8345.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa - widok 2" />
+                <img src="../images/rooms/room4/IMG_8341.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa - widok 3" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament dwuosobowy z łożem małżeńskim + sofa - widok 4" />
+              </div>
             </div>
               <h3>Apartament dwuosobowy z łożem małżeńskim + sofa</h3>
               <span class="room-price-bold">200 zł / doba</span>
@@ -297,9 +304,16 @@
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="2" data-price="190" data-amenities="wifi,tv,lodowka,czajnik,prywatna-lazienka,reczniki,posciel,kubki,talerze,sztucce,dwa-lozka,sofa" data-desc="apartament dwuosobowy dwa osobne łóżka rozkładana sofa prywatna łazienka ręczniki pościel telewizor wifi lodówka czajnik kubki talerze sztućce">
-            <div class="room-thumb">
+            <div class="room-thumb" onclick="openGalleryForRoom(this)">
               <img src="../images/rooms/room103/3.png" alt="Apartament dwuosobowy + sofa" />
               <div class="room-price">od 190 zł/noc</div>
+              <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room103/3.png" alt="Apartament - widok główny" />
+                <img src="../images/rooms/room103/IMG_8402.webp" alt="Apartament - łazienka" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Łazienka prywatna" />
+                <img src="../images/rooms/room103/IMG_8404 2.webp" alt="Apartament - kuchnia" />
+                <img src="../images/rooms/room103/IMG_8397 2.webp" alt="Apartament - salon" />
+              </div>
             </div>
             <h3>Apartament dwuosobowy + sofa</h3>
             <span class="room-price-bold">270 zł / doba</span>
@@ -315,9 +329,15 @@
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="1" data-price="120" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój jednoosobowy prywatna łazienka ręcznik pościel telewizor wifi lodówka">
-            <div class="room-thumb">
+            <div class="room-thumb" onclick="openGalleryForRoom(this)">
               <img src="../images/rooms/room6/pokoj6nowe.webp" alt="Pokój jednoosobowy z prywatną łazienką" />
               <div class="room-price">od 120 zł/noc</div>
+              <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room6/pokoj6nowe.webp" alt="Pokój - widok główny" />
+                <img src="../images/rooms/room6/pokoj6nowe1.webp" alt="Pokój - łazienka" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Łazienka prywatna" />
+                <img src="../images/rooms/room6/IMG_8381_2.webp" alt="Pokój - łóżka" />
+              </div>
             </div>
             <h3>Pokój jednoosobowy z prywatną łazienką</h3>
             <span class="room-price-bold">165 zł / doba</span>
@@ -331,9 +351,15 @@
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="2" data-price="140" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel,loze-malzenskie" data-desc="pokój dwuosobowy łoże małżeńskie prywatna łazienka ręczniki pościel telewizor wifi lodówka">
-            <div class="room-thumb">
+            <div class="room-thumb" onclick="openGalleryForRoom(this)">
               <img src="../images/rooms/room3/nowe2.png" alt="Pokój dwuosobowy z prywatną łazienką i łożem małżeńskim" />
               <div class="room-price">od 140 zł/noc</div>
+              <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room3/IMG_8360_2.webp" alt="Economy - widok główny" />
+                <img src="../images/rooms/room3/nowe2.webp" alt="Economy - łazienka" />
+                <img src="../images/rooms/room3/nowe3.webp" alt="Economy - wyposażenie" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament - salon" />
+              </div>
             </div>
             <h3>Pokój dwuosobowy z prywatną łazienką i łożem małżeńskim</h3>
             <span class="room-price-bold">200 zł / doba</span>
@@ -348,9 +374,15 @@
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="2" data-price="150" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój dwuosobowy prywatna łazienka ręczniki pościel telewizor wifi lodówka">
-            <div class="room-thumb">
+            <div class="room-thumb" onclick="openGalleryForRoom(this)">
               <img src="../images/rooms/room104/new104!.png" alt="Pokój dwuosobowy z prywatną łazienką" />
               <div class="room-price">od 150 zł/noc</div>
+              <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room104/new104!.png" alt="Pokój - widok główny" />
+                <img src="../images/rooms/room104/new104.png" alt="Pokój - łazienka" />
+                <img src="../images/rooms/room104/IMG_8429.webp" alt="Pokój - łóżka" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament - salon" />
+              </div>
             </div>
             <h3>Pokój dwuosobowy z prywatną łazienką</h3>
             <span class="room-price-bold">200 zł / doba</span>
@@ -364,9 +396,15 @@
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="3" data-price="170" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój trzyosobowy prywatna łazienka ręczniki pościel telewizor wifi lodówka">
-            <div class="room-thumb">
+            <div class="room-thumb" onclick="openGalleryForRoom(this)">
               <img src="../images/rooms/room113/113@new.png" alt="Pokój trzyosobowy z prywatną łazienką" />
               <div class="room-price">od 170 zł/noc</div>
+              <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room113/113new.webp" alt="Pokój trzyosobowy - widok główny" />
+                <img src="../images/rooms/room113/113@new.png" alt="Pokój trzyosobowy - łazienka" />
+                <img src="../images/rooms/room113/113!new.png" alt="Pokój trzyosobowy - wyposażenie" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament - salon" />
+              </div>
             </div>
             <h3>Pokój trzyosobowy z prywatną łazienką</h3>
             <span class="room-price-bold">260 zł / doba</span>
@@ -380,9 +418,15 @@
           </div>
           
           <div class="room-card" data-type="prywatna" data-persons="4" data-price="180" data-amenities="wifi,tv,lodowka,prywatna-lazienka,reczniki,posciel" data-desc="pokój czteroosobowy prywatna łazienka ręczniki pościel telewizor wifi lodówka">
-            <div class="room-thumb">
+            <div class="room-thumb" onclick="openGalleryForRoom(this)">
               <img src="../images/rooms/room308/IMG_8491 2.jpg" alt="Pokój czteroosobowy z prywatną łazienką" />
               <div class="room-price">od 180 zł/noc</div>
+              <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room308/IMG_8494.webp" alt="Pokój - widok główny" />
+                <img src="../images/rooms/room308/IMG_8488 2.webp" alt="Pokój - łóżka" />
+                <img src="../images/rooms/room308/IMG_8491 2.webp" alt="Pokój - wyposażenie" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament - salon" />
+              </div>
             </div>
             <h3>Pokój czteroosobowy z prywatną łazienką</h3>
             <span class="room-price-bold">280 zł / doba</span>
@@ -407,9 +451,14 @@
       <div class="rooms-list rooms-private-grid" id="rooms-shared">
         <!-- TUTAJ ZOSTAWIAMY TYLKO POKOJE NIE Z PARTERU -->
         <div class="room-card" data-type="wspolna" data-persons="1" data-price="90" data-amenities="wifi,tv,lodowka,wspolna-lazienka,reczniki,posciel" data-desc="pokój jednoosobowy ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi lodówka">
-          <div class="room-thumb">
+          <div class="room-thumb" onclick="openGalleryForRoom(this)">
             <img src="../images/rooms/room310/IMG_8472.webp" alt="Pokój jednoosobowy ze wspólną łazienką" />
             <div class="room-price">od 90 zł/noc</div>
+            <div class="gallery" style="display: none;">
+              <img src="../images/rooms/room310/IMG_8472.webp" alt="Pokój jednoosobowy ze wspólną łazienką - widok 1" />
+              <img src="../images/rooms/room310/IMG_8470 2.webp" alt="Pokój jednoosobowy ze wspólną łazienką - widok 2" />
+              <img src="../images/rooms/room310/IMG_8476.webp" alt="Pokój jednoosobowy ze wspólną łazienką - widok 3" />
+            </div>
           </div>
           <h3>Pokój jednoosobowy ze wspólną łazienką</h3>
           <span class="room-price-bold">130 zł / doba</span>
@@ -422,9 +471,14 @@
           <a href="pokoj-310.html" class="details-btn">Zobacz szczegóły</a>
         </div>
         <div class="room-card" data-type="wspolna" data-persons="2" data-price="110" data-amenities="wifi,tv,lodowka,wspolna-lazienka,reczniki,posciel" data-desc="pokój dwuosobowy ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi lodówka">
-          <div class="room-thumb">
+          <div class="room-thumb" onclick="openGalleryForRoom(this)">
             <img src="../images/rooms/room312/IMG_8518_2.webp" alt="Pokój dwuosobowy ze wspólną łazienką" />
             <div class="room-price">od 110 zł/noc</div>
+            <div class="gallery" style="display: none;">
+              <img src="../images/rooms/room312/IMG_8518_2.webp" alt="Pokój dwuosobowy ze wspólną łazienką - widok 1" />
+              <img src="../images/rooms/room312/IMG_8510 3.webp" alt="Pokój dwuosobowy ze wspólną łazienką - widok 2" />
+              <img src="../images/rooms/room312/IMG_8513 2.webp" alt="Pokój dwuosobowy ze wspólną łazienką - widok 3" />
+            </div>
           </div>
           <h3>Pokój dwuosobowy ze wspólną łazienką</h3>
           <span class="room-price-bold">160 zł / doba</span>
@@ -436,6 +490,27 @@
           ✓ Lodówka</p>
           <a href="pokoj-312.html" class="details-btn">Zobacz szczegóły</a>
         </div>
+        <div class="room-card" data-type="wspolna" data-persons="4" data-price="120" data-amenities="wifi,tv,lodowka,wspolna-lazienka,reczniki,posciel" data-desc="pokój czteroosobowy ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi lodówka">
+          <div class="room-thumb" onclick="openGalleryForRoom(this)">
+            <img src="../images/rooms/room305/2.png" alt="Pokój czteroosobowy ze wspólną łazienką" />
+            <div class="room-price">od 120 zł/noc</div>
+                          <div class="gallery" style="display: none;">
+                <img src="../images/rooms/room305/2.png" alt="Pokój - łóżka" />
+                <img src="../images/rooms/room305/4.png" alt="Pokój - wyposażenie" />
+                <img src="../images/rooms/room305/3.png" alt="Pokój - przestrzeń" />
+                <img src="../images/rooms/room4/IMG_8352.webp" alt="Apartament - salon" />
+              </div>
+          </div>
+          <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
+          <span class="room-price-bold">220 zł / doba</span>
+          <p>Ekonomiczna opcja dla czterech osób.<br>
+          ✓ Wspólna łazienka na korytarzu dla kilku pokoi<br>
+          ✓ Ręczniki i pościel w pokoju<br>
+          ✓ Telewizor<br>
+          ✓ Darmowe WI-FI<br>
+          ✓ Lodówka</p>
+          <a href="pokoj-305.html" class="details-btn">Zobacz szczegóły</a>
+        </div>
       </div>
       <!-- NOWA SEKCJA PARTER -->
       <div class="room-category-header">
@@ -443,9 +518,14 @@
       </div>
       <div class="rooms-list rooms-private-grid" id="rooms-parter">
         <div class="room-card" data-type="wspolna" data-persons="3" data-price="80" data-amenities="wifi,tv,wspolna-lazienka,reczniki,posciel,osobne-wejscie" data-desc="pokój trzyosobowy piętro 0 ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi osobne wejście">
-          <div class="room-thumb">
+          <div class="room-thumb" onclick="openGalleryForRoom(this)">
             <img src="../images/rooms/pietro0_1D/IMG_8545_2.webp" alt="Pokój trzyosobowy ze wspólną łazienką" />
             <div class="room-price">od 80 zł/noc</div>
+            <div class="gallery" style="display: none;">
+              <img src="../images/rooms/pietro0_1D/IMG_8545_2.webp" alt="Pokój trzyosobowy ze wspólną łazienką - poziom 0 - widok 1" />
+              <img src="../images/rooms/pietro0_1D/IMG_8540_2.webp" alt="Pokój trzyosobowy ze wspólną łazienką - poziom 0 - widok 2" />
+              <img src="../images/rooms/pietro0_1D/IMG_8542.webp" alt="Pokój trzyosobowy ze wspólną łazienką - poziom 0 - widok 3" />
+            </div>
           </div>
           <h3>Pokój trzyosobowy ze wspólną łazienką</h3>
           <span class="room-price-bold">180 zł / doba</span>
@@ -458,9 +538,15 @@
           <a href="pokoj-pietro-0-1D.html" class="details-btn">Zobacz szczegóły</a>
         </div>
         <div class="room-card" data-type="wspolna" data-persons="4" data-price="85" data-amenities="wifi,tv,wspolna-lazienka,reczniki,posciel,osobne-wejscie" data-desc="pokój czteroosobowy piętro 0 ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi osobne wejście">
-          <div class="room-thumb">
+          <div class="room-thumb" onclick="openGalleryForRoom(this)">
             <img src="../images/rooms/pietro0_2D/3.png" alt="Pokój czteroosobowy ze wspólną łazienką" />
             <div class="room-price">od 85 zł/noc</div>
+            <div class="gallery" style="display: none;">
+              <img src="../images/rooms/pietro0_2D/3.png" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 1" />
+              <img src="../images/rooms/pietro0_2D/IMG_8558.webp" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 2" />
+              <img src="../images/rooms/pietro0_2D/IMG_8560.webp" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 3" />
+              <img src="../images/rooms/pietro0_2D/IMG_8564.webp" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 4" />
+            </div>
           </div>
           <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
           <span class="room-price-bold">220 zł / doba</span>
@@ -473,9 +559,15 @@
           <a href="pokoj-pietro-0-2D.html" class="details-btn">Zobacz szczegóły</a>
         </div>
         <div class="room-card" data-type="wspolna" data-persons="4" data-price="85" data-amenities="wifi,tv,wspolna-lazienka,reczniki,posciel,osobne-wejscie" data-desc="pokój czteroosobowy piętro 0 ekonomiczny wspólna łazienka korytarz ręczniki pościel telewizor wifi osobne wejście">
-          <div class="room-thumb">
+          <div class="room-thumb" onclick="openGalleryForRoom(this)">
             <img src="../images/rooms/pietro0_3D/IMG_8582_3.webp" alt="Pokój czteroosobowy ze wspólną łazienką" />
             <div class="room-price">od 85 zł/noc</div>
+            <div class="gallery" style="display: none;">
+              <img src="../images/rooms/pietro0_3D/IMG_8582_3.webp" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 1" />
+              <img src="../images/rooms/pietro0_3D/2.png" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 2" />
+              <img src="../images/rooms/pietro0_3D/IMG_8578_3.webp" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 3" />
+              <img src="../images/rooms/pietro0_3D/IMG_8584_2.webp" alt="Pokój czteroosobowy ze wspólną łazienką - poziom 0 - widok 4" />
+            </div>
           </div>
           <h3>Pokój czteroosobowy ze wspólną łazienką</h3>
           <span class="room-price-bold">220 zł / doba</span>
@@ -552,6 +644,276 @@
       .then(response => response.text())
       .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
   </script>
+  <script>
+    // Kompletny kod galerii dla pokoi - niezależny od room-scripts.js
+    let currentGalleryImages = [];
+    let currentImageIndex = 0;
+    let lightbox = null;
+    let lightboxImg = null;
+    let lightboxThumbs = null;
+    let isAnimating = false;
+
+    function openGalleryForRoom(element) {
+      const gallery = element.querySelector('.gallery');
+      if (gallery) {
+        const images = gallery.querySelectorAll('img');
+        if (images.length > 0) {
+          // Ustaw zdjęcia tylko z tego pokoju
+          currentGalleryImages = Array.from(images);
+          currentImageIndex = 0;
+          
+          // Utwórz lightbox jeśli nie istnieje
+          if (!document.getElementById('lightbox')) {
+            createLightboxHTML();
+          }
+          
+          // Pobierz elementy lightboxa
+          lightbox = document.getElementById('lightbox');
+          lightboxImg = document.getElementById('lightbox-img');
+          lightboxThumbs = document.getElementById('lightbox-thumbs');
+          
+          // Otwórz lightbox
+          openLightbox(0);
+        }
+      }
+    }
+
+    function createLightboxHTML() {
+      const lightboxHTML = `
+        <div id="lightbox" class="lightbox" tabindex="-1" aria-modal="true" role="dialog">
+          <div class="lightbox-content">
+            <div class="lightbox-close" onclick="closeLightbox()" aria-label="Zamknij">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="8" y1="8" x2="24" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <line x1="24" y1="8" x2="8" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="lightbox-img-container">
+              <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage()" aria-label="Poprzednie zdjęcie">&#10094;</button>
+              <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+              <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage()" aria-label="Następne zdjęcie">&#10095;</button>
+              <div class="lightbox-loading" id="lightbox-loading" style="display: none;"></div>
+            </div>
+            <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
+          </div>
+        </div>
+      `;
+      document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+    }
+
+    function openLightbox(imageIndex = 0) {
+      if (!currentGalleryImages.length || !lightbox || isAnimating) return;
+      
+      isAnimating = true;
+      currentImageIndex = imageIndex;
+      
+      // Przewiń do góry i zablokuj scroll
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.body.classList.add('lightbox-open');
+      
+      // Pokaż lightbox
+      lightbox.style.display = 'flex';
+      
+      // Zaktualizuj obrazek
+      updateLightboxImage();
+      
+      // Efekt fade in
+      requestAnimationFrame(() => {
+        lightbox.classList.add('active');
+        setTimeout(() => {
+          isAnimating = false;
+        }, 400);
+      });
+      
+      // Focus dla dostępności
+      setTimeout(() => {
+        lightbox.focus();
+      }, 100);
+    }
+
+    function closeLightbox() {
+      if (!lightbox || isAnimating) return;
+      
+      isAnimating = true;
+      lightbox.classList.remove('active');
+      
+      setTimeout(() => {
+        lightbox.style.display = 'none';
+        document.body.classList.remove('lightbox-open');
+        isAnimating = false;
+      }, 400);
+    }
+
+    function updateLightboxImage() {
+      if (!currentGalleryImages[currentImageIndex] || !lightboxImg) return;
+      
+      // Zaktualizuj obrazek
+      lightboxImg.src = currentGalleryImages[currentImageIndex].src;
+      lightboxImg.alt = currentGalleryImages[currentImageIndex].alt || 'Podgląd zdjęcia';
+      
+      // Zaktualizuj miniaturki
+      updateLightboxThumbs();
+      
+      // Zaktualizuj przyciski nawigacji
+      updateNavigationButtons();
+      
+      // Dodaj licznik obrazków
+      updateImageCounter();
+    }
+
+    function prevLightboxImage() {
+      if (currentGalleryImages.length <= 1 || isAnimating) return;
+      
+      isAnimating = true;
+      lightboxImg.style.opacity = '0';
+      
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+        updateLightboxImage();
+        lightboxImg.style.opacity = '1';
+        isAnimating = false;
+      }, 150);
+    }
+
+    function nextLightboxImage() {
+      if (currentGalleryImages.length <= 1 || isAnimating) return;
+      
+      isAnimating = true;
+      lightboxImg.style.opacity = '0';
+      
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+        updateLightboxImage();
+        lightboxImg.style.opacity = '1';
+        isAnimating = false;
+      }, 150);
+    }
+
+    function updateLightboxThumbs() {
+      if (!lightboxThumbs || currentGalleryImages.length <= 1) {
+        if (lightboxThumbs) lightboxThumbs.style.display = 'none';
+        return;
+      }
+      
+      lightboxThumbs.style.display = 'flex';
+      lightboxThumbs.innerHTML = '';
+      
+      currentGalleryImages.forEach((img, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = img.src;
+        thumb.alt = img.alt || '';
+        thumb.className = 'lightbox-thumb' + (idx === currentImageIndex ? ' active' : '');
+        thumb.onclick = (e) => {
+          e.stopPropagation();
+          if (idx !== currentImageIndex && !isAnimating) {
+            jumpToImage(idx);
+          }
+        };
+        lightboxThumbs.appendChild(thumb);
+      });
+    }
+
+    function jumpToImage(index) {
+      if (isAnimating || index === currentImageIndex) return;
+      
+      isAnimating = true;
+      lightboxImg.style.opacity = '0';
+      
+      setTimeout(() => {
+        currentImageIndex = index;
+        updateLightboxImage();
+        lightboxImg.style.opacity = '1';
+        isAnimating = false;
+      }, 150);
+    }
+
+    function updateNavigationButtons() {
+      const prevBtn = document.querySelector('.lightbox-prev');
+      const nextBtn = document.querySelector('.lightbox-next');
+      
+      if (currentGalleryImages.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+      } else {
+        if (prevBtn) prevBtn.style.display = 'flex';
+        if (nextBtn) nextBtn.style.display = 'flex';
+      }
+    }
+
+    function updateImageCounter() {
+      let counter = document.getElementById('lightbox-counter');
+      if (!counter && currentGalleryImages.length > 1) {
+        counter = document.createElement('div');
+        counter.id = 'lightbox-counter';
+        counter.style.cssText = `
+          position: absolute;
+          top: -70px;
+          left: 0;
+          color: white;
+          font-size: 14px;
+          background: rgba(0, 0, 0, 0.5);
+          padding: 8px 12px;
+          border-radius: 20px;
+          backdrop-filter: blur(10px);
+          font-weight: 500;
+        `;
+        document.querySelector('.lightbox-content').appendChild(counter);
+      }
+      
+      if (counter && currentGalleryImages.length > 1) {
+        counter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
+      }
+    }
+
+    // Obsługa klawiatury
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox || !lightbox.classList.contains('active') || isAnimating) return;
+      
+      switch(e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          prevLightboxImage();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          nextLightboxImage();
+          break;
+        case 'Escape':
+          e.preventDefault();
+          closeLightbox();
+          break;
+      }
+    });
+
+    // Zamknij lightbox po kliknięciu w tło
+    document.addEventListener('click', function(e) {
+      if (e.target === lightbox && !isAnimating) {
+        closeLightbox();
+      }
+    });
+
+    // Zapobiegaj zamykaniu po kliknięciu w obrazek
+    document.addEventListener('click', function(e) {
+      if (e.target === lightboxImg) {
+        e.stopPropagation();
+      }
+    });
+
+    // Wyłącz automatyczną inicjalizację z room-scripts.js
+    document.addEventListener('DOMContentLoaded', function() {
+      // Wyczyść globalne zmienne z room-scripts.js
+      window.galleryImages = [];
+      
+      // Wywołaj potrzebne funkcje z room-scripts.js
+      if (typeof loadFooter === 'function') {
+        loadFooter();
+      }
+      if (typeof handleReservationForm === 'function') {
+        handleReservationForm();
+      }
+    });
+  </script>
+  <script src="../assets/rooms/room-scripts.js"></script>
   <script src="../assets/main.js" defer></script>
   <style>
     .menu-res-btn {
@@ -1341,7 +1703,7 @@
     }
     
     @keyframes rotateGradient {
-      0% { transform: rotate(0deg); }
+      0%, 100% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
     
@@ -1553,7 +1915,6 @@
       color: var(--primary);
       text-transform: uppercase;
     }
-  </style>
+    </style>
 </body>
-</html> 
 </html> 
